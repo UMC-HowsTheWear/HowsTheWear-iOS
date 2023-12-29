@@ -179,7 +179,6 @@ import URLNavigator
 ### 함수
 
 - 함수 이름에는 lowerCamelCase를 사용합니다.
-- 함수 이름 앞에는 되도록이면 `get`, `set`을 붙이지 않습니다.
     
     **좋은 예:**
     
@@ -198,13 +197,6 @@ import URLNavigator
 - Action 함수의 네이밍은 '주어 + 동사' 형태를 사용합니다.
     
     **좋은 예:**
-    
-    ```
-    func name(for user: User) -> String?
-    
-    ```
-    
-    **나쁜 예:**
 
     ```
     func backButtonTapped() {
