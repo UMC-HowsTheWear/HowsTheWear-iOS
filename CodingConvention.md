@@ -9,24 +9,24 @@ Swift 코드를 이해하기 쉽고 명확하게 작성하기 위한 스타일 �
 
 ## 목차
 
-- [코드 레이아웃](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%BD%94%EB%93%9C-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83)
-    - [들여쓰기 및 띄어쓰기](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EB%93%A4%EC%97%AC%EC%93%B0%EA%B8%B0-%EB%B0%8F-%EB%9D%84%EC%96%B4%EC%93%B0%EA%B8%B0)
-    - [줄바꿈](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%A4%84%EB%B0%94%EA%BF%88)
-    - [최대 줄 길이](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%B5%9C%EB%8C%80-%EC%A4%84-%EA%B8%B8%EC%9D%B4)
-    - [빈 줄](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EB%B9%88-%EC%A4%84)
-    - [임포트](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%9E%84%ED%8F%AC%ED%8A%B8)
-- [네이밍](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EB%84%A4%EC%9D%B4%EB%B0%8D)
-    - [타입](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%ED%83%80%EC%9E%85)
-    - [함수](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%ED%95%A8%EC%88%98)
-    - [변수](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EB%B3%80%EC%88%98)
-    - [상수](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%83%81%EC%88%98)
-    - [열거형](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%97%B4%EA%B1%B0%ED%98%95)
-    - [약어](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%95%BD%EC%96%B4)
-- [클로저](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%ED%81%B4%EB%A1%9C%EC%A0%80)
-- [클래스와 구조체](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80-%EA%B5%AC%EC%A1%B0%EC%B2%B4)
-- [타입](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%ED%83%80%EC%9E%85)
-- [주석](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%EC%A3%BC%EC%84%9D)
-- [프로그래밍 권장사항](notion://www.notion.so/d71a1e3a1f0640b8a90c98f529e162af#%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B6%8C%EC%9E%A5%EC%82%AC%ED%95%AD)
+- 코드 레이아웃
+    - 들여쓰기 및 띄어쓰기
+    - 줄바꿈
+    - 최대 줄 길이
+    - 빈 줄
+    - 임포트
+- 네이밍
+    - 타입
+    - 함수
+    - 변수
+    - 상수
+    - 열거형
+    - 약어
+- 클로저
+- 클래스와 구조체
+- 타입
+- 주석
+- 프로그래밍 권장사항
 
 ## 코드 레이아웃
 
@@ -194,13 +194,20 @@ import URLNavigator
     func getName(for user: User) -> String?
     
     ```
-    
-- Action 함수의 네이밍은 '동사 + 목적어' 형태를 사용합니다.
+
+- Action 함수의 네이밍은 '주어 + 동사' 형태를 사용합니다.
     
     **좋은 예:**
     
     ```
-    func tapBackButton() {
+    func name(for user: User) -> String?
+    
+    ```
+    
+    **나쁜 예:**
+
+    ```
+    func backButtonTapped() {
       // ...
     }
     
@@ -209,7 +216,7 @@ import URLNavigator
     **나쁜 예:**
     
     ```
-    func backButtonTapped() {
+    func tapBackButton() {
       // ...
     }
     
