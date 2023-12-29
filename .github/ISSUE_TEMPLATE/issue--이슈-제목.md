@@ -1,5 +1,5 @@
 ---
-name: 'Issue: 이슈 제목'
+name: 'Issue template'
 about: 이슈템플릿 참고해서 작성해주세요!
 title: "\U0001F4CDIssue: "
 labels: ''
