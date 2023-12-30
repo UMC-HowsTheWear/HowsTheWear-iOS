@@ -15,6 +15,7 @@
 		563927472B3EB8CE00A88D43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 563927462B3EB8CE00A88D43 /* Then */; };
 		5639274A2B3EB90A00A88D43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 563927492B3EB90A00A88D43 /* SnapKit */; };
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
+		5640F1B92B402F0600D97C65 /* StyleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640F1B82B402F0600D97C65 /* StyleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		563927372B3EAE1A00A88D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5639273A2B3EAE1A00A88D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5640F1B82B402F0600D97C65 /* StyleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleCollectionViewController.swift; path = ../../../../../../../Documents/StyleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		563927422B3EAE8C00A88D43 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5640F1B62B402ED500D97C65 /* StyleScene */,
 				563927442B3EAEF000A88D43 /* Application */,
 			);
 			path = Sources;
@@ -92,6 +95,22 @@
 				563927302B3EAE1900A88D43 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		5640F1B62B402ED500D97C65 /* StyleScene */ = {
+			isa = PBXGroup;
+			children = (
+				5640F1B72B402EEA00D97C65 /* Controllers */,
+			);
+			path = StyleScene;
+			sourceTree = "<group>";
+		};
+		5640F1B72B402EEA00D97C65 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5640F1B82B402F0600D97C65 /* StyleCollectionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +194,7 @@
 			files = (
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
+				5640F1B92B402F0600D97C65 /* StyleCollectionViewController.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
