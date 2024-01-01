@@ -5,17 +5,52 @@
 //  Created by 제민우 on 1/2/24.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class BrowseViewController: UIViewController {
 
-    private let browseCollectionView = UICollectionView()
+    private lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSubViews()
         configureLayout()
+    }
+}
+
+// MARK: - Configure Coll3ectionView
+
+extension BrowseViewController {
+    
+    private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalHeight(0.7),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(0.8)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(0.15)
+        )
+
+        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [headerElement]
+
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
     }
 }
 
