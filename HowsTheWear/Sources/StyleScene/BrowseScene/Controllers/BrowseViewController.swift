@@ -9,23 +9,33 @@ import SnapKit
 import UIKit
 
 class BrowseViewController: UIViewController {
+    
+    private var browseImageArray = [UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage"),
+                                    UIImage(named: "StyleTestImage")]
 
     private lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollectionView()
         configureSubViews()
         configureLayout()
     }
 }
 
-// MARK: - Configure Coll3ectionView
+// MARK: - Configure CollectionView
 
 extension BrowseViewController {
     
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalHeight(0.7),
+            widthDimension: .absolute(105),
             heightDimension: .fractionalHeight(1.0)
         )
         
@@ -33,7 +43,7 @@ extension BrowseViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.8)
+            heightDimension: .fractionalHeight(0.3)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -47,10 +57,50 @@ extension BrowseViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [headerElement]
+        section.orthogonalScrollingBehavior = .continuous
 
         let layout = UICollectionViewCompositionalLayout(section: section)
         
         return layout
+    }
+}
+
+// MARK: - Configure CollectionView
+
+extension BrowseViewController {
+    
+    private func configureCollectionView() {
+        browseCollectionView.dataSource = self
+        browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: "browseCollectionViewCell")
+        browseCollectionView.backgroundColor = .clear
+        
+        // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
+    }
+}
+
+// MARK: - Implementation CollectionView DataSource
+
+extension BrowseViewController: UICollectionViewDataSource {
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return browseImageArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "browseCollectionViewCell",
+            for: indexPath
+        ) as? BrowseCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.styleImageView.image = browseImageArray[indexPath.item]
+        
+        return cell
     }
 }
 
@@ -61,7 +111,6 @@ extension BrowseViewController {
     private func configureSubViews() {
         [browseCollectionView].forEach {
             view.addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
     

@@ -11,7 +11,7 @@ import UIKit
 
 final class BrowseCollectionViewCell: UICollectionViewCell {
     
-    private let styleImageView = UIImageView().then {
+    let styleImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(named: "StyleTestImage")
     }
@@ -32,8 +32,7 @@ final class BrowseCollectionViewCell: UICollectionViewCell {
 extension BrowseCollectionViewCell {
     
     private func configureSubviews() {
-        addSubview(styleImageView)
-        styleImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(styleImageView)
     }
     
     private func configureLayout() {

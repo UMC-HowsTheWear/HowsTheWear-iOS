@@ -102,8 +102,8 @@
 		563927422B3EAE8C00A88D43 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5640F1B62B402ED500D97C65 /* StyleScene */,
 				563927442B3EAEF000A88D43 /* Application */,
+				5640F1B62B402ED500D97C65 /* StyleScene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
