@@ -17,7 +17,6 @@
 		563927472B3EB8CE00A88D43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 563927462B3EB8CE00A88D43 /* Then */; };
 		5639274A2B3EB90A00A88D43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 563927492B3EB90A00A88D43 /* SnapKit */; };
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
-		5640F1B92B402F0600D97C65 /* StyleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5640F1B82B402F0600D97C65 /* StyleCollectionViewController.swift */; };
 		56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		563927372B3EAE1A00A88D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5639273A2B3EAE1A00A88D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5640F1B82B402F0600D97C65 /* StyleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StyleCollectionViewController.swift; path = ../../../../../../../Documents/StyleCollectionViewController.swift; sourceTree = "<group>"; };
 		56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,17 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				5619F9872B431B7000E86325 /* BrowseScene */,
-				5640F1B72B402EEA00D97C65 /* Controllers */,
 			);
 			path = StyleScene;
-			sourceTree = "<group>";
-		};
-		5640F1B72B402EEA00D97C65 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				5640F1B82B402F0600D97C65 /* StyleCollectionViewController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +217,6 @@
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
-				5640F1B92B402F0600D97C65 /* StyleCollectionViewController.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseViewController.swift in Sources */,
