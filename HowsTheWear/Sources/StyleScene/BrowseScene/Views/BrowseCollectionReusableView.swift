@@ -29,6 +29,11 @@ final class BrowseCollectionReusableView: UICollectionReusableView {
         super.init(frame: frame)
         configureSubviews()
         configureLayout()
+        
+        let screenHeight = UIScreen.main.bounds.height
+        if screenHeight >= 890 {
+            browseHeaderLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        }
     }
     
     required init?(coder: NSCoder) {
