@@ -5,9 +5,9 @@
 //  Created by 제민우 on 1/2/24.
 //
 
-import Then
 import UIKit
 
+import Then
 
 final class BrowseCollectionViewCell: UICollectionViewCell {
     
@@ -25,6 +25,7 @@ final class BrowseCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 // MARK: - Configure UI
@@ -40,4 +41,5 @@ extension BrowseCollectionViewCell {
             make.edges.equalToSuperview()
         }
     }
+    
 }

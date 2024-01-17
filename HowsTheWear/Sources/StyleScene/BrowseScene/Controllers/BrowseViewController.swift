@@ -5,30 +5,37 @@
 //  Created by 제민우 on 1/2/24.
 //
 
-import SnapKit
 import UIKit
 
-class BrowseViewController: UIViewController {
+import SnapKit
+
+final class BrowseViewController: UIViewController {
     
-    private var thisWeekStyleArray = [UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage")]
+    private var thisWeekStyleArray = [
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage")
+    ]
     
-    private var nextWeekStyleArray = [UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage")]
+    private var nextWeekStyleArray = [
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage")
+    ]
     
-    private var lastYearStyleArray = [UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage"),
-                                    UIImage(named: "StyleTestImage")]
+    private var lastYearStyleArray = [
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage"),
+        UIImage(named: "StyleTestImage")
+    ]
 
     private lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
     
@@ -89,6 +96,7 @@ extension BrowseViewController {
         
         return layout
     }
+    
 }
 
 // MARK: - Implementation CollectionView DataSource
@@ -137,6 +145,7 @@ extension BrowseViewController: UICollectionViewDataSource {
             for: indexPath) as? BrowseCollectionReusableView else { fatalError("Cannot create new supplementary") }
         return headerView
     }
+    
 }
 
 // MARK: - Configure UI
@@ -159,4 +168,5 @@ extension BrowseViewController {
             make.trailing.equalTo(safeArea.snp.trailing)
         }
     }
+    
 }

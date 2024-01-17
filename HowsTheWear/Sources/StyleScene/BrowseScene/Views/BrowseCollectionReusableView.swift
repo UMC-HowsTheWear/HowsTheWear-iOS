@@ -7,7 +7,10 @@
 
 import UIKit
 
+import SnapKit
+
 // BrowseCollectionView Header View
+
 final class BrowseCollectionReusableView: UICollectionReusableView {
     
     static let reuseIdentifier = "browseCollectionViewHeader"
@@ -39,10 +42,12 @@ final class BrowseCollectionReusableView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 // MARK: - Configure UI
 extension BrowseCollectionReusableView {
+    
     private func configureSubviews() {
         [browseHeaderLabel, browseHeaderRightArrowButton].forEach {
             addSubview($0)
@@ -60,4 +65,5 @@ extension BrowseCollectionReusableView {
             make.trailing.equalToSuperview().offset(-16)
         }
     }
+    
 }
