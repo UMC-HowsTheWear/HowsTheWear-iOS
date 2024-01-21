@@ -106,7 +106,6 @@
 		5619F98B2B432A7200E86325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */,
 				56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */,
 			);
 			path = Views;
@@ -196,6 +195,7 @@
 		56B0600D2B5CE93800CE923C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
