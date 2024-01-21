@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class BrowseViewController: UIViewController {
+final class BrowseMainViewController: UIViewController {
     
     private var thisWeekStyleArray = [
         UIImage(named: "StyleTestImage"),
@@ -50,7 +50,7 @@ final class BrowseViewController: UIViewController {
 
 // MARK: - Configure CollectionView
 
-extension BrowseViewController {
+extension BrowseMainViewController {
     
     private func configureCollectionView() {
         browseCollectionView.dataSource = self
@@ -102,7 +102,7 @@ extension BrowseViewController {
 
 // MARK: - Implementation CollectionView DataSource
 
-extension BrowseViewController: UICollectionViewDataSource {
+extension BrowseMainViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
@@ -151,7 +151,7 @@ extension BrowseViewController: UICollectionViewDataSource {
 
 // MARK: - Configure UI
 
-extension BrowseViewController {
+extension BrowseMainViewController {
     
     private func configureSubViews() {
         [browseCollectionView].forEach {
