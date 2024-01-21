@@ -26,6 +26,7 @@ final class BrowseThisWeekViewController: UIViewController {
         configureSubViews()
         configureLayout()
     }
+    
 }
 
 // MARK: - Configure CollectionView
@@ -61,6 +62,7 @@ extension BrowseThisWeekViewController {
         
         return layout
     }
+    
 }
 
 // MARK: - Implementation CollectionView DataSource
@@ -78,6 +80,7 @@ extension BrowseThisWeekViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
 }
 
 // MARK: - Configure UI
@@ -100,4 +103,5 @@ extension BrowseThisWeekViewController {
             make.trailing.equalTo(safeArea.snp.trailing).offset(-20)
         }
     }
+    
 }

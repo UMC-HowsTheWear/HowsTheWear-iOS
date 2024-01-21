@@ -45,6 +45,7 @@ final class BrowseViewController: UIViewController {
         configureSubViews()
         configureLayout()
     }
+    
 }
 
 // MARK: - Configure CollectionView
