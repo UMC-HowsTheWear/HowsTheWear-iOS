@@ -13,7 +13,7 @@ import SnapKit
 
 final class ThisWeekCollectionReusableView: UICollectionReusableView {
     
-    static let reuseIdentifier = "browseCollectionViewHeader"
+    static let reuseIdentifier = "thisWeekCollectionViewHeader"
     
     let ThisWeekWeeklyLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 14, weight: .semibold)
@@ -34,10 +34,12 @@ final class ThisWeekCollectionReusableView: UICollectionReusableView {
         configureSubviews()
         configureLayout()
         
-//        let screenHeight = UIScreen.main.bounds.height
-//        if screenHeight >= 890 {
-//            browseHeaderLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-//        }
+        let screenHeight = UIScreen.main.bounds.height
+        if screenHeight >= 890 {
+            [ThisWeekWeeklyLabel, ThisWeekDateRangeLabel].forEach {
+                $0.font = .systemFont(ofSize: 16, weight: .semibold)
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -63,44 +65,8 @@ extension ThisWeekCollectionReusableView {
         
         ThisWeekDateRangeLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-16)
+            make.trailing.equalToSuperview()
         }
     }
     
 }
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-struct UIViewPreview<View: UIView>: UIViewRepresentable {
-    let view: View
-
-    init(_ builder: @escaping () -> View) {
-        view = builder()
-    }
-
-    // MARK: - UIViewRepresentable
-
-    func makeUIView(context: Context) -> UIView {
-        return view
-    }
-
-    func updateUIView(_ view: UIView, context: Context) {
-        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
-    }
-}
-
-#endif
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-
-struct Preview: PreviewProvider{
-    static var previews: some View {
-        UIViewPreview {
-            let myView = ThisWeekCollectionReusableView()
-            return myView
-        }.previewLayout(.sizeThatFits)
-    }
-}
-#endif

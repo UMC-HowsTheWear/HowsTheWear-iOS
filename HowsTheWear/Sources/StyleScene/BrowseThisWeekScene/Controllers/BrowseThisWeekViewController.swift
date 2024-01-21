@@ -36,7 +36,12 @@ extension BrowseThisWeekViewController {
     private func configureCollectionView() {
         ThisWeekCollectionView.dataSource = self
         ThisWeekCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: "browseCollectionViewCell")
+        ThisWeekCollectionView.register(ThisWeekCollectionReusableView.self,
+                                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                      withReuseIdentifier: ThisWeekCollectionReusableView.reuseIdentifier)
+        
         ThisWeekCollectionView.backgroundColor = .clear
+
         // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
     }
 
@@ -56,7 +61,16 @@ extension BrowseThisWeekViewController {
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
+        let screenHeight = UIScreen.main.bounds.height
+        let headerHeight: CGFloat = screenHeight >= 890 ? 40 : 30
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
+        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                        elementKind: UICollectionView.elementKindSectionHeader,
+                                                                        alignment: .top)
+        
         let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [headerElement]
 
         let layout = UICollectionViewCompositionalLayout(section: section)
         
@@ -79,6 +93,14 @@ extension BrowseThisWeekViewController: UICollectionViewDataSource {
         cell.styleImageView.image = thisWeekStyleArray[indexPath.item]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: ThisWeekCollectionReusableView.reuseIdentifier,
+            for: indexPath) as? ThisWeekCollectionReusableView else { fatalError("Cannot create new supplementary") }
+        return headerView
     }
     
 }
@@ -104,4 +126,20 @@ extension BrowseThisWeekViewController {
         }
     }
     
+}
+
+// MARK: 프리뷰
+import SwiftUI
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+    struct Container: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return     UINavigationController(rootViewController: BrowseThisWeekViewController())
+        }
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        }
+        typealias  UIViewControllerType = UIViewController
+    }
 }
