@@ -21,6 +21,9 @@
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */; };
+		56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */; };
+		56B060172B5D487D00CE923C /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060152B5D487D00CE923C /* Pretendard-Regular.otf */; };
+		56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */; };
 		56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,9 @@
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeekCollectionReusableView.swift; sourceTree = "<group>"; };
+		56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		56B060152B5D487D00CE923C /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendardFontExtension.swift; sourceTree = "<group>"; };
 		56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,7 @@
 		563927432B3EAE9800A88D43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				56B060132B5D479500CE923C /* Fonts */,
 				563927392B3EAE1A00A88D43 /* LaunchScreen.storyboard */,
 				563927372B3EAE1A00A88D43 /* Assets.xcassets */,
 			);
@@ -162,6 +169,7 @@
 		563927442B3EAEF000A88D43 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				56B060182B5D4ABB00CE923C /* Extensions */,
 				5639272E2B3EAE1900A88D43 /* AppDelegate.swift */,
 				563927302B3EAE1900A88D43 /* SceneDelegate.swift */,
 			);
@@ -209,6 +217,23 @@
 				56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		56B060132B5D479500CE923C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				56B060152B5D487D00CE923C /* Pretendard-Regular.otf */,
+				56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		56B060182B5D4ABB00CE923C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +303,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */,
+				56B060172B5D487D00CE923C /* Pretendard-Regular.otf in Resources */,
 				5639273B2B3EAE1A00A88D43 /* LaunchScreen.storyboard in Resources */,
 				563927382B3EAE1A00A88D43 /* Assets.xcassets in Resources */,
 			);
@@ -299,6 +326,7 @@
 				05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
+				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
