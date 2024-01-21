@@ -11,7 +11,7 @@ import Then
 
 final class TabBarController: UITabBarController {
     
-    private let homeVC = UIViewController().then {
+    private let homeVC = WeatherViewController().then {
         $0.tabBarItem = UITabBarItem(title: "HOME", image: UIImage(named: "house")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "house.fill")?.withRenderingMode(.alwaysOriginal))
     }
     

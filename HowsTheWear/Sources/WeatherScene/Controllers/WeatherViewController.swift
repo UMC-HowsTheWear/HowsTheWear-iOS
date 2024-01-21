@@ -9,7 +9,7 @@ import UIKit
 
 final class WeatherViewController: UIViewController {
 
-    private let weatherBarButtonItem = WeatherBarButtonItem()
+    private let customBarButtonItem = CustomBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,20 +22,20 @@ final class WeatherViewController: UIViewController {
 // MARK: - Navigation Bar Setup
 private extension WeatherViewController {
     func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: weatherBarButtonItem.menuButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customBarButtonItem.locationButton)
     }
 }
 
 // MARK: - Button Target Configuration
 private extension WeatherViewController {
     func configureAddTargets() {
-        weatherBarButtonItem.menuButton.addTarget(self, action: #selector(menuButtonDidTap), for: .touchUpInside)
+        customBarButtonItem.locationButton.addTarget(self, action: #selector(locationButtonDidTap), for: .touchUpInside)
     }
 }
 
 // MARK: - Button Action Method
 private extension WeatherViewController {
-    @objc func menuButtonDidTap() {
-        print("Clicked menu button")
+    @objc func locationButtonDidTap() {
+        print("Clicked")
     }
 }
