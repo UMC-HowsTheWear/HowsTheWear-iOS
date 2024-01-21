@@ -1,5 +1,5 @@
 //
-//  WeatherViewController.swift
+//  HomeViewController.swift
 //  HowsTheWear
 //
 //  Created by Rafael on 1/3/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WeatherViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     private let customBarButtonItem = CustomBarButtonItem()
     
@@ -20,21 +20,21 @@ final class WeatherViewController: UIViewController {
 }
 
 // MARK: - Navigation Bar Setup
-private extension WeatherViewController {
+private extension HomeViewController {
     func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customBarButtonItem.locationButton)
     }
 }
 
 // MARK: - Button Target Configuration
-private extension WeatherViewController {
+private extension HomeViewController {
     func configureAddTargets() {
         customBarButtonItem.locationButton.addTarget(self, action: #selector(locationButtonDidTap), for: .touchUpInside)
     }
 }
 
 // MARK: - Button Action Method
-private extension WeatherViewController {
+private extension HomeViewController {
     @objc func locationButtonDidTap() {
         print("Clicked")
     }
