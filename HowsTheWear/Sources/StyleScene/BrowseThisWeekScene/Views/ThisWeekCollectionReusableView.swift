@@ -16,14 +16,14 @@ final class ThisWeekCollectionReusableView: UICollectionReusableView {
     static let reuseIdentifier = "thisWeekCollectionViewHeader"
     
     let ThisWeekWeeklyLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 14, weight: .semibold)
+        $0.font = UIFont.pretendard(size: 14, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
         $0.text = "1월 둘째 주"
     }
     
     let ThisWeekDateRangeLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 14, weight: .semibold)
+        $0.font = UIFont.pretendard(size: 14, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
         $0.text = "2024년 1월 7일 ~ 1월 13일"
@@ -37,11 +37,11 @@ final class ThisWeekCollectionReusableView: UICollectionReusableView {
         let screenHeight = UIScreen.main.bounds.height
         if screenHeight >= 890 {
             [ThisWeekWeeklyLabel, ThisWeekDateRangeLabel].forEach {
-                $0.font = .systemFont(ofSize: 16, weight: .semibold)
+                $0.font = UIFont.pretendard(size: 16, weight: .semibold)
             }
         }
     }
-    
+        
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
