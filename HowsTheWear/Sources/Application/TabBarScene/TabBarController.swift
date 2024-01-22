@@ -12,19 +12,35 @@ import Then
 final class TabBarController: UITabBarController {
     
     private let homeVC = HomeViewController().then {
-        $0.tabBarItem = UITabBarItem(title: "HOME", image: UIImage(named: "house")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "house.fill")?.withRenderingMode(.alwaysOriginal))
+        $0.tabBarItem = UITabBarItem(
+            title: "HOME",
+            image: UIImage(named: "house"),
+            selectedImage: UIImage(named: "house.fill")
+        )
     }
     
     private let browseVC = UIViewController().then {
-        $0.tabBarItem = UITabBarItem(title: "BROWSE", image: UIImage(named: "search")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "search.fill")?.withRenderingMode(.alwaysOriginal))
+        $0.tabBarItem = UITabBarItem(
+            title: "BROWSE",
+            image: UIImage(named: "search"),
+            selectedImage: UIImage(named: "search.fill")
+        )
     }
     
     private let othersVC = UIViewController().then {
-        $0.tabBarItem = UITabBarItem(title: "OTHERS", image: UIImage(named: "user.group")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "user.group.fill"))
+        $0.tabBarItem = UITabBarItem(
+            title: "OTHERS",
+            image: UIImage(named: "user.group"),
+            selectedImage: UIImage(named: "user.group.fill")
+        )
     }
     
     private let myVC = UIViewController().then {
-        $0.tabBarItem = UITabBarItem(title: "MY", image: UIImage(named: "person.circle"), selectedImage: UIImage(named: "person.circle.fill")?.withRenderingMode(.alwaysOriginal))
+        $0.tabBarItem = UITabBarItem(
+            title: "MY",
+            image: UIImage(named: "person.circle"),
+            selectedImage: UIImage(named: "person.circle.fill")
+        )
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
