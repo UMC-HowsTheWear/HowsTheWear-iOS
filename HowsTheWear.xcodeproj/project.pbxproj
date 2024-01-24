@@ -25,6 +25,7 @@
 		56B060172B5D487D00CE923C /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060152B5D487D00CE923C /* Pretendard-Regular.otf */; };
 		56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */; };
 		56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */; };
+		56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0601D2B5D524000CE923C /* StyleHashTagView.swift */; };
 		56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		56B060152B5D487D00CE923C /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendardFontExtension.swift; sourceTree = "<group>"; };
 		56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleHashTagCollectionViewCell.swift; sourceTree = "<group>"; };
+		56B0601D2B5D524000CE923C /* StyleHashTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleHashTagView.swift; sourceTree = "<group>"; };
 		56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 			children = (
 				56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */,
 				56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */,
+				56B0601D2B5D524000CE923C /* StyleHashTagView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				56B060102B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift in Sources */,
 				05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */,
+				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,

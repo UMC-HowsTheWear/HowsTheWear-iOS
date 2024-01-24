@@ -17,6 +17,8 @@ final class BrowseThisWeekViewController: UIViewController {
                                     UIImage(named: "ThisWeekTestImage"),
                                     UIImage(named: "ThisWeekTestImage"),
                                     UIImage(named: "ThisWeekTestImage")]
+    
+    private let thisWeekHashTagView = StyleHashTagView()
 
     private lazy var ThisWeekCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
     
@@ -110,13 +112,20 @@ extension BrowseThisWeekViewController: UICollectionViewDataSource {
 extension BrowseThisWeekViewController {
     
     private func configureSubViews() {
-        [ThisWeekCollectionView].forEach {
+        [ThisWeekCollectionView, thisWeekHashTagView].forEach {
             view.addSubview($0)
         }
     }
     
     private func configureLayout() {
         let safeArea = view.safeAreaLayoutGuide
+        
+        thisWeekHashTagView.snp.makeConstraints { make in
+            make.top.equalTo(safeArea.snp.top)
+            make.leading.equalTo(safeArea.snp.leading).offset(20)
+            make.trailing.equalTo(safeArea.snp.trailing)
+            make.height.equalTo(30)
+        }
         
         ThisWeekCollectionView.snp.makeConstraints { make in
             make.top.equalTo(safeArea.snp.top).offset(50)
@@ -128,18 +137,3 @@ extension BrowseThisWeekViewController {
     
 }
 
-// MARK: 프리뷰
-import SwiftUI
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
-    }
-    struct Container: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            return     UINavigationController(rootViewController: BrowseThisWeekViewController())
-        }
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        }
-        typealias  UIViewControllerType = UIViewController
-    }
-}
