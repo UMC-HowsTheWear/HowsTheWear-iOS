@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0530AAB22B5D50440021625D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB12B5D50440021625D /* TabBarController.swift */; };
+		0530AAB42B5D508F0021625D /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB32B5D508F0021625D /* Vibration.swift */; };
+		05BE628A2B45526400BAD63F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE62892B45526400BAD63F /* HomeViewController.swift */; };
+		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		5619F98A2B431B9E00E86325 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseViewController.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
-		05BE628A2B45526400BAD63F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE62892B45526400BAD63F /* WeatherViewController.swift */; };
-		05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */; };
 		5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639272E2B3EAE1900A88D43 /* AppDelegate.swift */; };
 		563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927302B3EAE1900A88D43 /* SceneDelegate.swift */; };
 		563927332B3EAE1900A88D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927322B3EAE1900A88D43 /* ViewController.swift */; };
@@ -23,10 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0530AAB12B5D50440021625D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		0530AAB32B5D508F0021625D /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
-		05BE62892B45526400BAD63F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBarButtonItem.swift; sourceTree = "<group>"; };
 		5639272B2B3EAE1900A88D43 /* HowsTheWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowsTheWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639272E2B3EAE1900A88D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		563927302B3EAE1900A88D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0530AAB52B5D522C0021625D /* TabBarScene */ = {
+			isa = PBXGroup;
+			children = (
+				0530AAB12B5D50440021625D /* TabBarController.swift */,
+				0530AAB32B5D508F0021625D /* Vibration.swift */,
+			);
+			path = TabBarScene;
+			sourceTree = "<group>";
+		};
+		05BE62852B45521000BAD63F /* WeatherScene */ = {
+			isa = PBXGroup;
+			children = (
+				05BE62882B45522700BAD63F /* Models */,
+				05BE62872B45522200BAD63F /* Views */,
+				05BE62862B45521D00BAD63F /* Controllers */,
+			);
+			path = WeatherScene;
+			sourceTree = "<group>";
+		};
+		05BE62862B45521D00BAD63F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05BE62892B45526400BAD63F /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		05BE62872B45522200BAD63F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05BE62882B45522700BAD63F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5619F9872B431B7000E86325 /* BrowseScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,24 +114,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		05BE62852B45521000BAD63F /* WeatherScene */ = {
-			isa = PBXGroup;
-			children = (
-				05BE62882B45522700BAD63F /* Models */,
-				05BE62872B45522200BAD63F /* Views */,
-				05BE62862B45521D00BAD63F /* Controllers */,
-			);
-			path = WeatherScene;
-			sourceTree = "<group>";
-		};
-		05BE62862B45521D00BAD63F /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				05BE62892B45526400BAD63F /* WeatherViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		5619F98B2B432A7200E86325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,21 +121,6 @@
 				56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		05BE62872B45522200BAD63F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		05BE62882B45522700BAD63F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		563927222B3EAE1900A88D43 = {
@@ -161,6 +174,7 @@
 			children = (
 				5639272E2B3EAE1900A88D43 /* AppDelegate.swift */,
 				563927302B3EAE1900A88D43 /* SceneDelegate.swift */,
+				0530AAB52B5D522C0021625D /* TabBarScene */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -254,9 +268,11 @@
 			files = (
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
-				05BE628A2B45526400BAD63F /* WeatherViewController.swift in Sources */,
+				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
+				05BE628A2B45526400BAD63F /* HomeViewController.swift in Sources */,
+				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
-				05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */,
+				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseViewController.swift in Sources */,
