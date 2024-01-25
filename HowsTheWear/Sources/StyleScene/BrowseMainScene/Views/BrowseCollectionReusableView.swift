@@ -16,7 +16,7 @@ final class BrowseCollectionReusableView: UICollectionReusableView {
     static let reuseIdentifier = "browseCollectionViewHeader"
     
     let browseHeaderLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 15, weight: .semibold)
+        $0.font = .pretendard(size: 15, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
         $0.text = "헤더 레이블"
