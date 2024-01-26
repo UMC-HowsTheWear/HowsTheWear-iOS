@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,7 +38,22 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrentWeatherCell.identifier, for: indexPath) as? CurrentWeatherCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: CurrentWeatherCell.identifier,
+                for: indexPath
+            ) as? CurrentWeatherCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: TodayWeatherCell.identifier, 
+                for: indexPath
+            ) as? TodayWeatherCell else {
+                return UITableViewCell()
+            }
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
@@ -103,10 +118,10 @@ private extension HomeViewController {
     }
     
     func registerTableViewCells() {
-        let cellTypes = [CurrentWeatherCell.self]
+        let cellTypes = [CurrentWeatherCell.self, TodayWeatherCell.self]
         
         cellTypes.forEach { cellType in
-            tableView.register(cellType, forCellReuseIdentifier: cellType.identifier)
+            tableView.register(cellType, forCellReuseIdentifier: String(describing: cellType))
         }
     }
     
