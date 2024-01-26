@@ -13,29 +13,52 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
+        configureNavBarUI()
         configureAddTargets()
     }
 
 }
 
 // MARK: - Navigation Bar Setup
+
 private extension HomeViewController {
-    func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customBarButtonItem.locationButton)
+    
+    func configureNavBarUI() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .clear
+        appearance.shadowColor = nil
+        navigationController?.navigationBar.standardAppearance = appearance
+        
+        setupNavigationBarButton()
     }
+    
+    func setupNavigationBarButton() {
+        let rightButton = UIBarButtonItem(customView: customBarButtonItem.locationButton)
+        navigationItem.rightBarButtonItem = rightButton
+    }
+    
 }
 
 // MARK: - Button Target Configuration
+
 private extension HomeViewController {
+    
     func configureAddTargets() {
-        customBarButtonItem.locationButton.addTarget(self, action: #selector(locationButtonDidTap), for: .touchUpInside)
+        customBarButtonItem.locationButton.addTarget(
+            self,
+            action: #selector(locationButtonDidTap),
+            for: .touchUpInside
+        )
     }
+    
 }
 
 // MARK: - Button Action Method
+
 private extension HomeViewController {
+    
     @objc func locationButtonDidTap() {
         print("Clicked")
     }
+    
 }
