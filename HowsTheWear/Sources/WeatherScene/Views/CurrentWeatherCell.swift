@@ -62,7 +62,7 @@ private extension CurrentWeatherCell {
     
     func configureUI() {
         backgroundView?.backgroundColor = .clear
-        [weatherIcon, locationLabel, temperatureLabel, descriptionLabel].forEach { contentView.addSubview($0) }
+        contentView.addSubviews([weatherIcon, locationLabel, temperatureLabel, descriptionLabel])
         setupConstraints()
     }
     
