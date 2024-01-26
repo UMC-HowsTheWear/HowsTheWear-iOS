@@ -84,14 +84,14 @@
 			path = TabBarScene;
 			sourceTree = "<group>";
 		};
-		05BE62852B45521000BAD63F /* WeatherScene */ = {
+		05BE62852B45521000BAD63F /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
 				05BE62882B45522700BAD63F /* Models */,
 				05BE62872B45522200BAD63F /* Views */,
 				05BE62862B45521D00BAD63F /* Controllers */,
 			);
-			path = WeatherScene;
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 		05BE62862B45521D00BAD63F /* Controllers */ = {
@@ -175,7 +175,7 @@
 			children = (
 				563927442B3EAEF000A88D43 /* Application */,
 				5640F1B62B402ED500D97C65 /* StyleScene */,
-				05BE62852B45521000BAD63F /* WeatherScene */,
+				05BE62852B45521000BAD63F /* HomeScene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
