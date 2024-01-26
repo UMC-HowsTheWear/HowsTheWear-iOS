@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class CurrentWeatherCell: UITableViewCell {
+final class CurrentWeatherCell: UITableViewCell {
     
     static let identifier = "CurrentWeatherCell"
 
