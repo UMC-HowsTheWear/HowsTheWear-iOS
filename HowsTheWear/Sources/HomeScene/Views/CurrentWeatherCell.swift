@@ -34,7 +34,7 @@ final class CurrentWeatherCell: UITableViewCell {
     let temperatureLabel = UILabel().then {
         $0.text = "7º"
         $0.textAlignment = .center
-        $0.font = UIFont(name: "Poppins-Medium", size: 70)
+        $0.font = .pretendard(size: 70, weight: .medium)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
     }
     
