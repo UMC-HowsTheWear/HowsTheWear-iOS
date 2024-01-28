@@ -31,6 +31,7 @@
 		56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0601D2B5D524000CE923C /* StyleHashTagView.swift */; };
 		56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */; };
 		56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF77A42B63C71D004C044F /* BrowseDetailViewController.swift */; };
+		56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF77A82B664B34004C044F /* PagingImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		56B0601D2B5D524000CE923C /* StyleHashTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleHashTagView.swift; sourceTree = "<group>"; };
 		56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionReusableView.swift; sourceTree = "<group>"; };
 		56BF77A42B63C71D004C044F /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseDetailViewController.swift; sourceTree = "<group>"; };
+		56BF77A82B664B34004C044F /* PagingImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +284,7 @@
 		56BF77A32B63C70A004C044F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56BF77A82B664B34004C044F /* PagingImageCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */,
 				56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */,
+				56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */,
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

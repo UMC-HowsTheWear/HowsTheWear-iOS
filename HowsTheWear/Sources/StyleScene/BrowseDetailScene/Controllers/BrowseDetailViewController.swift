@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BrowseDetailViewController: UIViewController {
+final class BrowseDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
