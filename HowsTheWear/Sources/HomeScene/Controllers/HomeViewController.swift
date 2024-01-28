@@ -28,7 +28,7 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,6 +57,15 @@ extension HomeViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: DailyWeatherCell.identifier, for: indexPath
+            ) as? DailyWeatherCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            return cell
         default:
             return UITableViewCell()
         }
@@ -65,6 +74,20 @@ extension HomeViewController: UITableViewDataSource {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return UITableView.automaticDimension
+        case 1:
+            return UITableView.automaticDimension
+        case 2:
+            return DailyWeatherCell.cellHeight
+        default:
+            return UITableView.automaticDimension
+        }
+    }
+    
 }
 
 
@@ -118,7 +141,7 @@ private extension HomeViewController {
     }
     
     func registerTableViewCells() {
-        let cellTypes = [CurrentWeatherCell.self, TodayWeatherCell.self]
+        let cellTypes = [CurrentWeatherCell.self, TodayWeatherCell.self, DailyWeatherCell.self]
         
         cellTypes.forEach { cellType in
             tableView.register(cellType, forCellReuseIdentifier: String(describing: cellType))
