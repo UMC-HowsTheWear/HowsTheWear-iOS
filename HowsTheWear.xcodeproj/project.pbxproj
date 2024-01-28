@@ -16,6 +16,8 @@
 		0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB102B6707890021625D /* DailyWeatherCell.swift */; };
 		0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB122B6707CC0021625D /* DailyCollectionCell.swift */; };
 		0530AB152B6708A40021625D /* Weekly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB142B6708A40021625D /* Weekly.swift */; };
+		0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */; };
+		0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */; };
 		05BE628A2B45526400BAD63F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE62892B45526400BAD63F /* HomeViewController.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */; };
@@ -49,6 +51,8 @@
 		0530AB102B6707890021625D /* DailyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 		0530AB122B6707CC0021625D /* DailyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCollectionCell.swift; sourceTree = "<group>"; };
 		0530AB142B6708A40021625D /* Weekly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Weekly.swift; path = HowsTheWear/Sources/HomeScene/Views/Weekly.swift; sourceTree = SOURCE_ROOT; };
+		0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherCell.swift; sourceTree = "<group>"; };
+		0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionCell.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				0530AB082B63F9A30021625D /* TodayWeatherCell.swift */,
 				0530AB102B6707890021625D /* DailyWeatherCell.swift */,
 				0530AB122B6707CC0021625D /* DailyCollectionCell.swift */,
+				0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */,
+				0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,8 +370,10 @@
 			files = (
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
+				0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */,
 				56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
+				0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */,
 				0530AB152B6708A40021625D /* Weekly.swift in Sources */,
 				0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
