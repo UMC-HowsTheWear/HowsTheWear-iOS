@@ -11,6 +11,8 @@ import SnapKit
 import Then
 
 final class HomeViewController: UIViewController {
+    
+    var items: [TodayItem] = TodayItem.items
 
     private let customBarButtonItem = CustomBarButtonItem()
     private let tableView = UITableView(frame: .zero, style: .plain)
@@ -28,7 +30,7 @@ final class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,6 +77,17 @@ extension HomeViewController: UITableViewDataSource {
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: TodayItemCell.identifier,
+                for: indexPath
+            ) as? TodayItemCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            cell.items = items
+            return cell
         default:
             return UITableViewCell()
         }
@@ -94,6 +107,8 @@ extension HomeViewController: UITableViewDelegate {
             return DailyWeatherCell.cellHeight
         case 3:
             return WeeklyWeatherCell.cellHeight
+        case 4:
+            return UITableView.automaticDimension
         default:
             return UITableView.automaticDimension
         }
@@ -152,7 +167,13 @@ private extension HomeViewController {
     }
     
     func registerTableViewCells() {
-        let cellTypes = [CurrentWeatherCell.self, TodayWeatherCell.self, DailyWeatherCell.self, WeeklyWeatherCell.self]
+        let cellTypes = [
+            CurrentWeatherCell.self,
+            TodayWeatherCell.self,
+            DailyWeatherCell.self,
+            WeeklyWeatherCell.self,
+            TodayItemCell.self
+        ]
         
         cellTypes.forEach { cellType in
             tableView.register(cellType, forCellReuseIdentifier: String(describing: cellType))
