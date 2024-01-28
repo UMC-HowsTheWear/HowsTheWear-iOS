@@ -17,7 +17,7 @@ class WeeklyCollectionCell: UICollectionViewCell {
     
     let dayOfWeekLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.376, green: 0.376, blue: 0.376, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        $0.font = .pretendard(size: 14, weight: .semibold)
     }
     
     private lazy var iconAndDayView = UIStackView(arrangedSubviews: [weatherIconImageView, dayOfWeekLabel]).then {
@@ -29,21 +29,23 @@ class WeeklyCollectionCell: UICollectionViewCell {
     
     let minTemperatureLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.578, green: 0.728, blue: 0.897, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .semibold)
     }
     
     private let separatorView = UILabel().then {
         $0.text = "/"
         $0.textColor = UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Bold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .bold)
     }
     
     let maxTemperatureLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.444, green: 0.607, blue: 0.901, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .semibold)
     }
     
-    private lazy var temperatureView = UIStackView(arrangedSubviews: [minTemperatureLabel, separatorView, maxTemperatureLabel]).then {
+    private lazy var temperatureView = UIStackView(arrangedSubviews: [
+        minTemperatureLabel, separatorView, maxTemperatureLabel
+    ]).then {
         $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
@@ -70,7 +72,7 @@ class WeeklyCollectionCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with data: Weekly) {
+    func prepare(data: Weekly) {
         weatherIconImageView.image = UIImage(systemName: data.weatherIcon)?
             .withRenderingMode(.alwaysOriginal)
             .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))

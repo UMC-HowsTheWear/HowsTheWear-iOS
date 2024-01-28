@@ -24,23 +24,6 @@ class DailyWeatherCell: UITableViewCell {
         collectionView.register(DailyCollectionCell.self, forCellWithReuseIdentifier: DailyCollectionCell.identifier)
         return collectionView
     }()
-
-    private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2),
-                                              heightDimension: .estimated(50))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .estimated(50))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
-    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -49,14 +32,14 @@ class DailyWeatherCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
+    private func configureUI() {
         contentView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 20
@@ -73,6 +56,27 @@ class DailyWeatherCell: UITableViewCell {
         }
     }
     
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.2),
+            heightDimension: .estimated(50)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(50)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
 }
 
 extension DailyWeatherCell: UICollectionViewDataSource {
@@ -81,8 +85,14 @@ extension DailyWeatherCell: UICollectionViewDataSource {
         return dailyData.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DailyCollectionCell.identifier, for: indexPath) as? DailyCollectionCell else {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DailyCollectionCell.identifier,
+            for: indexPath
+        ) as? DailyCollectionCell else {
             return UICollectionViewCell()
         }
         let data = dailyData[indexPath.item]
@@ -94,13 +104,21 @@ extension DailyWeatherCell: UICollectionViewDataSource {
 
 extension DailyWeatherCell: UICollectionViewDelegate {
 
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        willDisplay cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
         guard let dailyCollectionCell = cell as? DailyCollectionCell else { return }
         let data = dailyData[indexPath.item]
         dailyCollectionCell.prepare(data: data)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didEndDisplaying cell: UICollectionViewCell,
+        forItemAt indexPath: IndexPath
+    ) {
         guard let dailyCollectionCell = cell as? DailyCollectionCell else { return }
         let data = dailyData[indexPath.item]
         dailyCollectionCell.prepare(data: data)

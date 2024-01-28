@@ -16,7 +16,7 @@ class DailyCollectionCell: UICollectionViewCell {
     
     let timeLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-Medium", size: 14)
+        $0.font = .pretendard(size: 14, weight: .medium)
         $0.textAlignment = .center
     }
     
@@ -26,11 +26,13 @@ class DailyCollectionCell: UICollectionViewCell {
     
     let temperatureLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        $0.font = .pretendard(size: 14, weight: .semibold)
         $0.textAlignment = .center
     }
     
-    private lazy var stackView = UIStackView(arrangedSubviews: [timeLabel, weatherIconImageView, temperatureLabel]).then {
+    private lazy var stackView = UIStackView(arrangedSubviews: [
+        timeLabel, weatherIconImageView, temperatureLabel
+    ]).then {
         $0.axis = .vertical
         $0.alignment = .fill
         $0.distribution = .fillProportionally

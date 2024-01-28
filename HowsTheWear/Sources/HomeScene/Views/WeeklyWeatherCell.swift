@@ -18,19 +18,11 @@ class WeeklyWeatherCell: UITableViewCell {
     private var weeklyData = Weekly.lists
     
     private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-            return section
-        }
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.isScrollEnabled = false
         collectionView.register(WeeklyCollectionCell.self, forCellWithReuseIdentifier: WeeklyCollectionCell.identifier)
-        collectionView.dataSource = self
         return collectionView
     }()
     
@@ -41,14 +33,14 @@ class WeeklyWeatherCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
+    private func configureUI() {
         contentView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 20
@@ -65,6 +57,26 @@ class WeeklyWeatherCell: UITableViewCell {
         }
     }
     
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(50)
+        )
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    
 }
 
 extension WeeklyWeatherCell: UICollectionViewDataSource {
@@ -72,14 +84,24 @@ extension WeeklyWeatherCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return weeklyData.count
     }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeeklyCollectionCell.identifier, for: indexPath) as? WeeklyCollectionCell else {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: WeeklyCollectionCell.identifier,
+            for: indexPath
+        ) as? WeeklyCollectionCell else {
             return UICollectionViewCell()
         }
-        let cellData = weeklyData[indexPath.item]
-        cell.configure(with: cellData)
+        let data = weeklyData[indexPath.item]
+        cell.prepare(data: data)
         return cell
     }
+    
+}
+
+extension WeeklyWeatherCell: UICollectionViewDelegate {
     
 }
