@@ -32,6 +32,7 @@
 		56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */; };
 		56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF77A42B63C71D004C044F /* BrowseDetailViewController.swift */; };
 		56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF77A82B664B34004C044F /* PagingImageCollectionViewCell.swift */; };
+		56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF77AA2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionReusableView.swift; sourceTree = "<group>"; };
 		56BF77A42B63C71D004C044F /* BrowseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseDetailViewController.swift; sourceTree = "<group>"; };
 		56BF77A82B664B34004C044F /* PagingImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		56BF77AA2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseDetailCellPagingImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				56BF77A82B664B34004C044F /* PagingImageCollectionViewCell.swift */,
+				56BF77AA2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
 				56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */,
+				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				56B060102B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift in Sources */,
 				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,

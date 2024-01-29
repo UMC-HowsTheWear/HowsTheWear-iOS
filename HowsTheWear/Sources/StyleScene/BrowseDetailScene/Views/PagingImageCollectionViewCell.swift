@@ -34,8 +34,6 @@ extension PagingImageCollectionViewCell {
     }
     
     private func configureLayout() {
-        let safeArea = contentView.safeAreaLayoutGuide
-        
         pagingImageView.snp.makeConstraints { make in
             make.margins.equalToSuperview()
         }
