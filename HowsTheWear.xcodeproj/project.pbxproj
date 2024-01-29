@@ -7,11 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */; };
 		0530AAB22B5D50440021625D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB12B5D50440021625D /* TabBarController.swift */; };
 		0530AAB42B5D508F0021625D /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB32B5D508F0021625D /* Vibration.swift */; };
+		0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */; };
+		0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB042B63EF240021625D /* UIView+Extension.swift */; };
+		0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB082B63F9A30021625D /* TodayWeatherCell.swift */; };
+		0530AB0F2B67072C0021625D /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB0E2B67072C0021625D /* Daily.swift */; };
+		0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB102B6707890021625D /* DailyWeatherCell.swift */; };
+		0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB122B6707CC0021625D /* DailyCollectionCell.swift */; };
+		0530AB152B6708A40021625D /* Weekly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB142B6708A40021625D /* Weekly.swift */; };
+		0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */; };
+		0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */; };
+		0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB1A2B670DFA0021625D /* TodayItemCell.swift */; };
+		0530AB1D2B670E0E0021625D /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB1C2B670E0E0021625D /* TodayItem.swift */; };
+		0530AB1F2B670EB30021625D /* TodayItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB1E2B670EB30021625D /* TodayItemCollectionCell.swift */; };
 		05BE628A2B45526400BAD63F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE62892B45526400BAD63F /* HomeViewController.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
+		5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
 		5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639272E2B3EAE1900A88D43 /* AppDelegate.swift */; };
 		563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927302B3EAE1900A88D43 /* SceneDelegate.swift */; };
@@ -33,11 +45,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
 		0530AAB12B5D50440021625D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0530AAB32B5D508F0021625D /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
+		0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
+		0530AB042B63EF240021625D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0530AB082B63F9A30021625D /* TodayWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWeatherCell.swift; sourceTree = "<group>"; };
+		0530AB0E2B67072C0021625D /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = SOURCE_ROOT; };
+		0530AB102B6707890021625D /* DailyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
+		0530AB122B6707CC0021625D /* DailyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCollectionCell.swift; sourceTree = "<group>"; };
+		0530AB142B6708A40021625D /* Weekly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Weekly.swift; path = HowsTheWear/Sources/HomeScene/Views/Weekly.swift; sourceTree = SOURCE_ROOT; };
+		0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherCell.swift; sourceTree = "<group>"; };
+		0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionCell.swift; sourceTree = "<group>"; };
+		0530AB1A2B670DFA0021625D /* TodayItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemCell.swift; sourceTree = "<group>"; };
+		0530AB1C2B670E0E0021625D /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayItem.swift; path = HowsTheWear/Sources/HomeScene/Views/TodayItem.swift; sourceTree = SOURCE_ROOT; };
+		0530AB1E2B670EB30021625D /* TodayItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemCollectionCell.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
+		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
 		5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5639272B2B3EAE1900A88D43 /* HowsTheWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowsTheWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639272E2B3EAE1900A88D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,46 +95,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05BE62852B45521000BAD63F /* WeatherScene */ = {
+		0530AAB52B5D522C0021625D /* TabBarScene */ = {
+			isa = PBXGroup;
+			children = (
+				0530AAB12B5D50440021625D /* TabBarController.swift */,
+				0530AAB32B5D508F0021625D /* Vibration.swift */,
+			);
+			path = TabBarScene;
+			sourceTree = "<group>";
+		};
+		05BE62852B45521000BAD63F /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
 				05BE62882B45522700BAD63F /* Models */,
 				05BE62872B45522200BAD63F /* Views */,
 				05BE62862B45521D00BAD63F /* Controllers */,
 			);
-			path = WeatherScene;
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 		05BE62862B45521D00BAD63F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				05BE62892B45526400BAD63F /* HomeViewController.swift */,
-      );
+			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-    05BE62872B45522200BAD63F /* Views */ = {
+		05BE62872B45522200BAD63F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-        05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */,
-      );
+				05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */,
+				0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */,
+				0530AB082B63F9A30021625D /* TodayWeatherCell.swift */,
+				0530AB102B6707890021625D /* DailyWeatherCell.swift */,
+				0530AB122B6707CC0021625D /* DailyCollectionCell.swift */,
+				0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */,
+				0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */,
+				0530AB1A2B670DFA0021625D /* TodayItemCell.swift */,
+				0530AB1E2B670EB30021625D /* TodayItemCollectionCell.swift */,
+			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-    05BE62882B45522700BAD63F /* Models */ = {
+		05BE62882B45522700BAD63F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-      );
+				0530AB0E2B67072C0021625D /* Daily.swift */,
+				0530AB142B6708A40021625D /* Weekly.swift */,
+				0530AB1C2B670E0E0021625D /* TodayItem.swift */,
+			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		0530AAB52B5D522C0021625D /* TabBarScene */ = {
-			isa = PBXGroup;
-			children = (
-				0530AAB12B5D50440021625D /* TabBarController.swift */,
-				0530AAB32B5D508F0021625D /* Vibration.swift */,
-      );
-			path = TabBarScene;
 			sourceTree = "<group>";
 		};
 		5619F9872B431B7000E86325 /* BrowseMainScene */ = {
@@ -135,7 +170,6 @@
 			children = (
 				56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */,
 			);
-
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -171,7 +205,7 @@
 			children = (
 				563927442B3EAEF000A88D43 /* Application */,
 				5640F1B62B402ED500D97C65 /* StyleScene */,
-				05BE62852B45521000BAD63F /* WeatherScene */,
+				05BE62852B45521000BAD63F /* HomeScene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -256,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */,
+				0530AB042B63EF240021625D /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,16 +379,28 @@
 			files = (
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
+				0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */,
 				56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
+				0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */,
+				0530AB152B6708A40021625D /* Weekly.swift in Sources */,
+				0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */,
+				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
 				56B060102B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift in Sources */,
 				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,
+				0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */,
+				0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */,
+				0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */,
+				0530AB1F2B670EB30021625D /* TodayItemCollectionCell.swift in Sources */,
+				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
 				05BE628A2B45526400BAD63F /* HomeViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
+				0530AB0F2B67072C0021625D /* Daily.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
+				0530AB1D2B670E0E0021625D /* TodayItem.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */,
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
