@@ -19,7 +19,7 @@ final class TabBarController: UITabBarController {
         )
     }
     
-    private let browseVC = UIViewController().then {
+    private let browseVC = BrowseMainViewController().then {
         $0.tabBarItem = UITabBarItem(
             title: "BROWSE",
             image: UIImage(named: "search"),

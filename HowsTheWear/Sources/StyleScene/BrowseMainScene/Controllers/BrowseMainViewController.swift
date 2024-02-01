@@ -144,7 +144,28 @@ extension BrowseMainViewController: UICollectionViewDataSource {
             ofKind: kind,
             withReuseIdentifier: BrowseCollectionReusableView.reuseIdentifier,
             for: indexPath) as? BrowseCollectionReusableView else { fatalError("Cannot create new supplementary") }
+        
+        headerView.browseHeaderRightArrowButton.tag = indexPath.section
+        headerView.delegate = self
         return headerView
+    }
+    
+}
+
+// MARK: - delegate
+extension BrowseMainViewController: browseCollectionReusableDelegate{
+    func browseHeaderRightArrowButtonTapped(section: Int) {
+        switch section {
+        case 0:
+            let browseThisWeekViewController = BrowseThisWeekViewController()
+            navigationController?.pushViewController(browseThisWeekViewController, animated: true)
+        case 1:
+            print("2")
+        case 2:
+            print("3")
+        default:
+            break
+        }
     }
     
 }
