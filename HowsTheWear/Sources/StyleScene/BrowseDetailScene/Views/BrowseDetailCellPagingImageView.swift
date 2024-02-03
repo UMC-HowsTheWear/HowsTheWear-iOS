@@ -31,6 +31,7 @@ final class BrowseDetailCellPagingImageView: UIView {
     
     convenience init() {
         self.init(frame: .zero)
+        configureInitialSetting()
         configurePagingImageCollectionView()
         configureSubview()
         configureLayout()
@@ -41,6 +42,14 @@ final class BrowseDetailCellPagingImageView: UIView {
 extension BrowseDetailCellPagingImageView {
     func configureContents(_ images: [UIImage?]) {
         self.images = images
+    }
+}
+
+// MARK: - Configure InitialSetting
+extension BrowseDetailCellPagingImageView {
+    private func configureInitialSetting() {
+        imagePageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.3137255013, green: 0.3137254715, blue: 0.3137255013, alpha: 1)
+        imagePageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9411764741, green: 0.9411764741, blue: 0.9411764741, alpha: 1)
     }
 }
 
@@ -119,7 +128,6 @@ extension BrowseDetailCellPagingImageView {
     private func configureSubview() {
         [pagingImageCollectionView, imagePageControl].forEach {
             addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
         }
     }
     

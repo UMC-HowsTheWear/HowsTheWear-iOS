@@ -14,6 +14,7 @@ final class BrowseDetailView: UIView {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(named: "BrowseDetailBackground")
         $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = true
     }
     
     let browseDetailCellPagingImageView = BrowseDetailCellPagingImageView()
@@ -26,7 +27,7 @@ final class BrowseDetailView: UIView {
     }
     
     private let descriptionImageView = UIImageView().then {
-        $0.image = UIImage(named: "DetailItem")
+        $0.image = UIImage(named: "DetailItemTestImage")
         $0.contentMode = .scaleAspectFill
     }
     
@@ -37,7 +38,7 @@ final class BrowseDetailView: UIView {
         $0.textAlignment = .left
     }
     
-    private let descriptionMoveWebSiteButton = UIButton().then {
+    let descriptionMoveWebSiteButton = UIButton().then {
         var container = AttributeContainer()
         container.font = UIFont.pretendard(size: 15, weight: .semibold)
         
