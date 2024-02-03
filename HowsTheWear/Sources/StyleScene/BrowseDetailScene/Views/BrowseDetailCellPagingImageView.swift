@@ -8,7 +8,6 @@
 import UIKit
 
 final class BrowseDetailCellPagingImageView: UIView {
-    
     private var images: [UIImage?] = [] {
         didSet {
             configurePageControl()
@@ -16,40 +15,26 @@ final class BrowseDetailCellPagingImageView: UIView {
         }
     }
     
-    private let pagingImageCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+    private let pagingImageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        $0.collectionViewLayout = layout
-    }
-    
-//    private let imagePageControl = UIPageControl()
-    
-    private let imagePageControl: UIPageControl = {
-        let pageControl = UIPageControl()
-        return pageControl
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
+        return collectionView
     }()
+    
+    private let imagePageControl = UIPageControl()
     
     convenience init() {
         self.init(frame: .zero)
-        configureInitialSetting()
+        configurePagingImageCollectionView()
         configureSubview()
         configureLayout()
     }
-    
-}
-
-// MARK: - Configure InitialSetting
-extension BrowseDetailCellPagingImageView {
-    private func configureInitialSetting() {
-        pagingImageCollectionView.dataSource = self
-        pagingImageCollectionView.delegate = self
-        pagingImageCollectionView.register(PagingImageCollectionViewCell.self, forCellWithReuseIdentifier: "PagingImageCollectionViewCell")
-        pagingImageCollectionView.isPagingEnabled = true
-        pagingImageCollectionView.showsHorizontalScrollIndicator = true
-    }
-    
 }
 
 // MARK: Public Interface
@@ -57,7 +42,6 @@ extension BrowseDetailCellPagingImageView {
     func configureContents(_ images: [UIImage?]) {
         self.images = images
     }
-    
 }
 
 // MARK: UIScrollView Delegate Implementation
@@ -71,30 +55,39 @@ extension BrowseDetailCellPagingImageView {
             imagePageControl.currentPage = Int(currentPosition)
         }
     }
-    
 }
 
 // MARK: UICollectionView Delegate FlowLayout Implementation
 extension BrowseDetailCellPagingImageView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) ->
-    CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
         let width: CGFloat = collectionView.bounds.width
         let height: CGFloat = collectionView.bounds.height
         
         return CGSize(width: width, height: height)
     }
-    
 }
 
 // MARK: UICollectionView DataSource Implementation
 extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return images.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "PagingImageCollectionViewCell", for: indexPath) as? PagingImageCollectionViewCell
+            withReuseIdentifier: "PagingImageCollectionViewCell",
+            for: indexPath
+        ) as? PagingImageCollectionViewCell
         else {
             return UICollectionViewCell()
         }
@@ -102,7 +95,6 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
         cell.pagingImageView.image = images[indexPath.row]
         return cell
     }
-    
 }
 
 // MARK: Configure UI
@@ -110,6 +102,18 @@ extension BrowseDetailCellPagingImageView {
     private func configurePageControl() {
         imagePageControl.numberOfPages = images.count
         imagePageControl.hidesForSinglePage = true
+    }
+    
+    private func configurePagingImageCollectionView() {
+        pagingImageCollectionView.dataSource = self
+        pagingImageCollectionView.delegate = self
+        pagingImageCollectionView.register(
+            PagingImageCollectionViewCell.self,
+            forCellWithReuseIdentifier: "PagingImageCollectionViewCell"
+        )
+        
+        pagingImageCollectionView.isPagingEnabled = true
+        pagingImageCollectionView.showsHorizontalScrollIndicator = false
     }
     
     private func configureSubview() {
@@ -120,16 +124,17 @@ extension BrowseDetailCellPagingImageView {
     }
     
     private func configureLayout() {
-        let safeArea = safeAreaLayoutGuide
-        
         pagingImageCollectionView.snp.makeConstraints { make in
-            make.margins.equalTo(safeArea)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+            make.height.equalTo(safeAreaLayoutGuide.snp.height)
         }
         
         imagePageControl.snp.makeConstraints { make in
             make.top.equalTo(pagingImageCollectionView.snp.bottom)
-            make.centerX.equalTo(safeArea.snp.centerX)
-            make.height.equalTo(safeArea).multipliedBy(0.05)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.height.equalTo(safeAreaLayoutGuide.snp.height).multipliedBy(0.05)
         }
     }
     
