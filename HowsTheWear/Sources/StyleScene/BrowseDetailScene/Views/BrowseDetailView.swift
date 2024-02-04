@@ -88,6 +88,7 @@ final class BrowseDetailView: UIView {
         super.init(frame: frame)
         configureSubview()
         configureLayout()
+        // CellPagingImageView 테스트
         browseDetailCellPagingImageView.configureContents([UIImage(named: "DetailTestImage"), UIImage(named: "DetailTestImage"), UIImage(named: "DetailTestImage")])
     }
     
@@ -95,16 +96,6 @@ final class BrowseDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-// MARK: GestureRecognizer Delegate Implement
-extension BrowseDetailView: UIGestureRecognizerDelegate {
-    func configureTapPostImageAction(_ target: Any, _ action: Selector) {
-        let tapGesture = UITapGestureRecognizer(target: target, action: action)
-        tapGesture.delegate = self
-        browseDetailCellPagingImageView.isUserInteractionEnabled = true
-        browseDetailCellPagingImageView.addGestureRecognizer(tapGesture)
-    }
 }
 
 // MARK: - Configure UI

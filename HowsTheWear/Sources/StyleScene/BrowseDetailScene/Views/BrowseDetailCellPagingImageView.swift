@@ -36,13 +36,15 @@ final class BrowseDetailCellPagingImageView: UIView {
         configureSubview()
         configureLayout()
     }
+    
 }
 
-// MARK: Public Interface
+// MARK: - Public Interface
 extension BrowseDetailCellPagingImageView {
     func configureContents(_ images: [UIImage?]) {
         self.images = images
     }
+    
 }
 
 // MARK: - Configure InitialSetting
@@ -51,9 +53,10 @@ extension BrowseDetailCellPagingImageView {
         imagePageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.3137255013, green: 0.3137254715, blue: 0.3137255013, alpha: 1)
         imagePageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9411764741, green: 0.9411764741, blue: 0.9411764741, alpha: 1)
     }
+    
 }
 
-// MARK: UIScrollView Delegate Implementation
+// MARK: - Implement UIScrollView Delegate
 extension BrowseDetailCellPagingImageView {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
@@ -64,9 +67,10 @@ extension BrowseDetailCellPagingImageView {
             imagePageControl.currentPage = Int(currentPosition)
         }
     }
+    
 }
 
-// MARK: UICollectionView Delegate FlowLayout Implementation
+// MARK: - Implement UICollectionView Delegate FlowLayout
 extension BrowseDetailCellPagingImageView: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
@@ -78,9 +82,10 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: width, height: height)
     }
+    
 }
 
-// MARK: UICollectionView DataSource Implementation
+// MARK: - Implement UICollectionView DataSource
 extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
@@ -104,9 +109,10 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
         cell.pagingImageView.image = images[indexPath.row]
         return cell
     }
+    
 }
 
-// MARK: Configure UI
+// MARK: - Configure UI
 extension BrowseDetailCellPagingImageView {
     private func configurePageControl() {
         imagePageControl.numberOfPages = images.count

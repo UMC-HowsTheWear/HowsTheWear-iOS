@@ -113,7 +113,6 @@
 			sourceTree = "<group>";
 		};
 		05BE62852B45521000BAD63F /* HomeScene */ = {
-		05BE62852B45521000BAD63F /* WeatherScene */ = {
 			isa = PBXGroup;
 			children = (
 				05BE62882B45522700BAD63F /* Models */,

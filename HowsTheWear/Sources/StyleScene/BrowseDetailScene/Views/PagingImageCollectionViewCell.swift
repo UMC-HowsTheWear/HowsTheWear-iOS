@@ -27,7 +27,7 @@ final class PagingImageCollectionViewCell: UICollectionViewCell {
     
 }
 
-// MARK: Configure UI
+// MARK: - Configure UI
 extension PagingImageCollectionViewCell {
     private func configureSubview() {
         contentView.addSubview(pagingImageView)
