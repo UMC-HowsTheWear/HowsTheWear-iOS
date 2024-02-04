@@ -184,9 +184,20 @@
 		5634089F2B6F2A4800B0159B /* BrowseStyleScene */ = {
 			isa = PBXGroup;
 			children = (
+				563408A02B6F2B0000B0159B /* Views */,
 				56B060092B5CE85400CE923C /* BrowseThisWeekScene */,
 			);
 			path = BrowseStyleScene;
+			sourceTree = "<group>";
+		};
+		563408A02B6F2B0000B0159B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */,
+				56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */,
+				56B0601D2B5D524000CE923C /* StyleHashTagView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		563927222B3EAE1900A88D43 = {
@@ -286,9 +297,6 @@
 		56B0600E2B5CEA5600CE923C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */,
-				56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */,
-				56B0601D2B5D524000CE923C /* StyleHashTagView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
