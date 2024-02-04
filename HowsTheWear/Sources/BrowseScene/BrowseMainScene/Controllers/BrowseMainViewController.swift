@@ -155,7 +155,7 @@ extension BrowseMainViewController: UICollectionViewDataSource {
     
 }
 
-// MARK: - delegate
+// MARK: - Implement browseCollectionReusableDelegate
 extension BrowseMainViewController: browseCollectionReusableDelegate{
     func browseHeaderRightArrowButtonTapped(section: Int) {
         switch section {
@@ -163,9 +163,11 @@ extension BrowseMainViewController: browseCollectionReusableDelegate{
             let browseThisWeekViewController = BrowseThisWeekViewController()
             navigationController?.pushViewController(browseThisWeekViewController, animated: true)
         case 1:
-            print("2")
+            let browseNextWeekViewController = BrowseNextWeekViewController()
+            navigationController?.pushViewController(browseNextWeekViewController, animated: true)
         case 2:
-            print("3")
+            let browseLastYearViewController = BrowseLastYearViewController()
+            navigationController?.pushViewController(browseLastYearViewController, animated: true)
         default:
             break
         }
