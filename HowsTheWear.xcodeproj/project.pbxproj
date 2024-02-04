@@ -181,6 +181,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		5634089F2B6F2A4800B0159B /* BrowseStyleScene */ = {
+			isa = PBXGroup;
+			children = (
+				56B060092B5CE85400CE923C /* BrowseThisWeekScene */,
+			);
+			path = BrowseStyleScene;
+			sourceTree = "<group>";
+		};
 		563927222B3EAE1900A88D43 = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +252,7 @@
 			children = (
 				56B0600D2B5CE93800CE923C /* Views */,
 				5619F9872B431B7000E86325 /* BrowseMainScene */,
-				56B060092B5CE85400CE923C /* BrowseThisWeekScene */,
+				5634089F2B6F2A4800B0159B /* BrowseStyleScene */,
 				56BF77A12B63C6E1004C044F /* BrowseDetailScene */,
 			);
 			path = BrowseScene;
