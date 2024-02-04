@@ -64,7 +64,7 @@ extension BrowseStyleCollectionView {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let screenHeight = UIScreen.main.bounds.height
-        let headerHeight: CGFloat = screenHeight >= 890 ? 40 : 30
+        let headerHeight: CGFloat = screenHeight >= 890 ? 45 : 35
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
         let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,

@@ -62,14 +62,14 @@ extension BrowseLastYearViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         lastYearHashTagView.snp.makeConstraints { make in
-            make.top.equalTo(safeArea.snp.top)
+            make.top.equalTo(safeArea.snp.top).offset(20)
             make.leading.equalTo(safeArea.snp.leading).offset(20)
             make.trailing.equalTo(safeArea.snp.trailing)
             make.height.equalTo(30)
         }
         
         lastYearCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(safeArea.snp.top).offset(50)
+            make.top.equalTo(lastYearHashTagView.snp.bottom).offset(24)
             make.bottom.equalTo(safeArea.snp.bottom).offset(13)
             make.leading.equalTo(safeArea.snp.leading).offset(20)
             make.trailing.equalTo(safeArea.snp.trailing).offset(-20)
