@@ -139,16 +139,16 @@ extension BrowseDetailCellPagingImageView {
     
     private func configureLayout() {
         pagingImageCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
-            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
-            make.height.equalTo(safeAreaLayoutGuide.snp.height)
+            make.top.equalTo(safeAreaLayoutGuide)
+            make.leading.equalTo(safeAreaLayoutGuide)
+            make.trailing.equalTo(safeAreaLayoutGuide)
+            make.height.equalToSuperview().multipliedBy(0.95)
         }
         
         imagePageControl.snp.makeConstraints { make in
-            make.top.equalTo(pagingImageCollectionView.snp.bottom)
+            make.top.equalTo(pagingImageCollectionView.snp.bottom).offset(5)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.height.equalTo(safeAreaLayoutGuide.snp.height).multipliedBy(0.05)
+//            make.height.equalToSuperview()..multipliedBy(0
         }
     }
     

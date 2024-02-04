@@ -27,7 +27,15 @@ extension BrowseLastYearViewController {
     
     private func configureInitialSetting() {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        let backBarButton = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        
         navigationItem.title = "작년 이맘때는"
+        navigationItem.backBarButtonItem = backBarButton
     }
     
 }

@@ -123,19 +123,18 @@ extension BrowseDetailView {
     
     private func configureLayout() {
         backgroundImageView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.top.equalToSuperview().inset(120)
-            make.bottom.equalToSuperview().inset(50)
+            make.edges.equalToSuperview()
         }
         
         browseDetailCellPagingImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(18)
             make.leading.equalToSuperview().inset(14)
             make.centerX.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.725)
+            make.height.equalToSuperview().multipliedBy(0.72)
         }
         
         descriptionStackView.snp.makeConstraints { make in
+            make.top.equalTo(browseDetailCellPagingImageView.snp.bottom).offset(14)
             make.leading.trailing.equalToSuperview().inset(14)
             make.bottom.equalToSuperview().inset(16)
         }
@@ -145,7 +144,7 @@ extension BrowseDetailView {
         }
         
         descriptionBottomStackView.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(0.68)
+            make.height.equalToSuperview().multipliedBy(0.65)
             make.trailing.equalToSuperview()
         }
     }

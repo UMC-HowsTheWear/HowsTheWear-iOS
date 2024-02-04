@@ -26,7 +26,15 @@ final class BrowseThisWeekViewController: UIViewController {
 extension BrowseThisWeekViewController {
     private func configureInitialSetting() {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        
+        let backBarButton = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: self,
+            action: nil
+        )
         navigationItem.title = "이번주 코디"
+        navigationItem.backBarButtonItem = backBarButton
     }
     
 }
