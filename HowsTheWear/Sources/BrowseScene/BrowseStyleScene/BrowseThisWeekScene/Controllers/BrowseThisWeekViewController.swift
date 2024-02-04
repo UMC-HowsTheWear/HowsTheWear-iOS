@@ -9,18 +9,9 @@ import UIKit
 
 final class BrowseThisWeekViewController: UIViewController {
     
-    private var thisWeekStyleArray = [UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage"),
-                                    UIImage(named: "ThisWeekTestImage")]
-    
     private let thisWeekHashTagView = StyleHashTagView()
 
-    private lazy var ThisWeekCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
+    private lazy var ThisWeekCollectionView = BrowseStyleCollectionView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,73 +27,10 @@ final class BrowseThisWeekViewController: UIViewController {
 extension BrowseThisWeekViewController {
     
     private func configureCollectionView() {
-        ThisWeekCollectionView.dataSource = self
-        ThisWeekCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
-        ThisWeekCollectionView.register(StyleCollectionReusableHeaderView.self,
-                                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                      withReuseIdentifier: StyleCollectionReusableHeaderView.reuseIdentifier)
-        
-        ThisWeekCollectionView.backgroundColor = .clear
-
         // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
-    }
-
-    private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1/3),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 1, bottom: 1, trailing: 1)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.417)
-        )
-        
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
-        let screenHeight = UIScreen.main.bounds.height
-        let headerHeight: CGFloat = screenHeight >= 890 ? 40 : 30
-        
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
-        let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-                                                                        elementKind: UICollectionView.elementKindSectionHeader,
-                                                                        alignment: .top)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [headerElement]
-
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        
-        return layout
-    }
-    
-}
-
-// MARK: - Implementation CollectionView DataSource
-
-extension BrowseThisWeekViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return thisWeekStyleArray.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier, for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.styleImageView.image = thisWeekStyleArray[indexPath.item]
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: StyleCollectionReusableHeaderView.reuseIdentifier,
-            for: indexPath) as? StyleCollectionReusableHeaderView else { fatalError("Cannot create new supplementary") }
-        return headerView
+        ThisWeekCollectionView.configureContents([UIImage(named: "ThisWeekTestImage"),
+                           UIImage(named: "ThisWeekTestImage"),
+                           UIImage(named: "ThisWeekTestImage")])
     }
     
 }
