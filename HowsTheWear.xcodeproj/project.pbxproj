@@ -29,6 +29,7 @@
 		563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408A32B6F30FA00B0159B /* BrowseStyleCollectionView.swift */; };
 		563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408A92B6F3E0600B0159B /* BrowseNextWeekViewController.swift */; };
 		563408AC2B6F3E1300B0159B /* BrowseLastYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408AB2B6F3E1300B0159B /* BrowseLastYearViewController.swift */; };
+		563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408AD2B6F40D100B0159B /* BrowseMainCollectionView.swift */; };
 		5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639272E2B3EAE1900A88D43 /* AppDelegate.swift */; };
 		563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927302B3EAE1900A88D43 /* SceneDelegate.swift */; };
 		563927332B3EAE1900A88D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927322B3EAE1900A88D43 /* ViewController.swift */; };
@@ -75,6 +76,7 @@
 		563408A32B6F30FA00B0159B /* BrowseStyleCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseStyleCollectionView.swift; sourceTree = "<group>"; };
 		563408A92B6F3E0600B0159B /* BrowseNextWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseNextWeekViewController.swift; sourceTree = "<group>"; };
 		563408AB2B6F3E1300B0159B /* BrowseLastYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseLastYearViewController.swift; sourceTree = "<group>"; };
+		563408AD2B6F40D100B0159B /* BrowseMainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainCollectionView.swift; sourceTree = "<group>"; };
 		5639272B2B3EAE1900A88D43 /* HowsTheWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowsTheWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639272E2B3EAE1900A88D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		563927302B3EAE1900A88D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */,
+				563408AD2B6F40D100B0159B /* BrowseMainCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				0530AB1D2B670E0E0021625D /* TodayItem.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */,
+				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
 				56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */,
 				56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */,
