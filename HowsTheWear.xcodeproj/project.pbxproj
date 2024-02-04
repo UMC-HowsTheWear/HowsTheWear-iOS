@@ -35,7 +35,7 @@
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
-		56B060102B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */; };
+		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
 		56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */; };
 		56B060172B5D487D00CE923C /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060152B5D487D00CE923C /* Pretendard-Regular.otf */; };
 		56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */; };
@@ -76,7 +76,7 @@
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
-		56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThisWeekCollectionReusableView.swift; sourceTree = "<group>"; };
+		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		56B060152B5D487D00CE923C /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		56B060192B5D4AE400CE923C /* PretendardFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendardFontExtension.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		563408A02B6F2B0000B0159B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				56B0600F2B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift */,
+				56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */,
 				56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */,
 				56B0601D2B5D524000CE923C /* StyleHashTagView.swift */,
 			);
@@ -439,7 +439,7 @@
 				0530AB152B6708A40021625D /* Weekly.swift in Sources */,
 				0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
-				56B060102B5CEA9400CE923C /* ThisWeekCollectionReusableView.swift in Sources */,
+				56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */,
 				56B9F7E02B6CABC1005B924F /* BrowseDetailView.swift in Sources */,
 				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,
 				0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */,
