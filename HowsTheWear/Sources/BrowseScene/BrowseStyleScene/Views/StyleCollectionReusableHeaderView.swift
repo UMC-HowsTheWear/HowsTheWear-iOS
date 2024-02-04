@@ -11,7 +11,7 @@ import SnapKit
 
 // BrowseCollectionView Header View
 
-final class ThisWeekCollectionReusableView: UICollectionReusableView {
+final class StyleCollectionReusableHeaderView: UICollectionReusableView {
     
     static let reuseIdentifier = "thisWeekCollectionViewHeader"
     
@@ -49,7 +49,7 @@ final class ThisWeekCollectionReusableView: UICollectionReusableView {
 }
 
 // MARK: - Configure UI
-extension ThisWeekCollectionReusableView {
+extension StyleCollectionReusableHeaderView {
     
     private func configureSubviews() {
         [ThisWeekWeeklyLabel, ThisWeekDateRangeLabel].forEach {
