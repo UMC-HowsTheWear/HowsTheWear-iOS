@@ -139,7 +139,7 @@ extension BrowseMainViewController {
         browseMainCollectionView.snp.makeConstraints { make in
             make.top.equalTo(safeArea.snp.top).inset(30)
             make.bottom.equalTo(safeArea.snp.bottom)
-            make.leading.equalTo(safeArea.snp.leading).inset(15)
+            make.leading.equalTo(safeArea.snp.leading).inset(20)
             make.trailing.equalTo(safeArea.snp.trailing)
         }
     }

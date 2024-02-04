@@ -70,7 +70,7 @@ extension BrowseMainCollectionView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.32),
-            heightDimension: .estimated(130)
+            heightDimension: .estimated(136)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -148,7 +148,7 @@ extension BrowseMainCollectionView {
     
     private func configureLayout() {
         browseCollectionView.snp.makeConstraints { make in
-            make.margins.equalTo(safeAreaLayoutGuide)
+            make.margins.equalToSuperview()
         }
     }
     
