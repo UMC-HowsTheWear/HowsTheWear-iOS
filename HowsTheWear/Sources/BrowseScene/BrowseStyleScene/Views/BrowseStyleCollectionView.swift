@@ -9,6 +9,8 @@ import UIKit
 
 final class BrowseStyleCollectionView: UIView {
     
+    var didSelectCell: ((IndexPath) -> Void)?
+    
     private var imageArray: [UIImage?] = [] {
         didSet {
             browseStyleCollectionView.reloadData()
@@ -42,6 +44,8 @@ extension BrowseStyleCollectionView {
 extension BrowseStyleCollectionView {
     private func configureCollectionView() {
         browseStyleCollectionView.dataSource = self
+        browseStyleCollectionView.delegate = self
+        
         browseStyleCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
         browseStyleCollectionView.register(StyleCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StyleCollectionReusableHeaderView.reuseIdentifier)
         
@@ -108,6 +112,14 @@ extension BrowseStyleCollectionView: UICollectionViewDataSource {
         return headerView
     }
     
+}
+
+// MARK: - Implement CollectionView Delegate
+
+extension BrowseStyleCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectCell?(indexPath)
+    }
 }
 
 // MARK: - Configure UI

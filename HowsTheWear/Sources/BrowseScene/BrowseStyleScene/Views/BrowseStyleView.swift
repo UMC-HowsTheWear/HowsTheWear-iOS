@@ -39,6 +39,11 @@ extension BrowseStyleView {
 // MARK: - Public Interface
 
 extension BrowseStyleView {
+    
+    func setCollectionViewCellSelectionHandler(_ handler: @escaping ((IndexPath) -> Void)) {
+        browseStyleCollectionView.didSelectCell = handler
+    }
+    
     func configureContents(_ images: [UIImage?]) {
         browseStyleCollectionView.configureContents(images)
     }

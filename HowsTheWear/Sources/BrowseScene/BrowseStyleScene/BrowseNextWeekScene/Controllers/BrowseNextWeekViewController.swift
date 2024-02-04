@@ -37,29 +37,24 @@ extension BrowseNextWeekViewController {
 extension BrowseNextWeekViewController {
     
     private func configureCollectionView() {
+        nextWeekStyleView.setCollectionViewCellSelectionHandler { [weak self] indexPath in
+            let detailViewController = BrowseDetailViewController()
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+        }
+        
         // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
-        nextWeekStyleView.configureContents([UIImage(named: "ThisWeekTestImage"),
-                           UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-                                             UIImage(named: "ThisWeekTestImage"),
-
-                           UIImage(named: "ThisWeekTestImage")]
-        )
+        nextWeekStyleView.configureContents([
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+            UIImage(named: "ThisWeekTestImage"),
+        ])
     }
     
 }
