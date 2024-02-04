@@ -9,10 +9,7 @@ import UIKit
 
 final class BrowseLastYearViewController: UIViewController {
 
-    
-    private let lastYearHashTagView = StyleHashTagView()
-
-    private lazy var lastYearCollectionView = BrowseStyleCollectionView()
+    private let lastYearStyleView = BrowseStyleView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +38,7 @@ extension BrowseLastYearViewController {
     
     private func configureCollectionView() {
         // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
-        lastYearCollectionView.configureContents([UIImage(named: "ThisWeekTestImage"),
+        lastYearStyleView.configureContents([UIImage(named: "ThisWeekTestImage"),
                            UIImage(named: "ThisWeekTestImage"),
                            UIImage(named: "ThisWeekTestImage")])
     }
@@ -53,26 +50,17 @@ extension BrowseLastYearViewController {
 extension BrowseLastYearViewController {
     
     private func configureSubViews() {
-        [lastYearHashTagView, lastYearCollectionView].forEach {
-            view.addSubview($0)
-        }
+        [lastYearStyleView].forEach { view.addSubview($0) }
     }
     
     private func configureLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
-        lastYearHashTagView.snp.makeConstraints { make in
-            make.top.equalTo(safeArea.snp.top).offset(20)
-            make.leading.equalTo(safeArea.snp.leading).offset(20)
-            make.trailing.equalTo(safeArea.snp.trailing)
-            make.height.equalTo(30)
-        }
-        
-        lastYearCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(lastYearHashTagView.snp.bottom).offset(24)
-            make.bottom.equalTo(safeArea.snp.bottom).offset(13)
-            make.leading.equalTo(safeArea.snp.leading).offset(20)
-            make.trailing.equalTo(safeArea.snp.trailing).offset(-20)
+        lastYearStyleView.snp.makeConstraints { make in
+            make.top.equalTo(safeArea).inset(20)
+            make.leading.equalTo(safeArea).inset(20)
+            make.trailing.equalTo(safeArea).inset(20)
+            make.bottom.equalTo(safeArea).inset(10)
         }
     }
     

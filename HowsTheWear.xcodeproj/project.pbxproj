@@ -30,6 +30,7 @@
 		563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408A92B6F3E0600B0159B /* BrowseNextWeekViewController.swift */; };
 		563408AC2B6F3E1300B0159B /* BrowseLastYearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408AB2B6F3E1300B0159B /* BrowseLastYearViewController.swift */; };
 		563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408AD2B6F40D100B0159B /* BrowseMainCollectionView.swift */; };
+		563408B02B6FB34D00B0159B /* BrowseStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408AF2B6FB34D00B0159B /* BrowseStyleView.swift */; };
 		5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639272E2B3EAE1900A88D43 /* AppDelegate.swift */; };
 		563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927302B3EAE1900A88D43 /* SceneDelegate.swift */; };
 		563927332B3EAE1900A88D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927322B3EAE1900A88D43 /* ViewController.swift */; };
@@ -77,6 +78,7 @@
 		563408A92B6F3E0600B0159B /* BrowseNextWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseNextWeekViewController.swift; sourceTree = "<group>"; };
 		563408AB2B6F3E1300B0159B /* BrowseLastYearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseLastYearViewController.swift; sourceTree = "<group>"; };
 		563408AD2B6F40D100B0159B /* BrowseMainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainCollectionView.swift; sourceTree = "<group>"; };
+		563408AF2B6FB34D00B0159B /* BrowseStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseStyleView.swift; sourceTree = "<group>"; };
 		5639272B2B3EAE1900A88D43 /* HowsTheWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowsTheWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639272E2B3EAE1900A88D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		563927302B3EAE1900A88D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				56B0601B2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift */,
 				56B0601D2B5D524000CE923C /* StyleHashTagView.swift */,
 				563408A32B6F30FA00B0159B /* BrowseStyleCollectionView.swift */,
+				563408AF2B6FB34D00B0159B /* BrowseStyleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				563408B02B6FB34D00B0159B /* BrowseStyleView.swift in Sources */,
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563408AC2B6F3E1300B0159B /* BrowseLastYearViewController.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
