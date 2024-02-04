@@ -13,8 +13,6 @@ import SnapKit
 
 final class StyleCollectionReusableHeaderView: UICollectionReusableView {
     
-    static let reuseIdentifier = "thisWeekCollectionViewHeader"
-    
     let ThisWeekWeeklyLabel = UILabel().then {
         $0.font = UIFont.pretendard(size: 14, weight: .semibold)
         $0.textColor = .black

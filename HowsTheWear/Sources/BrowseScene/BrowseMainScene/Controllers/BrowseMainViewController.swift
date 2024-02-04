@@ -54,7 +54,7 @@ extension BrowseMainViewController {
     
     private func configureCollectionView() {
         browseCollectionView.dataSource = self
-        browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: "browseCollectionViewCell")
+        browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
         browseCollectionView.backgroundColor = .clear
         
         browseCollectionView.register(BrowseCollectionReusableView.self,
@@ -122,7 +122,10 @@ extension BrowseMainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "browseCollectionViewCell", for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
+            for: indexPath
+        ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
         let section = indexPath.section
         

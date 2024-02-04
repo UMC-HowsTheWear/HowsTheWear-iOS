@@ -37,10 +37,10 @@ extension BrowseThisWeekViewController {
     
     private func configureCollectionView() {
         ThisWeekCollectionView.dataSource = self
-        ThisWeekCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: "browseCollectionViewCell")
-        ThisWeekCollectionView.register(ThisWeekCollectionReusableView.self,
+        ThisWeekCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
+        ThisWeekCollectionView.register(StyleCollectionReusableHeaderView.self,
                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                      withReuseIdentifier: ThisWeekCollectionReusableView.reuseIdentifier)
+                                      withReuseIdentifier: StyleCollectionReusableHeaderView.reuseIdentifier)
         
         ThisWeekCollectionView.backgroundColor = .clear
 
@@ -90,7 +90,7 @@ extension BrowseThisWeekViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "browseCollectionViewCell", for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier, for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
         cell.styleImageView.image = thisWeekStyleArray[indexPath.item]
         
@@ -100,8 +100,8 @@ extension BrowseThisWeekViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let headerView = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
-            withReuseIdentifier: ThisWeekCollectionReusableView.reuseIdentifier,
-            for: indexPath) as? ThisWeekCollectionReusableView else { fatalError("Cannot create new supplementary") }
+            withReuseIdentifier: StyleCollectionReusableHeaderView.reuseIdentifier,
+            for: indexPath) as? StyleCollectionReusableHeaderView else { fatalError("Cannot create new supplementary") }
         return headerView
     }
     

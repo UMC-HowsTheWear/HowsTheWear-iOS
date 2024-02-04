@@ -19,9 +19,7 @@ protocol browseCollectionReusableDelegate: AnyObject {
 final class BrowseCollectionReusableView: UICollectionReusableView {
     
     weak var delegate: browseCollectionReusableDelegate?
-    
-    static let reuseIdentifier = "browseCollectionViewHeader"
-    
+        
     let browseHeaderLabel = UILabel().then {
         $0.font = .pretendard(size: 15, weight: .semibold)
         $0.textColor = .black
