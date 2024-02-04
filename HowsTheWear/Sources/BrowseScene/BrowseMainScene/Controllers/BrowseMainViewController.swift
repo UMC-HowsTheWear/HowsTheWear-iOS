@@ -46,7 +46,6 @@ final class BrowseMainViewController: UIViewController {
         configureCollectionView()
         configureSubViews()
         configureLayout()
-        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
     }
     
 }
@@ -54,7 +53,13 @@ final class BrowseMainViewController: UIViewController {
 // MARK: Configure InitialSetting
 
 extension BrowseMainViewController {
+    
     private func configureInitialSetting() {
+        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        configureNaviBar()
+    }
+    
+    private func configureNaviBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
@@ -67,12 +72,21 @@ extension BrowseMainViewController {
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
+        navigationController?.navigationBar.tintColor = .black
+
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
         
+        let backBarButton = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        
         navigationItem.title = "둘러보기"
+        navigationItem.backBarButtonItem = backBarButton
     }
     
 }

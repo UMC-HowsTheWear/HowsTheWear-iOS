@@ -15,9 +15,21 @@ final class BrowseNextWeekViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureInitialSetting()
         configureCollectionView()
         configureSubViews()
         configureLayout()
+    }
+    
+}
+
+// MARK: Configure InitialSetting
+
+extension BrowseNextWeekViewController {
+    
+    private func configureInitialSetting() {
+        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        navigationItem.title = "저번주 코디"
     }
     
 }

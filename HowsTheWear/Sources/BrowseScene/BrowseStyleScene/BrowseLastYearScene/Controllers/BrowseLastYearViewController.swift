@@ -16,9 +16,21 @@ final class BrowseLastYearViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureInitialSetting()
         configureCollectionView()
         configureSubViews()
         configureLayout()
+    }
+    
+}
+
+// MARK: Configure InitialSetting
+
+extension BrowseLastYearViewController {
+    
+    private func configureInitialSetting() {
+        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        navigationItem.title = "작년 이맘때는"
     }
     
 }
