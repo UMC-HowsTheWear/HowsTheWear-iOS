@@ -275,7 +275,6 @@
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
 			isa = PBXGroup;
 			children = (
-				56B0600E2B5CEA5600CE923C /* Views */,
 				56B0600A2B5CE86E00CE923C /* Controllers */,
 			);
 			path = BrowseThisWeekScene;
@@ -293,13 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		56B0600E2B5CEA5600CE923C /* Views */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
