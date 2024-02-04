@@ -212,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				563927442B3EAEF000A88D43 /* Application */,
-				5640F1B62B402ED500D97C65 /* StyleScene */,
+				5640F1B62B402ED500D97C65 /* BrowseScene */,
 				05BE62852B45521000BAD63F /* HomeScene */,
 			);
 			path = Sources;
@@ -239,7 +239,7 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		5640F1B62B402ED500D97C65 /* StyleScene */ = {
+		5640F1B62B402ED500D97C65 /* BrowseScene */ = {
 			isa = PBXGroup;
 			children = (
 				56B0600D2B5CE93800CE923C /* Views */,
@@ -247,7 +247,7 @@
 				56B060092B5CE85400CE923C /* BrowseThisWeekScene */,
 				56BF77A12B63C6E1004C044F /* BrowseDetailScene */,
 			);
-			path = StyleScene;
+			path = BrowseScene;
 			sourceTree = "<group>";
 		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
