@@ -1,17 +1,17 @@
 //
-//  BrowseThisWeekViewController.swift
+//  BrowseNextWeekViewController.swift
 //  HowsTheWear
 //
-//  Created by 제민우 on 1/21/24.
+//  Created by 제민우 on 2/4/24.
 //
 
 import UIKit
 
-final class BrowseThisWeekViewController: UIViewController {
+final class BrowseNextWeekViewController: UIViewController {
     
-    private let thisWeekHashTagView = StyleHashTagView()
+    private let nextWeekHashTagView = StyleHashTagView()
 
-    private lazy var thisWeekCollectionView = BrowseStyleCollectionView()
+    private lazy var nextWeekCollectionView = BrowseStyleCollectionView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +24,11 @@ final class BrowseThisWeekViewController: UIViewController {
 
 // MARK: - Configure CollectionView
 
-extension BrowseThisWeekViewController {
+extension BrowseNextWeekViewController {
     
     private func configureCollectionView() {
         // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
-        thisWeekCollectionView.configureContents([UIImage(named: "ThisWeekTestImage"),
+        nextWeekCollectionView.configureContents([UIImage(named: "ThisWeekTestImage"),
                            UIImage(named: "ThisWeekTestImage"),
                            UIImage(named: "ThisWeekTestImage")])
     }
@@ -37,10 +37,10 @@ extension BrowseThisWeekViewController {
 
 // MARK: - Configure UI
 
-extension BrowseThisWeekViewController {
+extension BrowseNextWeekViewController {
     
     private func configureSubViews() {
-        [thisWeekHashTagView, thisWeekCollectionView].forEach {
+        [nextWeekHashTagView, nextWeekCollectionView].forEach {
             view.addSubview($0)
         }
     }
@@ -48,14 +48,14 @@ extension BrowseThisWeekViewController {
     private func configureLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
-        thisWeekHashTagView.snp.makeConstraints { make in
+        nextWeekHashTagView.snp.makeConstraints { make in
             make.top.equalTo(safeArea.snp.top)
             make.leading.equalTo(safeArea.snp.leading).offset(20)
             make.trailing.equalTo(safeArea.snp.trailing)
             make.height.equalTo(30)
         }
         
-        thisWeekCollectionView.snp.makeConstraints { make in
+        nextWeekCollectionView.snp.makeConstraints { make in
             make.top.equalTo(safeArea.snp.top).offset(50)
             make.bottom.equalTo(safeArea.snp.bottom).offset(13)
             make.leading.equalTo(safeArea.snp.leading).offset(20)
