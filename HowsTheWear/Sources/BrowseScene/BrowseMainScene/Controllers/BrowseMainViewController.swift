@@ -41,10 +41,38 @@ final class BrowseMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureInitialSetting()
         browseMainCollectionView.configureContents(3, [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray])
         configureCollectionView()
         configureSubViews()
         configureLayout()
+        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+    }
+    
+}
+
+// MARK: Configure InitialSetting
+
+extension BrowseMainViewController {
+    private func configureInitialSetting() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        appearance.titleTextAttributes = [
+            .font: UIFont.pretendard(size: 16, weight: .semibold),
+            .foregroundColor: UIColor.black
+        ]
+    
+        appearance.shadowColor = .clear
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        
+        navigationItem.title = "둘러보기"
     }
     
 }
