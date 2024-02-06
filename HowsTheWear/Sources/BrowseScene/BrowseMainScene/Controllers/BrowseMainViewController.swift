@@ -42,7 +42,11 @@ final class BrowseMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInitialSetting()
-        browseMainCollectionView.configureContents(3, [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray])
+        browseMainCollectionView.configureContents(
+            sectionCount: 3,
+            imagesData: [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray],
+            sectionTitles: ["이번주 코디", "저번주 코디", "작년 이맘때는"]
+        )
         configureCollectionView()
         configureSubViews()
         configureLayout()

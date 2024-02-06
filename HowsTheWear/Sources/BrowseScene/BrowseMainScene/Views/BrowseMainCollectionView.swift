@@ -13,6 +13,8 @@ final class BrowseMainCollectionView: UIView {
     
     private var sectionCount = 0
     
+    private var sectionTitlesArray: [String] = []
+    
     private var imageArray: [[UIImage?]] = [] {
         didSet {
             browseCollectionView.reloadData()
@@ -37,9 +39,10 @@ final class BrowseMainCollectionView: UIView {
 // MARK: - Public Interface
 
 extension BrowseMainCollectionView {
-    func configureContents(_ sectionCounts: Int,_ images: [[UIImage?]]) {
-        sectionCount = sectionCounts
+    func configureContents(sectionCount count: Int,imagesData images: [[UIImage?]], sectionTitles titles: [String]) {
+        sectionCount = count
         self.imageArray = images
+        self.sectionTitlesArray = titles
     }
     
 }
@@ -133,6 +136,11 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
         
         headerView.browseHeaderRightArrowButton.tag = indexPath.section
         headerView.delegate = delegate
+        
+        if indexPath.section < sectionTitlesArray.count {
+            headerView.browseHeaderLabel.text = sectionTitlesArray[indexPath.section]
+        }
+        
         return headerView
     }
     
