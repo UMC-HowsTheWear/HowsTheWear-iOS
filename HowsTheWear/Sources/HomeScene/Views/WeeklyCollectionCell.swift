@@ -9,8 +9,6 @@ import UIKit
 
 class WeeklyCollectionCell: UICollectionViewCell {
     
-    static let identifier = "WeeklyCollectionCell"
-    
     let weatherIconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }

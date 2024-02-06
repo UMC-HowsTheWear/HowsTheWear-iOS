@@ -12,7 +12,6 @@ import Then
 
 class WeeklyWeatherCell: UITableViewCell {
     
-    static let identifier = "WeeklyWeatherCell"
     static let cellHeight = 530.0
     
     private var weeklyData = Weekly.lists
@@ -22,7 +21,10 @@ class WeeklyWeatherCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.isScrollEnabled = false
-        collectionView.register(WeeklyCollectionCell.self, forCellWithReuseIdentifier: WeeklyCollectionCell.identifier)
+        collectionView.register(
+            WeeklyCollectionCell.self,
+            forCellWithReuseIdentifier: WeeklyCollectionCell.reuseIdentifier
+        )
         return collectionView
     }()
     
@@ -90,7 +92,7 @@ extension WeeklyWeatherCell: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: WeeklyCollectionCell.identifier,
+            withReuseIdentifier: WeeklyCollectionCell.reuseIdentifier,
             for: indexPath
         ) as? WeeklyCollectionCell else {
             return UICollectionViewCell()

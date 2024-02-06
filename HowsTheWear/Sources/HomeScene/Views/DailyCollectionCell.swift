@@ -12,8 +12,6 @@ import Then
 
 class DailyCollectionCell: UICollectionViewCell {
     
-    static let identifier = "DailyCollectionCell"
-    
     let timeLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
         $0.font = .pretendard(size: 14, weight: .medium)

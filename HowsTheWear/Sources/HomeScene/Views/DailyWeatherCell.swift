@@ -10,9 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
-class DailyWeatherCell: UITableViewCell {
+final class DailyWeatherCell: UITableViewCell {
     
-    static let identifier = "DailyWeatherCell"
     static let cellHeight = 120.0
     
     var dailyData: [Daily] = Daily.lists
@@ -21,7 +20,10 @@ class DailyWeatherCell: UITableViewCell {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(DailyCollectionCell.self, forCellWithReuseIdentifier: DailyCollectionCell.identifier)
+        collectionView.register(
+            DailyCollectionCell.self,
+            forCellWithReuseIdentifier: DailyCollectionCell.reuseIdentifier
+        )
         return collectionView
     }()
     
@@ -90,7 +92,7 @@ extension DailyWeatherCell: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: DailyCollectionCell.identifier,
+            withReuseIdentifier: DailyCollectionCell.reuseIdentifier,
             for: indexPath
         ) as? DailyCollectionCell else {
             return UICollectionViewCell()

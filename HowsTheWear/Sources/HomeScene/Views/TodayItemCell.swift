@@ -12,8 +12,6 @@ import Then
 
 final class TodayItemCell: UITableViewCell {
     
-    static let identifier = "TodayItemCell"
-    
     private let subtitleLabel = UILabel().then {
         $0.text = "Hows The Wear"
         $0.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)

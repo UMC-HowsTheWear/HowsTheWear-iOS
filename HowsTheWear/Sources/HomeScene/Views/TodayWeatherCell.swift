@@ -11,8 +11,6 @@ import SnapKit
 import Then
 
 final class TodayWeatherCell: UITableViewCell {
-
-    static let identifier = "TodayWeatherCell"
     
     private let minimumLabel = UILabel().then {
         $0.text = "최저"

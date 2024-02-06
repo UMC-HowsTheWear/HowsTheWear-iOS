@@ -41,7 +41,7 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: CurrentWeatherCell.identifier,
+                withIdentifier: CurrentWeatherCell.reuseIdentifier,
                 for: indexPath
             ) as? CurrentWeatherCell else {
                 return UITableViewCell()
@@ -51,7 +51,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TodayWeatherCell.identifier, 
+                withIdentifier: TodayWeatherCell.reuseIdentifier,
                 for: indexPath
             ) as? TodayWeatherCell else {
                 return UITableViewCell()
@@ -61,7 +61,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: DailyWeatherCell.identifier, for: indexPath
+                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
             ) as? DailyWeatherCell else {
                 return UITableViewCell()
             }
@@ -70,7 +70,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: WeeklyWeatherCell.identifier, for: indexPath
+                withIdentifier: WeeklyWeatherCell.reuseIdentifier, for: indexPath
             ) as? WeeklyWeatherCell else {
                 return UITableViewCell()
             }
@@ -79,14 +79,13 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 4:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TodayItemCell.identifier,
+                withIdentifier: TodayItemCell.reuseIdentifier,
                 for: indexPath
             ) as? TodayItemCell else {
                 return UITableViewCell()
             }
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
-            cell.items = items
             return cell
         default:
             return UITableViewCell()
