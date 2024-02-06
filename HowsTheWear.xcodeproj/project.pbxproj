@@ -11,6 +11,8 @@
 		05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
+		12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA904E2B7219FA0059E55D /* LoginInfoView.swift */; };
+		12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA90502B721A730059E55D /* LoginInfoViewController.swift */; };
 		5619F98A2B431B9E00E86325 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseViewController.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
 		5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639272E2B3EAE1900A88D43 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 		05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBarButtonItem.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		12541C9F2B71F36A00951C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		12DA904E2B7219FA0059E55D /* LoginInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoView.swift; sourceTree = "<group>"; };
+		12DA90502B721A730059E55D /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5639272B2B3EAE1900A88D43 /* HowsTheWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowsTheWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				12541C9D2B71F32B00951C9D /* LoginView.swift */,
+				12DA904E2B7219FA0059E55D /* LoginInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				12541C9F2B71F36A00951C9D /* LoginViewController.swift */,
+				12DA90502B721A730059E55D /* LoginInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */,
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
 				05BE628A2B45526400BAD63F /* WeatherViewController.swift in Sources */,
+				12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */,
 				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */,
