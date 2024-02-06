@@ -24,6 +24,13 @@
 		05BE628A2B45526400BAD63F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE62892B45526400BAD63F /* HomeViewController.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */; };
+		05BE628A2B45526400BAD63F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE62892B45526400BAD63F /* WeatherViewController.swift */; };
+		05BE628C2B45527900BAD63F /* WeatherBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */; };
+		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
+		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
+		12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA904E2B7219FA0059E55D /* LoginInfoView.swift */; };
+		12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA90502B721A730059E55D /* LoginInfoViewController.swift */; };
+		5619F98A2B431B9E00E86325 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F9892B431B9E00E86325 /* BrowseViewController.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
 		5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5639272E2B3EAE1900A88D43 /* AppDelegate.swift */; };
 		563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927302B3EAE1900A88D43 /* SceneDelegate.swift */; };
@@ -62,6 +69,13 @@
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
+		05BE62892B45526400BAD63F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		05BE628B2B45527900BAD63F /* WeatherBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBarButtonItem.swift; sourceTree = "<group>"; };
+		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		12541C9F2B71F36A00951C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		12DA904E2B7219FA0059E55D /* LoginInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoView.swift; sourceTree = "<group>"; };
+		12DA90502B721A730059E55D /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
+		5619F9892B431B9E00E86325 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		5639272B2B3EAE1900A88D43 /* HowsTheWear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowsTheWear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5639272E2B3EAE1900A88D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +119,7 @@
 			sourceTree = "<group>";
 		};
 		05BE62852B45521000BAD63F /* HomeScene */ = {
+		05BE62852B45521000BAD63F /* WeatherScene */ = {
 			isa = PBXGroup;
 			children = (
 				05BE62882B45522700BAD63F /* Models */,
@@ -149,18 +164,56 @@
 			sourceTree = "<group>";
 		};
 		5619F9872B431B7000E86325 /* BrowseMainScene */ = {
+		12541C992B71F2E400951C9D /* SignUpScene */ = {
+			isa = PBXGroup;
+			children = (
+				12541C9C2B71F30600951C9D /* Controllers */,
+				12541C9B2B71F2FB00951C9D /* Views */,
+				12541C9A2B71F2F100951C9D /* Models */,
+			);
+			path = SignUpScene;
+			sourceTree = "<group>";
+		};
+		12541C9A2B71F2F100951C9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		12541C9B2B71F2FB00951C9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12541C9D2B71F32B00951C9D /* LoginView.swift */,
+				12DA904E2B7219FA0059E55D /* LoginInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12541C9C2B71F30600951C9D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12541C9F2B71F36A00951C9D /* LoginViewController.swift */,
+				12DA90502B721A730059E55D /* LoginInfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5619F9872B431B7000E86325 /* BrowseScene */ = {
 			isa = PBXGroup;
 			children = (
 				5619F98B2B432A7200E86325 /* Views */,
 				5619F9882B431B8B00E86325 /* Controllers */,
 			);
 			path = BrowseMainScene;
+			path = BrowseScene;
 			sourceTree = "<group>";
 		};
 		5619F9882B431B8B00E86325 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */,
+				5619F9892B431B9E00E86325 /* BrowseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +221,7 @@
 		5619F98B2B432A7200E86325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */,
 				56B1F1EF2B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift */,
 			);
 			path = Views;
@@ -203,6 +257,7 @@
 		563927422B3EAE8C00A88D43 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				12541C992B71F2E400951C9D /* SignUpScene */,
 				563927442B3EAEF000A88D43 /* Application */,
 				5640F1B62B402ED500D97C65 /* StyleScene */,
 				05BE62852B45521000BAD63F /* HomeScene */,
@@ -377,10 +432,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */,
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
 				0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */,
 				56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */,
+				05BE628A2B45526400BAD63F /* WeatherViewController.swift in Sources */,
+				12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */,
+				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */,
 				0530AB152B6708A40021625D /* Weekly.swift in Sources */,
@@ -404,6 +463,8 @@
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				5619F98A2B431B9E00E86325 /* BrowseMainViewController.swift in Sources */,
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
+				5619F98A2B431B9E00E86325 /* BrowseViewController.swift in Sources */,
+				12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
