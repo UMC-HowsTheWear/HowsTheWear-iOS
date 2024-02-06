@@ -10,23 +10,52 @@ import UIKit
 import SnapKit
 import Then
 
-class TodayItemCell: UITableViewCell {
-
-    static let identifier = "TodayItemCell"
+final class TodayItemCell: UITableViewCell {
     
-    var items: [TodayItem] = []
+    private let subtitleLabel = UILabel().then {
+        $0.text = "Hows The Wear"
+        $0.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)
+        $0.textAlignment = .left
+        $0.font = .pretendard(size: 13, weight: .medium)
+    }
+    
+    private let titleLabel = UILabel().then {
+        $0.text = "오늘의 아이템"
+        $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
+        $0.textAlignment = .left
+        $0.font = .pretendard(size: 16, weight: .bold)
+    }
 
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collectionView.dataSource = self
-        collectionView.isScrollEnabled = false
-        collectionView.register(
-            TodayItemCollectionCell.self,
-            forCellWithReuseIdentifier: TodayItemCollectionCell.identifier
+    private lazy var titleView = UIStackView(arrangedSubviews: [subtitleLabel, titleLabel]).then {
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.distribution = .fillProportionally
+        $0.spacing = 5
+    }
+    
+    private let itemStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
+        $0.spacing = 20
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+        
+        let path = UIBezierPath(
+            roundedRect: contentView.bounds,
+            byRoundingCorners: [.topLeft, .topRight],
+            cornerRadii: CGSize(width: 30, height: 30)
         )
-        return collectionView
-    }()
-
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = path.cgPath
+        
+        contentView.layer.mask = maskLayer
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
@@ -36,67 +65,67 @@ class TodayItemCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureUI() {
-        contentView.backgroundColor = .clear
-        contentView.layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOffset = CGSize(width: -2, height: 2)
-        layer.shadowRadius = 20
-        layer.shadowOpacity = 0.15
-        layer.masksToBounds = false
-        
-        contentView.addSubview(collectionView)
-        collectionView.backgroundColor = .clear
-        collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-            $0.height.equalTo(160)
-        }
-    }
-    
-    private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1/3),
-            heightDimension: .fractionalWidth(1/3)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalWidth(1/3)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.interItemSpacing = NSCollectionLayoutSpacing.fixed(10)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20)
-        
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
-    }
-
 }
 
-extension TodayItemCell: UICollectionViewDataSource {
+// MARK: - UI Configuration
+
+private extension TodayItemCell {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+    func configureUI() {
+        setupContentView()
+        setupUI()
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: TodayItemCollectionCell.identifier,
-            for: indexPath
-        ) as? TodayItemCollectionCell else {
-            return UICollectionViewCell()
+    func setupContentView() {
+        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        contentView.addSubview(titleView)
+        contentView.addSubview(itemStackView)
+    }
+    
+    func setupUI() {
+        createItemView(with: "가방", imageName: "1")
+        createItemView(with: "아우터", imageName: "2")
+        createItemView(with: "시계", imageName: "3")
+
+        titleView.snp.makeConstraints {
+            $0.centerY.equalTo(itemStackView)
+            $0.left.equalTo(40)
         }
-        let data = items[indexPath.item]
-        cell.prepare(data: data)
-        cell.backgroundColor = #colorLiteral(red: 0.9562537074, green: 0.9562535882, blue: 0.9562537074, alpha: 1)
-        cell.clipsToBounds = true
-        cell.layer.cornerRadius = 20
-        return cell
+        
+        itemStackView.snp.makeConstraints {
+            $0.top.equalTo(20)
+            $0.right.equalTo(-40)
+            $0.bottom.equalTo(-20)
+            $0.height.equalTo(100)
+        }
+    }
+    
+}
+
+// MARK: - Helper Methods for UI
+
+private extension TodayItemCell {
+    
+    func createItemView(with title: String, imageName: String) {
+        let imageView = UIImageView().then {
+            $0.image = UIImage(named: imageName)
+            $0.contentMode = .scaleAspectFit
+        }
+
+        let itemLabel = UILabel().then {
+            $0.text = title
+            $0.textAlignment = .center
+            $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
+            $0.font = .pretendard(size: 13, weight: .medium)
+        }
+        
+        let itemView = UIStackView(arrangedSubviews: [imageView, itemLabel])
+        itemView.axis = .vertical
+        itemView.alignment = .center
+        itemView.distribution = .fillProportionally
+        itemView.spacing = 5
+
+        itemStackView.addArrangedSubview(itemView)
     }
     
 }

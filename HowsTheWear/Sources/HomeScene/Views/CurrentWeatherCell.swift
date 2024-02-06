@@ -11,8 +11,6 @@ import SnapKit
 import Then
 
 final class CurrentWeatherCell: UITableViewCell {
-    
-    static let identifier = "CurrentWeatherCell"
 
     let weatherIcon = UIImageView().then {
         $0.image = UIImage(named: "clear-cloudy")
@@ -56,7 +54,7 @@ final class CurrentWeatherCell: UITableViewCell {
     
 }
 
-// MARK: - Configure UI
+// MARK: - UI Configuration
 
 private extension CurrentWeatherCell {
     

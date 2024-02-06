@@ -10,9 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class DailyCollectionCell: UICollectionViewCell {
-    
-    static let identifier = "DailyCollectionCell"
+final class DailyCollectionCell: UICollectionViewCell {
     
     let timeLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
@@ -61,10 +59,21 @@ class DailyCollectionCell: UICollectionViewCell {
         weatherIconImageView.image = UIImage(systemName: data?.weatherIcon ?? "sun.max.fill")?
             .withRenderingMode(.alwaysOriginal)
             .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
+        weatherIconImageView.layer.masksToBounds = false
+        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
+        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        weatherIconImageView.layer.shadowRadius = 20
+        weatherIconImageView.layer.shadowOpacity = 0.2
         temperatureLabel.text = data?.temperature
     }
     
-    private func configureUI() {
+}
+
+// MARK: - UI Configuration
+
+private extension DailyCollectionCell {
+    
+    func configureUI() {
         contentView.addSubview(stackView)
         
         stackView.snp.makeConstraints {

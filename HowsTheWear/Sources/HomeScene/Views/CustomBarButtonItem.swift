@@ -9,12 +9,17 @@ import UIKit
 
 import Then
 
-class CustomBarButtonItem: UIView {
+final class CustomBarButtonItem: UIView {
 
     let locationButton = UIButton().then {
         var config = UIButton.Configuration.filled()
         config.image = UIImage(named: "location-pin")
-        config.title = "Location"
+        config.attributedTitle = AttributedString(
+            NSAttributedString(
+                string: "Location",
+                attributes: [.font: UIFont.pretendard(size: 13, weight: .medium)]
+            )
+        )
         config.baseBackgroundColor = .black
         config.imagePadding = 5
         config.cornerStyle = .capsule
