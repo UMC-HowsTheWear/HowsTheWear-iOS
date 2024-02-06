@@ -81,7 +81,7 @@ extension StyleHashTagView: UICollectionViewDelegateFlowLayout {
     ) -> CGSize {
         
         let text = hashTags[indexPath.row] ?? ""
-        let cellWidth = text.size(withAttributes:[.font: UIFont.systemFont(ofSize:13)]).width + 32 // 여백을 위해 20 추가
+        let cellWidth = text.size(withAttributes:[.font: UIFont.systemFont(ofSize:15)]).width + 32 // 여백을 위해 20 추가
         let height: CGFloat = collectionView.bounds.height
         
         return CGSize(width: cellWidth, height: height)

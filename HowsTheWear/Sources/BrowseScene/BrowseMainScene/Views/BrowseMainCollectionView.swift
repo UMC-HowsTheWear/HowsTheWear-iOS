@@ -1,60 +1,59 @@
 //
-//  BrowseViewController.swift
+//  BrowseMainCollectionView.swift
 //  HowsTheWear
 //
-//  Created by 제민우 on 1/2/24.
+//  Created by 제민우 on 2/4/24.
 //
 
 import UIKit
 
-import SnapKit
+final class BrowseMainCollectionView: UIView {
+    
+    weak var delegate: browseCollectionReusableDelegate?
+    
+    private var sectionCount = 0
+    
+    private var sectionTitlesArray: [String] = []
+    
+    private var imageArray: [[UIImage?]] = [] {
+        didSet {
+            browseCollectionView.reloadData()
+        }
+    }
 
-final class BrowseMainViewController: UIViewController {
-    
-    private var thisWeekStyleArray = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
-    
-    private var nextWeekStyleArray = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
-    
-    private var lastYearStyleArray = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
+    lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
 
-    private lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureCollectionView()
         configureSubViews()
         configureLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: - Public Interface
+
+extension BrowseMainCollectionView {
+    func configureContents(sectionCount count: Int,imagesData images: [[UIImage?]], sectionTitles titles: [String]) {
+        sectionCount = count
+        self.imageArray = images
+        self.sectionTitlesArray = titles
     }
     
 }
 
 // MARK: - Configure CollectionView
 
-extension BrowseMainViewController {
+extension BrowseMainCollectionView {
     
     private func configureCollectionView() {
         browseCollectionView.dataSource = self
-        browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: "browseCollectionViewCell")
+        browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
         browseCollectionView.backgroundColor = .clear
         
         browseCollectionView.register(BrowseCollectionReusableView.self,
@@ -74,7 +73,7 @@ extension BrowseMainViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.32),
-            heightDimension: .estimated(130)
+            heightDimension: .estimated(136)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -102,40 +101,30 @@ extension BrowseMainViewController {
 
 // MARK: - Implementation CollectionView DataSource
 
-extension BrowseMainViewController: UICollectionViewDataSource {
+extension BrowseMainCollectionView: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return sectionCount
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return thisWeekStyleArray.count
-        case 1:
-            return nextWeekStyleArray.count
-        case 2:
-            return lastYearStyleArray.count
-        default:
+        guard section < imageArray.count else {
             return 0
         }
+        
+        return imageArray[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "browseCollectionViewCell", for: indexPath) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
+            for: indexPath
+        ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
         let section = indexPath.section
         
-        switch section {
-        case 0:
-            cell.styleImageView.image = thisWeekStyleArray[indexPath.item]
-        case 1:
-            cell.styleImageView.image = nextWeekStyleArray[indexPath.item]
-        case 2:
-            cell.styleImageView.image = lastYearStyleArray[indexPath.item]
-        default:
-            fatalError()
-        }
+        cell.styleImageView.image = imageArray[section][indexPath.item]
+
         return cell
     }
     
@@ -144,6 +133,14 @@ extension BrowseMainViewController: UICollectionViewDataSource {
             ofKind: kind,
             withReuseIdentifier: BrowseCollectionReusableView.reuseIdentifier,
             for: indexPath) as? BrowseCollectionReusableView else { fatalError("Cannot create new supplementary") }
+        
+        headerView.browseHeaderRightArrowButton.tag = indexPath.section
+        headerView.delegate = delegate
+        
+        if indexPath.section < sectionTitlesArray.count {
+            headerView.browseHeaderLabel.text = sectionTitlesArray[indexPath.section]
+        }
+        
         return headerView
     }
     
@@ -151,22 +148,15 @@ extension BrowseMainViewController: UICollectionViewDataSource {
 
 // MARK: - Configure UI
 
-extension BrowseMainViewController {
+extension BrowseMainCollectionView {
     
     private func configureSubViews() {
-        [browseCollectionView].forEach {
-            view.addSubview($0)
-        }
+        addSubview(browseCollectionView)
     }
     
     private func configureLayout() {
-        let safeArea = view.safeAreaLayoutGuide
-        
         browseCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(safeArea.snp.top).offset(30)
-            make.bottom.equalTo(safeArea.snp.bottom)
-            make.leading.equalTo(safeArea.snp.leading).offset(15)
-            make.trailing.equalTo(safeArea.snp.trailing)
+            make.margins.equalToSuperview()
         }
     }
     

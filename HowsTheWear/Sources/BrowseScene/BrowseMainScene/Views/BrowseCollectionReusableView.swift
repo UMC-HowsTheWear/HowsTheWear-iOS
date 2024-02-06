@@ -11,18 +11,23 @@ import SnapKit
 
 // BrowseCollectionView Header View
 
+protocol browseCollectionReusableDelegate: AnyObject {
+    func browseHeaderRightArrowButtonTapped(section: Int)
+    
+}
+
 final class BrowseCollectionReusableView: UICollectionReusableView {
     
-    static let reuseIdentifier = "browseCollectionViewHeader"
-    
+    weak var delegate: browseCollectionReusableDelegate?
+        
     let browseHeaderLabel = UILabel().then {
-        $0.font = .pretendard(size: 15, weight: .semibold)
+        $0.font = UIFont.pretendard(size: 15, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
         $0.text = "헤더 레이블"
     }
     
-    private let browseHeaderRightArrowButton = UIButton().then {
+    let browseHeaderRightArrowButton = UIButton().then {
         $0.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         $0.imageView?.contentMode = .scaleAspectFit
         $0.tintColor = .black
@@ -32,6 +37,7 @@ final class BrowseCollectionReusableView: UICollectionReusableView {
         super.init(frame: frame)
         configureSubviews()
         configureLayout()
+        configureAddTarget()
         
         let screenHeight = UIScreen.main.bounds.height
         if screenHeight >= 890 {
@@ -43,6 +49,17 @@ final class BrowseCollectionReusableView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+// MARK: - Configure Action
+extension BrowseCollectionReusableView {
+    private func configureAddTarget() {
+        browseHeaderRightArrowButton.addTarget(self, action: #selector(rightArrowButtonAction), for: .touchUpInside)
+    }
+    
+    @objc private func rightArrowButtonAction() {
+        delegate?.browseHeaderRightArrowButtonTapped(section: browseHeaderRightArrowButton.tag)
+    }
 }
 
 // MARK: - Configure UI
