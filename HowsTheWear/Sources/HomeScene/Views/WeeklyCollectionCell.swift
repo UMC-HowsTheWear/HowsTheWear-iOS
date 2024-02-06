@@ -7,7 +7,10 @@
 
 import UIKit
 
-class WeeklyCollectionCell: UICollectionViewCell {
+import SnapKit
+import Then
+
+final class WeeklyCollectionCell: UICollectionViewCell {
     
     let weatherIconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -63,23 +66,43 @@ class WeeklyCollectionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func prepare(data: Weekly) {
-        weatherIconImageView.image = UIImage(systemName: data.weatherIcon)?
-            .withRenderingMode(.alwaysOriginal)
-            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
-        dayOfWeekLabel.text = data.day
-        minTemperatureLabel.text = data.minTemperature
-        maxTemperatureLabel.text = data.maxTemperature
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        weatherIconImageView.image = nil
+        dayOfWeekLabel.text = nil
+        minTemperatureLabel.text = nil
+        maxTemperatureLabel.text = nil
+        prepare(data: nil)
     }
     
-    private func setupUI() {
+    func prepare(data: Weekly?) {
+        weatherIconImageView.image = UIImage(systemName: data?.weatherIcon ?? "sun.max.fill")?
+            .withRenderingMode(.alwaysOriginal)
+            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
+        weatherIconImageView.layer.masksToBounds = false
+        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
+        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        weatherIconImageView.layer.shadowRadius = 20
+        weatherIconImageView.layer.shadowOpacity = 0.2
+        dayOfWeekLabel.text = data?.day
+        minTemperatureLabel.text = data?.minTemperature
+        maxTemperatureLabel.text = data?.maxTemperature
+    }
+    
+}
+
+// MARK: - UI Configuration
+
+private extension WeeklyCollectionCell {
+    
+    func configureUI() {
         contentView.backgroundColor = .clear
         contentView.addSubview(weeklyView)
         

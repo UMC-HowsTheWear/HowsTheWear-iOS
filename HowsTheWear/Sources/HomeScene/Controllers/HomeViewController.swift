@@ -13,18 +13,22 @@ import Then
 final class HomeViewController: UIViewController {
     
     var items: [TodayItem] = TodayItem.items
-
+    
     private let customBarButtonItem = CustomBarButtonItem()
     private let tableView = UITableView(frame: .zero, style: .plain)
     private let backgroundImageView = UIImageView()
+    private let backgroundView = UIView().then {
+        $0.backgroundColor = .white
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 30
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavBarUI()
-        configureAddTargets()
         configureUI()
+        configureAddTargets()
     }
-
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -43,8 +47,7 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: CurrentWeatherCell.reuseIdentifier,
-                for: indexPath
+                withIdentifier: CurrentWeatherCell.reuseIdentifier, for: indexPath
             ) as? CurrentWeatherCell else {
                 return UITableViewCell()
             }
@@ -53,8 +56,7 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: TodayWeatherCell.reuseIdentifier,
-                for: indexPath
+                withIdentifier: TodayWeatherCell.reuseIdentifier, for: indexPath
             ) as? TodayWeatherCell else {
                 return UITableViewCell()
             }
@@ -63,24 +65,6 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
-            ) as? DailyWeatherCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
-            cell.backgroundColor = .clear
-            return cell
-        case 3:
-            guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: WeeklyWeatherCell.reuseIdentifier, for: indexPath
-            ) as? WeeklyWeatherCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
-            cell.backgroundColor = .clear
-            return cell
-        case 4:
-            guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: TodayItemCell.reuseIdentifier,
                 for: indexPath
             ) as? TodayItemCell else {
@@ -88,6 +72,24 @@ extension HomeViewController: UITableViewDataSource {
             }
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
+            return cell
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
+            ) as? DailyWeatherCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            return cell
+        case 4:
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: WeeklyWeatherCell.reuseIdentifier, for: indexPath
+            ) as? WeeklyWeatherCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
             return cell
         default:
             return UITableViewCell()
@@ -107,35 +109,14 @@ extension HomeViewController: UITableViewDelegate {
         case 1:
             return UITableView.automaticDimension
         case 2:
-            return DailyWeatherCell.cellHeight
-        case 3:
-            return WeeklyWeatherCell.cellHeight
-        case 4:
             return UITableView.automaticDimension
+        case 3:
+            return DailyWeatherCell.cellHeight
+        case 4:
+            return WeeklyWeatherCell.cellHeight
         default:
             return UITableView.automaticDimension
         }
-    }
-    
-}
-
-
-// MARK: - Navigation Bar Setup
-
-private extension HomeViewController {
-    
-    func configureNavBarUI() {
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .clear
-        appearance.shadowColor = nil
-        navigationController?.navigationBar.standardAppearance = appearance
-        
-        setupNavigationBarButton()
-    }
-    
-    func setupNavigationBarButton() {
-        let rightButton = UIBarButtonItem(customView: customBarButtonItem.locationButton)
-        navigationItem.rightBarButtonItem = rightButton
     }
     
 }
@@ -145,13 +126,18 @@ private extension HomeViewController {
 private extension HomeViewController {
     
     func configureUI() {
-        setupBackgroundImageView()
+        setupNavigationBarUI()
         setupTableView()
     }
     
-    func setupBackgroundImageView() {
-        backgroundImageView.image = UIImage(named: "background-image")
-        backgroundImageView.contentMode = .scaleAspectFill
+    func setupNavigationBarUI() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .clear
+        appearance.shadowColor = nil
+        navigationController?.navigationBar.standardAppearance = appearance
+        
+        let rightButton = UIBarButtonItem(customView: customBarButtonItem.locationButton)
+        navigationItem.rightBarButtonItem = rightButton
     }
     
     func setupTableView() {
@@ -161,26 +147,23 @@ private extension HomeViewController {
             $0.edges.equalToSuperview()
         }
         
+        backgroundImageView.image = UIImage(named: "background-image")
+        backgroundImageView.contentMode = .scaleAspectFill
+        
         tableView.separatorStyle = .none
         tableView.backgroundView = backgroundImageView
         tableView.dataSource = self
         tableView.delegate = self
         
-        registerTableViewCells()
+        registerTableViews()
     }
     
-    func registerTableViewCells() {
-        let cellTypes = [
-            CurrentWeatherCell.self,
-            TodayWeatherCell.self,
-            DailyWeatherCell.self,
-            WeeklyWeatherCell.self,
-            TodayItemCell.self
-        ]
-        
-        cellTypes.forEach { cellType in
-            tableView.register(cellType, forCellReuseIdentifier: String(describing: cellType))
-        }
+    func registerTableViews() {
+        tableView.register(CurrentWeatherCell.self, forCellReuseIdentifier: CurrentWeatherCell.reuseIdentifier)
+        tableView.register(TodayWeatherCell.self, forCellReuseIdentifier: TodayWeatherCell.reuseIdentifier)
+        tableView.register(TodayItemCell.self, forCellReuseIdentifier: TodayItemCell.reuseIdentifier)
+        tableView.register(DailyWeatherCell.self, forCellReuseIdentifier: DailyWeatherCell.reuseIdentifier)
+        tableView.register(WeeklyWeatherCell.self, forCellReuseIdentifier: WeeklyWeatherCell.reuseIdentifier)
     }
     
 }
