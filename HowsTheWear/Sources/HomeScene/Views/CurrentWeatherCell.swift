@@ -54,7 +54,7 @@ final class CurrentWeatherCell: UITableViewCell {
     
 }
 
-// MARK: - Configure UI
+// MARK: - UI Configuration
 
 private extension CurrentWeatherCell {
     

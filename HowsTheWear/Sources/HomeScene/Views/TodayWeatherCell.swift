@@ -118,6 +118,8 @@ final class TodayWeatherCell: UITableViewCell {
 
 }
 
+// MARK: - UI Configuration
+
 private extension TodayWeatherCell {
     
     func configureUI() {

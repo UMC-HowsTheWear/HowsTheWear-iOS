@@ -67,6 +67,8 @@ final class TodayItemCell: UITableViewCell {
     
 }
 
+// MARK: - UI Configuration
+
 private extension TodayItemCell {
     
     func configureUI() {
@@ -99,6 +101,8 @@ private extension TodayItemCell {
     }
     
 }
+
+// MARK: - Helper Methods for UI
 
 private extension TodayItemCell {
     

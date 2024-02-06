@@ -27,6 +27,8 @@ final class HomeViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDataSource
+
 extension HomeViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,6 +96,8 @@ extension HomeViewController: UITableViewDataSource {
     
 }
 
+// MARK: - UITableViewDelegate
+
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -136,7 +140,7 @@ private extension HomeViewController {
     
 }
 
-// MARK: - UI Setup
+// MARK: - UI Configuration
 
 private extension HomeViewController {
     
