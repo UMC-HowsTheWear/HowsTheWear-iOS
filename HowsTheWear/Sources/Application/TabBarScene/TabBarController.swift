@@ -27,7 +27,7 @@ final class TabBarController: UITabBarController {
         )
     }
     
-    private let othersVC = UIViewController().then {
+    private let othersVC = OthersViewController().then {
         $0.tabBarItem = UITabBarItem(
             title: "OTHERS",
             image: UIImage(named: "user.group"),

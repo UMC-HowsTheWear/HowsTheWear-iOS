@@ -27,7 +27,7 @@ final class MyPostView: UIView {
     private let todayLookTitle = UILabel().then {
         $0.text = "오늘의 룩을 공유해주세요!"
         $0.textColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .semibold)
     }
     
     private let todayLookBackgroundImageView = UIImageView().then {
@@ -57,11 +57,11 @@ final class MyPostView: UIView {
     private let customTagTitle = UILabel().then {
         $0.text = "강조하고 싶은 아이템을 입력해주세요!"
         $0.textColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .semibold)
     }
     
     let customTagTextField = UITextField().then {
-        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.font = .pretendard(size: 14, weight: .regular)
         $0.textColor = .black
         $0.tintColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 1)
         $0.placeholder = "제품명을 입력해주세요"
@@ -98,7 +98,7 @@ final class MyPostView: UIView {
     private let tagTitle = UILabel().then {
         $0.text = "스타일을 선택해주세요!"
         $0.textColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .semibold)
     }
     
     private var tagButtons: [UIButton] = []
@@ -119,19 +119,19 @@ final class MyPostView: UIView {
     private let descriptionTitle = UILabel().then {
         $0.text = "날씨를 알려주세요!"
         $0.textColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
-        $0.font = UIFont(name: "Pretendard-SemiBold", size: 16)
+        $0.font = .pretendard(size: 16, weight: .semibold)
     }
     
     private let dateTitle = UILabel().then {
         $0.text = "날짜"
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = .pretendard(size: 16, weight: .medium)
         $0.textColor = UIColor(red: 0.251, green: 0.251, blue: 0.251, alpha: 1)
         $0.textAlignment = .left
     }
     
     let dateLabel = UILabel().then {
         $0.text = "날짜를 선택해주세요"
-        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.font = .pretendard(size: 14, weight: .regular)
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
     }
     
@@ -168,13 +168,13 @@ final class MyPostView: UIView {
     
     private let locationTitle = UILabel().then {
         $0.text = "위치"
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = .pretendard(size: 16, weight: .medium)
         $0.textColor = UIColor(red: 0.251, green: 0.251, blue: 0.251, alpha: 1)
         $0.textAlignment = .left
     }
     
     let locationTextField = UITextField().then {
-        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.font = .pretendard(size: 14, weight: .regular)
         $0.textColor = .black
         $0.tintColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 1)
         $0.placeholder = "위치를 입력해주세요"
@@ -201,14 +201,14 @@ final class MyPostView: UIView {
     
     private let feelsLikeTitle = UILabel().then {
         $0.text = "체감 날씨"
-        $0.font = UIFont(name: "Pretendard-Medium", size: 16)
+        $0.font = .pretendard(size: 16, weight: .medium)
         $0.textColor = UIColor(red: 0.251, green: 0.251, blue: 0.251, alpha: 1)
         $0.textAlignment = .left
     }
     
     let feelsLikeLabel = UILabel().then {
         $0.text = "체감이 어땠나요?"
-        $0.font = UIFont(name: "Pretendard-Regular", size: 14)
+        $0.font = .pretendard(size: 14, weight: .regular)
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
     }
     
@@ -531,7 +531,15 @@ extension MyPostView {
     
     func createButton(withTitle title: String) -> UIButton {
         let button = UIButton()
-        button.setAttributedTitle(NSAttributedString(string: title, attributes: [.font: UIFont(name: "Pretendard-Medium", size: 14) as Any, .foregroundColor: UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)]), for: .normal)
+        button.setAttributedTitle(
+            NSAttributedString(
+                string: title,
+                attributes: [
+                    .font: UIFont.pretendard(size: 14, weight: .medium),
+                    .foregroundColor: UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)
+                ]
+            ), for: .normal
+        )
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         button.layer.cornerRadius = 13
@@ -544,12 +552,24 @@ extension MyPostView {
         if isSelected {
             button.backgroundColor = UIColor(red: 0.444, green: 0.607, blue: 0.901, alpha: 1)
             button.layer.borderWidth = 0
-            let selectedTitle = NSAttributedString(string: button.titleLabel?.text ?? "", attributes: [.font: UIFont.pretendard(size: 14, weight: .medium), .foregroundColor: UIColor.white])
+            let selectedTitle = NSAttributedString(
+                string: button.titleLabel?.text ?? "",
+                attributes: [
+                    .font: UIFont.pretendard(size: 14, weight: .medium),
+                    .foregroundColor: UIColor.white
+                ]
+            )
             button.setAttributedTitle(selectedTitle, for: .normal)
         } else {
             button.backgroundColor = .clear
             button.layer.borderWidth = 1
-            let unselectedTitle = NSAttributedString(string: button.titleLabel?.text ?? "", attributes: [.font: UIFont.pretendard(size: 14, weight: .medium), .foregroundColor: UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)])
+            let unselectedTitle = NSAttributedString(
+                string: button.titleLabel?.text ?? "",
+                attributes: [
+                    .font: UIFont.pretendard(size: 14, weight: .medium),
+                    .foregroundColor: UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)
+                ]
+            )
             button.setAttributedTitle(unselectedTitle, for: .normal)
         }
     }

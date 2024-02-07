@@ -17,7 +17,7 @@ final class OthersView: UIView {
         $0.setImage(UIImage(systemName: "plus")?
             .withConfiguration(
                 UIImage.SymbolConfiguration(
-                    pointSize: 30, weight: .regular
+                    pointSize: 20, weight: .regular
                 )
             ), for: .normal
         )
