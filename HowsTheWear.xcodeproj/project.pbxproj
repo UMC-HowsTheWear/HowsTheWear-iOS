@@ -163,7 +163,6 @@
 			children = (
 				05B034BC2B7326490014F110 /* OthersView.swift */,
 				05B034BE2B73265E0014F110 /* OthersViewController.swift */,
-				05B034C02B7327010014F110 /* MyPostScene */,
 			);
 			path = OthersScene;
 			sourceTree = "<group>";
@@ -365,6 +364,7 @@
 				5640F1B62B402ED500D97C65 /* BrowseScene */,
 				05BE62852B45521000BAD63F /* HomeScene */,
 				05B034BB2B73262D0014F110 /* OthersScene */,
+				05B034C02B7327010014F110 /* MyPostScene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
