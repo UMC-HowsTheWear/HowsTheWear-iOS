@@ -2,7 +2,7 @@
 //  LoginInfoCheckView.swift
 //  HowsTheWear
 //
-//  Created by 성대훈 on 2/6/24.
+//  Created by 성대훈 on 2/7/24.
 //
 
 import UIKit
@@ -96,13 +96,6 @@ class LoginInfoCheckView: UIView {
         return textField
     }()
     
-    //    private lazy var loginInputView = UIStackView(arrangedSubviews: [idTextFieldView,separatorView,pwTextFieldView]).then {
-    //        $0.axis = .vertical
-    //        $0.alignment = .fill
-    //        $0.distribution = .fillProportionally
-    //        $0.spacing = 10
-    //
-    //    }
     
     lazy var passwordSecureButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -132,7 +125,7 @@ class LoginInfoCheckView: UIView {
         return label
     }()
     
-    // id를 영어로 입력하는 부분
+    // 비밀번호 확인 부분의 텍스트 필드
     let pwConfirmTextField: UITextField = {
         var textField = UITextField()
         textField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -146,7 +139,6 @@ class LoginInfoCheckView: UIView {
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.isSecureTextEntry = true
-        
         return textField
     }()
     
