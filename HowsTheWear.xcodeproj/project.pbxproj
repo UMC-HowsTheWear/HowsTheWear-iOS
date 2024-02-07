@@ -20,8 +20,6 @@
 		05B034B42B7325330014F110 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B32B7325330014F110 /* Daily.swift */; };
 		05B034B62B73257C0014F110 /* Weekly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B52B73257C0014F110 /* Weekly.swift */; };
 		05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B92B7325D90014F110 /* TodayItem.swift */; };
-		05B034BD2B7326490014F110 /* OthersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034BC2B7326490014F110 /* OthersView.swift */; };
-		05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034BE2B73265E0014F110 /* OthersViewController.swift */; };
 		05B034C22B7327400014F110 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C12B7327400014F110 /* MyPostView.swift */; };
 		05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C32B7327540014F110 /* MyPostViewController.swift */; };
 		05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C52B73276D0014F110 /* CalendarViewController.swift */; };
@@ -49,6 +47,7 @@
 		563927472B3EB8CE00A88D43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 563927462B3EB8CE00A88D43 /* Then */; };
 		5639274A2B3EB90A00A88D43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 563927492B3EB90A00A88D43 /* SnapKit */; };
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
+		56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
@@ -81,8 +80,6 @@
 		05B034B32B7325330014F110 /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 		05B034B52B73257C0014F110 /* Weekly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekly.swift; sourceTree = "<group>"; };
 		05B034B92B7325D90014F110 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
-		05B034BC2B7326490014F110 /* OthersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersView.swift; sourceTree = "<group>"; };
-		05B034BE2B73265E0014F110 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
 		05B034C12B7327400014F110 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		05B034C32B7327540014F110 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 		05B034C52B73276D0014F110 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +108,7 @@
 		563927372B3EAE1A00A88D43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5639273A2B3EAE1A00A88D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleViewController.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
@@ -164,8 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				56C1DC512B73AD0B006580F9 /* Views */,
-				05B034BC2B7326490014F110 /* OthersView.swift */,
-				05B034BE2B73265E0014F110 /* OthersViewController.swift */,
+				56475D3B2B73C6C400D88A62 /* Controllers */,
 			);
 			path = OthersScene;
 			sourceTree = "<group>";
@@ -406,6 +403,14 @@
 			path = BrowseScene;
 			sourceTree = "<group>";
 		};
+		56475D3B2B73C6C400D88A62 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,7 +585,6 @@
 				56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */,
 				12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */,
 				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
-				05B034BD2B7326490014F110 /* OthersView.swift in Sources */,
 				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
@@ -600,8 +604,8 @@
 				0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */,
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
+				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
-				05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
