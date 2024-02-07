@@ -22,6 +22,10 @@
 		05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B92B7325D90014F110 /* TodayItem.swift */; };
 		05B034BD2B7326490014F110 /* OthersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034BC2B7326490014F110 /* OthersView.swift */; };
 		05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034BE2B73265E0014F110 /* OthersViewController.swift */; };
+		05B034C22B7327400014F110 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C12B7327400014F110 /* MyPostView.swift */; };
+		05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C32B7327540014F110 /* MyPostViewController.swift */; };
+		05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C52B73276D0014F110 /* CalendarViewController.swift */; };
+		05B034C82B7327910014F110 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C72B7327910014F110 /* CalendarView.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
@@ -75,6 +79,10 @@
 		05B034B92B7325D90014F110 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		05B034BC2B7326490014F110 /* OthersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersView.swift; sourceTree = "<group>"; };
 		05B034BE2B73265E0014F110 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
+		05B034C12B7327400014F110 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
+		05B034C32B7327540014F110 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
+		05B034C52B73276D0014F110 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		05B034C72B7327910014F110 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -149,8 +157,20 @@
 			children = (
 				05B034BC2B7326490014F110 /* OthersView.swift */,
 				05B034BE2B73265E0014F110 /* OthersViewController.swift */,
+				05B034C02B7327010014F110 /* MyPostScene */,
 			);
 			path = OthersScene;
+			sourceTree = "<group>";
+		};
+		05B034C02B7327010014F110 /* MyPostScene */ = {
+			isa = PBXGroup;
+			children = (
+				05B034C12B7327400014F110 /* MyPostView.swift */,
+				05B034C32B7327540014F110 /* MyPostViewController.swift */,
+				05B034C72B7327910014F110 /* CalendarView.swift */,
+				05B034C52B73276D0014F110 /* CalendarViewController.swift */,
+			);
+			path = MyPostScene;
 			sourceTree = "<group>";
 		};
 		05BE62852B45521000BAD63F /* HomeScene */ = {
@@ -528,6 +548,7 @@
 			files = (
 				56C1DC502B731D7B006580F9 /* HomeViewController.swift in Sources */,
 				56C1DC4F2B731D77006580F9 /* BrowseMainViewController.swift in Sources */,
+				05B034C82B7327910014F110 /* CalendarView.swift in Sources */,
 				05B034B62B73257C0014F110 /* Weekly.swift in Sources */,
 				12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */,
 				563408B02B6FB34D00B0159B /* BrowseStyleView.swift in Sources */,
@@ -541,7 +562,9 @@
 				05B034BD2B7326490014F110 /* OthersView.swift in Sources */,
 				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
+				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
 				05B034B42B7325330014F110 /* Daily.swift in Sources */,
+				05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */,
 				0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */,
@@ -551,6 +574,7 @@
 				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,
 				0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */,
 				0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */,
+				05B034C22B7327400014F110 /* MyPostView.swift in Sources */,
 				0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */,
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
