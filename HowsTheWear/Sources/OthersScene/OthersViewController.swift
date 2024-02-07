@@ -7,23 +7,37 @@
 
 import UIKit
 
-class OthersViewController: UIViewController {
+final class OthersViewController: UIViewController {
+    
+    private let othersView = OthersView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view = othersView
+        othersView.myPostButton.addTarget(self, action: #selector(myPostButtonDidTap), for: .touchUpInside)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+        othersView.myPostButton.isHidden = false
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let navigationController = navigationController,
+           navigationController.topViewController is MyPostViewController
+        {
+            othersView.myPostButton.isHidden = true
+            tabBarController?.tabBar.isHidden = true
+        }
+    }
+    
+    @objc func myPostButtonDidTap() {
+        let myPostVC = MyPostViewController()
+        navigationController?.pushViewController(myPostVC, animated: true)
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
+    }
 
 }
