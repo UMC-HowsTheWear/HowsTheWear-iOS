@@ -26,6 +26,7 @@
 		05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C32B7327540014F110 /* MyPostViewController.swift */; };
 		05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C52B73276D0014F110 /* CalendarViewController.swift */; };
 		05B034C82B7327910014F110 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C72B7327910014F110 /* CalendarView.swift */; };
+		05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C92B7328DD0014F110 /* PaddedLabel.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
@@ -83,6 +84,7 @@
 		05B034C32B7327540014F110 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
 		05B034C52B73276D0014F110 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		05B034C72B7327910014F110 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		05B034C92B7328DD0014F110 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				563408A12B6F2D3500B0159B /* Reusable.swift */,
+				05B034C92B7328DD0014F110 /* PaddedLabel.swift */,
 				56B060182B5D4ABB00CE923C /* Extensions */,
 				5639272E2B3EAE1900A88D43 /* AppDelegate.swift */,
 				563927302B3EAE1900A88D43 /* SceneDelegate.swift */,
@@ -587,6 +590,7 @@
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
+				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
 				56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */,
 				56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */,
