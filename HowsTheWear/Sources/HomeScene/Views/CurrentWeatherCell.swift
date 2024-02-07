@@ -30,18 +30,22 @@ final class CurrentWeatherCell: UITableViewCell {
     }
     
     let temperatureLabel = UILabel().then {
-        $0.text = "7º"
+        $0.text = "7"
         $0.textAlignment = .center
         $0.font = .pretendard(size: 70, weight: .medium)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
     }
     
-    let descriptionLabel = UILabel().then {
-        $0.text = "살짝 쌀쌀해요!"
-        $0.textAlignment = .center
-        $0.font = .pretendard(size: 14, weight: .medium)
-        $0.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1)
+    private let temperatureIcon = UIImageView().then {
+        $0.image = UIImage(named: "temp")
     }
+    
+//    let descriptionLabel = UILabel().then {
+//        $0.text = "살짝 쌀쌀해요!"
+//        $0.textAlignment = .center
+//        $0.font = .pretendard(size: 14, weight: .medium)
+//        $0.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1)
+//    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,7 +64,7 @@ private extension CurrentWeatherCell {
     
     func configureUI() {
         backgroundView?.backgroundColor = .clear
-        contentView.addSubviews([weatherIcon, locationLabel, temperatureLabel, descriptionLabel])
+        addSubviews([weatherIcon, locationLabel, temperatureLabel, temperatureIcon])
         setupConstraints()
     }
     
@@ -81,12 +85,13 @@ private extension CurrentWeatherCell {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(locationLabel.snp.bottom).offset(10)
             $0.height.equalTo(70)
+            $0.bottom.equalTo(-40)
         }
         
-        descriptionLabel.snp.makeConstraints {
-            $0.centerX.left.equalTo(temperatureLabel)
-            $0.top.equalTo(temperatureLabel.snp.bottom).offset(10)
-            $0.bottom.equalTo(-40)
+        temperatureIcon.snp.makeConstraints {
+            $0.top.equalTo(temperatureLabel.snp.top).inset(5)
+            $0.left.equalTo(temperatureLabel.snp.right).offset(5)
+            $0.height.equalTo(10)
         }
     }
     
