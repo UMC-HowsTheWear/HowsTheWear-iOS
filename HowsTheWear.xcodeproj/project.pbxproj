@@ -17,6 +17,7 @@
 		0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */; };
 		0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */; };
 		0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB1A2B670DFA0021625D /* TodayItemCell.swift */; };
+		05B034B42B7325330014F110 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B32B7325330014F110 /* Daily.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
@@ -65,6 +66,7 @@
 		0530AB162B6708D30021625D /* WeeklyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherCell.swift; sourceTree = "<group>"; };
 		0530AB182B6708F50021625D /* WeeklyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionCell.swift; sourceTree = "<group>"; };
 		0530AB1A2B670DFA0021625D /* TodayItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemCell.swift; sourceTree = "<group>"; };
+		05B034B32B7325330014F110 /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -124,9 +126,18 @@
 			path = TabBarScene;
 			sourceTree = "<group>";
 		};
+		05B034B22B7325260014F110 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B034B32B7325330014F110 /* Daily.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		05BE62852B45521000BAD63F /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				05B034B22B7325260014F110 /* Models */,
 				05BE62872B45522200BAD63F /* Views */,
 				05BE62862B45521D00BAD63F /* Controllers */,
 			);
@@ -508,6 +519,7 @@
 				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
 				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
+				05B034B42B7325330014F110 /* Daily.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */,
 				0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */,
