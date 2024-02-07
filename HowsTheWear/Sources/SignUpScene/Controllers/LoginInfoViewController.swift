@@ -34,8 +34,8 @@ class LoginInfoViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc private func confirmButtonDidTap() {
-        let loginInfoCheckVC = LoginInfoCheckViewController()
-        navigationController?.pushViewController(loginInfoCheckVC, animated: true)
+//        let loginInfoCheckVC = LoginInfoCheckViewController()
+//        navigationController?.pushViewController(loginInfoCheckVC, animated: true)
         navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.4400014281, green: 0.4400013983, blue: 0.4400013983, alpha: 1)
         
