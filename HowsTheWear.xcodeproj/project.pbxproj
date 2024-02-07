@@ -20,6 +20,8 @@
 		05B034B42B7325330014F110 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B32B7325330014F110 /* Daily.swift */; };
 		05B034B62B73257C0014F110 /* Weekly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B52B73257C0014F110 /* Weekly.swift */; };
 		05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B92B7325D90014F110 /* TodayItem.swift */; };
+		05B034BD2B7326490014F110 /* OthersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034BC2B7326490014F110 /* OthersView.swift */; };
+		05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034BE2B73265E0014F110 /* OthersViewController.swift */; };
 		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
@@ -71,6 +73,8 @@
 		05B034B32B7325330014F110 /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 		05B034B52B73257C0014F110 /* Weekly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekly.swift; sourceTree = "<group>"; };
 		05B034B92B7325D90014F110 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
+		05B034BC2B7326490014F110 /* OthersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersView.swift; sourceTree = "<group>"; };
+		05B034BE2B73265E0014F110 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 				05B034B92B7325D90014F110 /* TodayItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		05B034BB2B73262D0014F110 /* OthersScene */ = {
+			isa = PBXGroup;
+			children = (
+				05B034BC2B7326490014F110 /* OthersView.swift */,
+				05B034BE2B73265E0014F110 /* OthersViewController.swift */,
+			);
+			path = OthersScene;
 			sourceTree = "<group>";
 		};
 		05BE62852B45521000BAD63F /* HomeScene */ = {
@@ -323,6 +336,7 @@
 				563927442B3EAEF000A88D43 /* Application */,
 				5640F1B62B402ED500D97C65 /* BrowseScene */,
 				05BE62852B45521000BAD63F /* HomeScene */,
+				05B034BB2B73262D0014F110 /* OthersScene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -524,6 +538,7 @@
 				56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */,
 				12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */,
 				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
+				05B034BD2B7326490014F110 /* OthersView.swift in Sources */,
 				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
 				05B034B42B7325330014F110 /* Daily.swift in Sources */,
@@ -540,6 +555,7 @@
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
+				05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
