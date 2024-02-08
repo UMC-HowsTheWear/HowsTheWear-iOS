@@ -48,6 +48,7 @@
 		5639274A2B3EB90A00A88D43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 563927492B3EB90A00A88D43 /* SnapKit */; };
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
 		56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */; };
+		56475D432B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
@@ -109,6 +110,7 @@
 		5639273A2B3EAE1A00A88D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleViewController.swift; sourceTree = "<group>"; };
+		56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleProfileHeaderView.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 		56475D412B746B6600D88A62 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
+				56475D432B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
