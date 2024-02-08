@@ -158,13 +158,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		05B034BB2B73262D0014F110 /* OthersScene */ = {
+		05B034BB2B73262D0014F110 /* OtherPeopleScene */ = {
 			isa = PBXGroup;
 			children = (
 				56C1DC512B73AD0B006580F9 /* Views */,
 				56475D3B2B73C6C400D88A62 /* Controllers */,
 			);
-			path = OthersScene;
+			path = OtherPeopleScene;
 			sourceTree = "<group>";
 		};
 		05B034C02B7327010014F110 /* MyPostScene */ = {
@@ -363,7 +363,7 @@
 				563927442B3EAEF000A88D43 /* Application */,
 				5640F1B62B402ED500D97C65 /* BrowseScene */,
 				05BE62852B45521000BAD63F /* HomeScene */,
-				05B034BB2B73262D0014F110 /* OthersScene */,
+				05B034BB2B73262D0014F110 /* OtherPeopleScene */,
 				05B034C02B7327010014F110 /* MyPostScene */,
 			);
 			path = Sources;
