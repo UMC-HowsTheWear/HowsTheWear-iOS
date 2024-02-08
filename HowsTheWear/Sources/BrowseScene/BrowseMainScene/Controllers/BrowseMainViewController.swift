@@ -37,7 +37,7 @@ final class BrowseMainViewController: UIViewController {
         UIImage(named: "StyleTestImage")
     ]
 
-    private lazy var browseMainCollectionView = BrowseMainCollectionView()
+    private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()

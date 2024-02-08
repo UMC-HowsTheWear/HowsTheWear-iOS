@@ -11,6 +11,8 @@ final class BrowseMainCollectionView: UIView {
     
     weak var delegate: browseCollectionReusableDelegate?
     
+    private var isHiddenCellUserId = false
+    
     private var sectionCount = 0
     
     private var sectionTitlesArray: [String] = []
@@ -23,11 +25,12 @@ final class BrowseMainCollectionView: UIView {
 
     lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(isHiddenCellUserID: Bool) {
+        super.init(frame: .zero)
         configureCollectionView()
         configureSubViews()
         configureLayout()
+        isHiddenCellUserId = isHiddenCellUserID
     }
     
     required init?(coder: NSCoder) {
@@ -124,6 +127,7 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
         let section = indexPath.section
         
         cell.styleImageView.image = imageArray[section][indexPath.item]
+        cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
 
         return cell
     }
