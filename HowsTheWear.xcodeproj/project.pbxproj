@@ -161,8 +161,8 @@
 		05B034BB2B73262D0014F110 /* OtherPeopleScene */ = {
 			isa = PBXGroup;
 			children = (
-				56C1DC512B73AD0B006580F9 /* Views */,
-				56475D3B2B73C6C400D88A62 /* Controllers */,
+				56475D3F2B746ADB00D88A62 /* OtherPeopleMainScene */,
+				56475D402B746B5900D88A62 /* OtherPeopleDetailScene */,
 			);
 			path = OtherPeopleScene;
 			sourceTree = "<group>";
@@ -409,6 +409,30 @@
 				56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		56475D3F2B746ADB00D88A62 /* OtherPeopleMainScene */ = {
+			isa = PBXGroup;
+			children = (
+				56C1DC512B73AD0B006580F9 /* Views */,
+				56475D3B2B73C6C400D88A62 /* Controllers */,
+			);
+			path = OtherPeopleMainScene;
+			sourceTree = "<group>";
+		};
+		56475D402B746B5900D88A62 /* OtherPeopleDetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				56475D412B746B6600D88A62 /* Views */,
+			);
+			path = OtherPeopleDetailScene;
+			sourceTree = "<group>";
+		};
+		56475D412B746B6600D88A62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
