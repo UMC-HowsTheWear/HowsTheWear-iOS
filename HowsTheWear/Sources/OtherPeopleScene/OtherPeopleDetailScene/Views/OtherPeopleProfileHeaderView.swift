@@ -30,8 +30,8 @@ final class OtherPeopleProfileHeaderView: UIView {
     private let headerLabelStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .leading
-        $0.distribution = .fill
-        $0.spacing = 5
+        $0.distribution = .fillEqually
+        $0.spacing = 0
     }
     
     override func layoutSubviews() {
@@ -66,6 +66,7 @@ extension OtherPeopleProfileHeaderView {
     
     private func configureLayout() {
         profileImageView.snp.makeConstraints { make in
+            make.height.equalTo(profileImageView.snp.width)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview()

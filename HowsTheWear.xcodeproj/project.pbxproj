@@ -49,6 +49,8 @@
 		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
 		56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */; };
 		56475D432B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */; };
+		56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D462B7474C400D88A62 /* OtherPeopleDetailView.swift */; };
+		56475D492B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
@@ -111,6 +113,8 @@
 		5639273C2B3EAE1A00A88D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleViewController.swift; sourceTree = "<group>"; };
 		56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleProfileHeaderView.swift; sourceTree = "<group>"; };
+		56475D462B7474C400D88A62 /* OtherPeopleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleDetailView.swift; sourceTree = "<group>"; };
+		56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleDescriptionStackView.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 			isa = PBXGroup;
 			children = (
 				56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */,
+				56475D462B7474C400D88A62 /* OtherPeopleDetailView.swift */,
+				56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -605,6 +611,7 @@
 				12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */,
 				563408B02B6FB34D00B0159B /* BrowseStyleView.swift in Sources */,
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
+				56475D492B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift in Sources */,
 				563408AC2B6F3E1300B0159B /* BrowseLastYearViewController.swift in Sources */,
 				563927332B3EAE1900A88D43 /* ViewController.swift in Sources */,
 				0530AB192B6708F50021625D /* WeeklyCollectionCell.swift in Sources */,
@@ -631,6 +638,7 @@
 				0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */,
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
+				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
