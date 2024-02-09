@@ -40,13 +40,6 @@ final class CurrentWeatherCell: UITableViewCell {
         $0.image = UIImage(named: "temp")
     }
     
-//    let descriptionLabel = UILabel().then {
-//        $0.text = "살짝 쌀쌀해요!"
-//        $0.textAlignment = .center
-//        $0.font = .pretendard(size: 14, weight: .medium)
-//        $0.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1)
-//    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
