@@ -109,7 +109,7 @@ extension HomeViewController: UITableViewDelegate {
         case 1:
             return UITableView.automaticDimension
         case 2:
-            return UITableView.automaticDimension
+            return TodayItemCell.cellHeight
         case 3:
             return DailyWeatherCell.cellHeight
         case 4:
