@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0519E5D62B761FAD00A306F1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519E5D52B761FAD00A306F1 /* LocationManager.swift */; };
+		0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519E5D82B76201D00A306F1 /* WeatherManager.swift */; };
 		0530AAB22B5D50440021625D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB12B5D50440021625D /* TabBarController.swift */; };
 		0530AAB42B5D508F0021625D /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB32B5D508F0021625D /* Vibration.swift */; };
 		0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */; };
@@ -68,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		0519E5D22B761A3B00A306F1 /* HowsTheWear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HowsTheWear.entitlements; sourceTree = "<group>"; };
+		0519E5D52B761FAD00A306F1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0519E5D82B76201D00A306F1 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		0530AAB12B5D50440021625D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0530AAB32B5D508F0021625D /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0519E5D72B76201000A306F1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0519E5D52B761FAD00A306F1 /* LocationManager.swift */,
+				0519E5D82B76201D00A306F1 /* WeatherManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		0530AAB52B5D522C0021625D /* TabBarScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 		05BE62852B45521000BAD63F /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				0519E5D72B76201000A306F1 /* Manager */,
 				05B034B22B7325260014F110 /* Models */,
 				05BE62872B45522200BAD63F /* Views */,
 				05BE62862B45521D00BAD63F /* Controllers */,
@@ -559,6 +573,7 @@
 			files = (
 				56C1DC502B731D7B006580F9 /* HomeViewController.swift in Sources */,
 				56C1DC4F2B731D77006580F9 /* BrowseMainViewController.swift in Sources */,
+				0519E5D62B761FAD00A306F1 /* LocationManager.swift in Sources */,
 				05B034C82B7327910014F110 /* CalendarView.swift in Sources */,
 				05B034B62B73257C0014F110 /* Weekly.swift in Sources */,
 				12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */,
@@ -592,6 +607,7 @@
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
+				0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */,
 				05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,

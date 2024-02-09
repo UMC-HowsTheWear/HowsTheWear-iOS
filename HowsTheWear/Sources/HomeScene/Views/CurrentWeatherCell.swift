@@ -5,12 +5,17 @@
 //  Created by RAFA on 1/26/24.
 //
 
+import CoreLocation
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
 
 final class CurrentWeatherCell: UITableViewCell {
+    
+    let locationManager = CLLocationManager()
+    let weatherService = WeatherService()
 
     let weatherIcon = UIImageView().then {
         $0.image = UIImage(named: "clear-cloudy")
@@ -23,14 +28,14 @@ final class CurrentWeatherCell: UITableViewCell {
     }
     
     let locationLabel = UILabel().then {
-        $0.text = "Busan, Korea"
+        $0.text = ""
         $0.textAlignment = .center
         $0.font = .pretendard(size: 24, weight: .semibold)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
     }
     
     let temperatureLabel = UILabel().then {
-        $0.text = "7"
+        $0.text = ""
         $0.textAlignment = .center
         $0.font = .pretendard(size: 70, weight: .medium)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
@@ -42,11 +47,52 @@ final class CurrentWeatherCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configureLocationManager()
         configureUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension CurrentWeatherCell: CLLocationManagerDelegate {
+    
+    func configureLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func getWeather(location: CLLocation) {
+        Task {
+            do {
+                let result = try await weatherService.weather(for: location)
+                DispatchQueue.main.async {
+                    let temperature = result.currentWeather.temperature.converted(to: .celsius).value
+                    self.temperatureLabel.text = String(format: "%.0f", temperature)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                if let placemark = placemarks?.first, let city = placemark.locality, let country = placemark.country {
+                    DispatchQueue.main.async {
+                        self.locationLabel.text = "\(city), \(country)"
+                    }
+                }
+            }
+
+            locationManager.stopUpdatingLocation()
+            getWeather(location: location)
+        }
     }
     
 }
