@@ -61,6 +61,7 @@ extension BrowseMainCollectionView {
         browseCollectionView.dataSource = self
         browseCollectionView.delegate = self
         browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
+        browseCollectionView.register(BrowseMoreCollectionViewCell.self, forCellWithReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier)
         browseCollectionView.backgroundColor = .clear
         
         browseCollectionView.register(BrowseCollectionReusableView.self,
@@ -115,25 +116,34 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard section < imageArray.count else {
-            return 0
-        }
-        
-        return imageArray[section].count
+        return 11
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
-            for: indexPath
-        ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
-        let section = indexPath.section
-        
-        cell.styleImageView.image = imageArray[section][indexPath.item]
-        cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
+        if indexPath.item == 10 {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier,
+                for: indexPath
+            ) as? BrowseMoreCollectionViewCell else { return UICollectionViewCell() }
+            
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
+                for: indexPath
+            ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+            
+            let section = indexPath.section
+            
+            if indexPath.item < imageArray[section].count {
+                  cell.styleImageView.image = imageArray[section][indexPath.item]
+              }      
+            
+            cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
 
-        return cell
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
