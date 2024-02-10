@@ -28,14 +28,12 @@ final class CurrentWeatherCell: UITableViewCell {
     }
     
     let locationLabel = UILabel().then {
-        $0.text = ""
         $0.textAlignment = .center
         $0.font = .pretendard(size: 24, weight: .semibold)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
     }
     
     let temperatureLabel = UILabel().then {
-        $0.text = ""
         $0.textAlignment = .center
         $0.font = .pretendard(size: 70, weight: .medium)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
