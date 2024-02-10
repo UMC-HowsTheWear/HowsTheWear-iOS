@@ -52,7 +52,7 @@ extension OtherPeopleDetailView {
         profileHeaderView.snp.makeConstraints { make in
             make.height.equalToSuperview().multipliedBy(0.05)
             make.centerX.equalToSuperview()
-            make.top.equalTo(safeAreaLayoutGuide).offset(10)
+            make.top.equalTo(safeAreaLayoutGuide).offset(30)
             make.leading.equalTo(safeAreaLayoutGuide).offset(16)
         }
         
@@ -70,12 +70,28 @@ extension OtherPeopleDetailView {
         }
         
         bottomDescriptionStackView.snp.makeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(0.2)
+            make.height.equalTo(postImageView).multipliedBy(0.2)
             make.top.equalTo(postImageView.snp.bottom).offset(16)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(21)
+//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(31)
             make.leading.equalTo(postImageView)
             make.trailing.equalTo(postImageView)
         }
     }
     
+}
+
+// MARK: 프리뷰
+import SwiftUI
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+    struct Container: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return     UINavigationController(rootViewController: OtherPeopleDetailViewController())
+        }
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        }
+        typealias  UIViewControllerType = UIViewController
+    }
 }
