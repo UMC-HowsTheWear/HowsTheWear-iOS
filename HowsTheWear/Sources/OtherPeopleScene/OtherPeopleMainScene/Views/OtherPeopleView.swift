@@ -39,7 +39,7 @@ final class OtherPeopleView: UIView {
         UIImage(named: "StyleTestImage")
     ]
     
-    private let othersPeopleCollectionView = BrowseMainCollectionView(isHiddenCellUserID: false)
+    let othersPeopleCollectionView = BrowseMainCollectionView(isHiddenCellUserID: false)
     
     let myPostButton = UIButton().then {
         $0.backgroundColor = .black
