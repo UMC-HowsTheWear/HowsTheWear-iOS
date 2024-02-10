@@ -84,6 +84,11 @@ extension OtherPeopleView {
 // MARK: - SetUp Data
 
 extension OtherPeopleView {
+
+    func setCollectionViewCellSelectionHandler(_ handler: @escaping ((IndexPath) -> Void)) {
+        othersPeopleCollectionView.didSelectCell = handler
+    }
+    
     private func fetchData() {
         othersPeopleCollectionView.configureContents(
             sectionCount: hashTagNumber,

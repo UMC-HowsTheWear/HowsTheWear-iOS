@@ -11,6 +11,9 @@ final class BrowseMainCollectionView: UIView {
     
     weak var delegate: browseCollectionReusableDelegate?
     
+    var didSelectCell: ((IndexPath) -> Void)?
+
+    
     private var isHiddenCellUserId = false
     
     private var sectionCount = 0
@@ -56,6 +59,7 @@ extension BrowseMainCollectionView {
     
     private func configureCollectionView() {
         browseCollectionView.dataSource = self
+        browseCollectionView.delegate = self
         browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
         browseCollectionView.backgroundColor = .clear
         
@@ -148,6 +152,14 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
         return headerView
     }
     
+}
+
+// MARK: - Implement CollectionView Delegate
+
+extension BrowseMainCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectCell?(indexPath)
+    }
 }
 
 // MARK: - Configure UI
