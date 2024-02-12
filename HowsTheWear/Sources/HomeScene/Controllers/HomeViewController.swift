@@ -78,8 +78,8 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
-            ) as? DailyWeatherCell else {
+                withIdentifier: HourlyWeatherCell.reuseIdentifier, for: indexPath
+            ) as? HourlyWeatherCell else {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
@@ -87,8 +87,8 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 4:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: WeeklyWeatherCell.reuseIdentifier, for: indexPath
-            ) as? WeeklyWeatherCell else {
+                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
+            ) as? DailyWeatherCell else {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
@@ -114,9 +114,9 @@ extension HomeViewController: UITableViewDelegate {
         case 2:
             return TodayItemCell.cellHeight
         case 3:
-            return DailyWeatherCell.cellHeight
+            return HourlyWeatherCell.cellHeight
         case 4:
-            return WeeklyWeatherCell.cellHeight
+            return DailyWeatherCell.cellHeight
         default:
             return UITableView.automaticDimension
         }
@@ -167,8 +167,8 @@ private extension HomeViewController {
         tableView.register(CurrentWeatherCell.self, forCellReuseIdentifier: CurrentWeatherCell.reuseIdentifier)
         tableView.register(TodayWeatherCell.self, forCellReuseIdentifier: TodayWeatherCell.reuseIdentifier)
         tableView.register(TodayItemCell.self, forCellReuseIdentifier: TodayItemCell.reuseIdentifier)
+        tableView.register(HourlyWeatherCell.self, forCellReuseIdentifier: HourlyWeatherCell.reuseIdentifier)
         tableView.register(DailyWeatherCell.self, forCellReuseIdentifier: DailyWeatherCell.reuseIdentifier)
-        tableView.register(WeeklyWeatherCell.self, forCellReuseIdentifier: WeeklyWeatherCell.reuseIdentifier)
     }
     
     @objc func refreshData() {
