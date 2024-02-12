@@ -15,7 +15,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
 
     private var locationFetchCompletion: ((CLLocation) -> Void)?
 
-    private var location: CLLocation? {
+    var location: CLLocation? {
         didSet {
             guard let location else {
                 return

@@ -55,6 +55,8 @@ final class CurrentWeatherCell: UITableViewCell {
     
 }
 
+// MARK: - CLLocationManagerDelegate
+
 extension CurrentWeatherCell: CLLocationManagerDelegate {
     
     func configureLocationManager() {
@@ -90,6 +92,28 @@ extension CurrentWeatherCell: CLLocationManagerDelegate {
 
             locationManager.stopUpdatingLocation()
             getWeather(location: location)
+        }
+    }
+    
+}
+
+// MARK: - UI Update
+
+extension CurrentWeatherCell {
+    
+    func updateWeather(currentWeather: CurrentWeather, location: CLLocation) {
+        // 온도 레이블 업데이트
+        let temperature = currentWeather.temperature.converted(to: .celsius).value
+        temperatureLabel.text = String(format: "%.0f", temperature)
+
+        // 위치 레이블 업데이트
+        CLGeocoder().reverseGeocodeLocation(location) { [weak self] placemarks, error in
+            guard error == nil, let placemark = placemarks?.first, let city = placemark.locality, let country = placemark.country else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.locationLabel.text = "\(city), \(country)"
+            }
         }
     }
     

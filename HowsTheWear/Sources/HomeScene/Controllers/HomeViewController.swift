@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     var items: [TodayItem] = TodayItem.items
     
     private let customBarButtonItem = CustomBarButtonItem()
+    private let refreshControl = UIRefreshControl().then {
+        $0.tintColor = #colorLiteral(red: 0.4442995787, green: 0.6070379615, blue: 0.9031649232, alpha: 1)
+    }
     private let tableView = UITableView(frame: .zero, style: .plain)
     private let backgroundImageView = UIImageView()
     private let backgroundView = UIView().then {
@@ -142,6 +145,8 @@ private extension HomeViewController {
     
     func setupTableView() {
         view.addSubview(tableView)
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -164,6 +169,29 @@ private extension HomeViewController {
         tableView.register(TodayItemCell.self, forCellReuseIdentifier: TodayItemCell.reuseIdentifier)
         tableView.register(DailyWeatherCell.self, forCellReuseIdentifier: DailyWeatherCell.reuseIdentifier)
         tableView.register(WeeklyWeatherCell.self, forCellReuseIdentifier: WeeklyWeatherCell.reuseIdentifier)
+    }
+    
+    @objc func refreshData() {
+        LocationManager.shared.getCurrentLocation { [weak self] location in
+            WeatherManager.shared.getWeather(for: location) {
+                DispatchQueue.main.async {
+                    self?.updateCurrentWeatherCell()
+                    self?.tableView.reloadData()
+                    self?.refreshControl.endRefreshing()
+                }
+            }
+        }
+    }
+
+    func updateCurrentWeatherCell() {
+        guard let currentWeather = WeatherManager.shared.currentWeather,
+              let location = LocationManager.shared.location else {
+            return
+        }
+        
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CurrentWeatherCell {
+            cell.updateWeather(currentWeather: currentWeather, location: location)
+        }
     }
     
 }
