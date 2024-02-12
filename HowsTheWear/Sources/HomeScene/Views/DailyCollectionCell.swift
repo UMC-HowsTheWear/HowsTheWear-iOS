@@ -12,29 +12,56 @@ import Then
 
 final class DailyCollectionCell: UICollectionViewCell {
     
-    let timeLabel = UILabel().then {
-        $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
-        $0.font = .pretendard(size: 14, weight: .medium)
-        $0.textAlignment = .center
-    }
-    
     let weatherIconImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFit
     }
     
-    let temperatureLabel = UILabel().then {
-        $0.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1)
+    let dayOfWeekLabel = UILabel().then {
+        $0.textColor = UIColor(red: 0.376, green: 0.376, blue: 0.376, alpha: 1)
         $0.font = .pretendard(size: 14, weight: .semibold)
-        $0.textAlignment = .center
     }
     
-    private lazy var stackView = UIStackView(arrangedSubviews: [
-        timeLabel, weatherIconImageView, temperatureLabel
+    private lazy var iconAndDayView = UIStackView(arrangedSubviews: [weatherIconImageView, dayOfWeekLabel]).then {
+        $0.axis = .horizontal
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
+        $0.spacing = 10
+    }
+    
+    let minTemperatureLabel = UILabel().then {
+        $0.textColor = UIColor(red: 0.578, green: 0.728, blue: 0.897, alpha: 1)
+        $0.font = .pretendard(size: 16, weight: .semibold)
+    }
+    
+    private let separatorView = UILabel().then {
+        $0.text = "/"
+        $0.textColor = UIColor(red: 0.851, green: 0.851, blue: 0.851, alpha: 1)
+        $0.font = .pretendard(size: 16, weight: .bold)
+    }
+    
+    let maxTemperatureLabel = UILabel().then {
+        $0.textColor = UIColor(red: 0.444, green: 0.607, blue: 0.901, alpha: 1)
+        $0.font = .pretendard(size: 16, weight: .semibold)
+    }
+    
+    private lazy var temperatureView = UIStackView(arrangedSubviews: [
+        minTemperatureLabel, separatorView, maxTemperatureLabel
     ]).then {
-        $0.axis = .vertical
+        $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
-        $0.spacing = 5
+        $0.spacing = 10
+    }
+    
+    private let emptyView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    
+    private lazy var dailyView = UIStackView(arrangedSubviews: [iconAndDayView, emptyView,  temperatureView]).then {
+        $0.axis = .horizontal
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
+        $0.spacing = 10
     }
     
     override init(frame: CGRect) {
@@ -48,14 +75,14 @@ final class DailyCollectionCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        timeLabel.text = nil
         weatherIconImageView.image = nil
-        temperatureLabel.text = nil
+        dayOfWeekLabel.text = nil
+        minTemperatureLabel.text = nil
+        maxTemperatureLabel.text = nil
         prepare(data: nil)
     }
     
     func prepare(data: Daily?) {
-        timeLabel.text = data?.time
         weatherIconImageView.image = UIImage(systemName: data?.weatherIcon ?? "sun.max.fill")?
             .withRenderingMode(.alwaysOriginal)
             .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
@@ -64,7 +91,9 @@ final class DailyCollectionCell: UICollectionViewCell {
         weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
         weatherIconImageView.layer.shadowRadius = 20
         weatherIconImageView.layer.shadowOpacity = 0.2
-        temperatureLabel.text = data?.temperature
+        dayOfWeekLabel.text = data?.day
+        minTemperatureLabel.text = data?.minTemperature
+        maxTemperatureLabel.text = data?.maxTemperature
     }
     
 }
@@ -74,10 +103,12 @@ final class DailyCollectionCell: UICollectionViewCell {
 private extension DailyCollectionCell {
     
     func configureUI() {
-        contentView.addSubview(stackView)
+        contentView.backgroundColor = .clear
+        contentView.addSubview(dailyView)
         
-        stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        dailyView.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.left.equalToSuperview()
         }
     }
     
