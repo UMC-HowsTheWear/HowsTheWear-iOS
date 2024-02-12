@@ -24,7 +24,7 @@ class LoginInfoCheckView: UIView {
         $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
-        $0.spacing = 10
+        $0.spacing = 45
     }
     
     
@@ -63,7 +63,7 @@ class LoginInfoCheckView: UIView {
         $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
-        $0.spacing = 10
+        $0.spacing = 45
     }
     
     

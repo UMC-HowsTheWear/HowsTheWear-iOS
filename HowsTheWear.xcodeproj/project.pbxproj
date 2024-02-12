@@ -32,6 +32,10 @@
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
 		126C9D4B2B7327A300C9FF03 /* LoginInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */; };
 		126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */; };
+		12794B562B7A0B22001C3AF2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12794B552B7A0B22001C3AF2 /* ProfileView.swift */; };
+		12794B582B7A0B39001C3AF2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12794B572B7A0B39001C3AF2 /* ProfileViewController.swift */; };
+		12794B5E2B7A0CEB001C3AF2 /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12794B5D2B7A0CEB001C3AF2 /* InterestViewController.swift */; };
+		12794B602B7A0D01001C3AF2 /* InterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12794B5F2B7A0D01001C3AF2 /* InterestView.swift */; };
 		12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA904E2B7219FA0059E55D /* LoginInfoView.swift */; };
 		12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA90502B721A730059E55D /* LoginInfoViewController.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
@@ -93,6 +97,10 @@
 		12541C9F2B71F36A00951C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckViewController.swift; sourceTree = "<group>"; };
 		126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckView.swift; sourceTree = "<group>"; };
+		12794B552B7A0B22001C3AF2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		12794B572B7A0B39001C3AF2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		12794B5D2B7A0CEB001C3AF2 /* InterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		12794B5F2B7A0D01001C3AF2 /* InterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestView.swift; sourceTree = "<group>"; };
 		12DA904E2B7219FA0059E55D /* LoginInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoView.swift; sourceTree = "<group>"; };
 		12DA90502B721A730059E55D /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +243,8 @@
 				12541C9D2B71F32B00951C9D /* LoginView.swift */,
 				12DA904E2B7219FA0059E55D /* LoginInfoView.swift */,
 				126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */,
+				12794B552B7A0B22001C3AF2 /* ProfileView.swift */,
+				12794B5F2B7A0D01001C3AF2 /* InterestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +255,8 @@
 				12541C9F2B71F36A00951C9D /* LoginViewController.swift */,
 				12DA90502B721A730059E55D /* LoginInfoViewController.swift */,
 				126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */,
+				12794B572B7A0B39001C3AF2 /* ProfileViewController.swift */,
+				12794B5D2B7A0CEB001C3AF2 /* InterestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -579,6 +591,7 @@
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				0530AB172B6708D30021625D /* WeeklyWeatherCell.swift in Sources */,
 				0530AB112B6707890021625D /* DailyWeatherCell.swift in Sources */,
+				12794B582B7A0B39001C3AF2 /* ProfileViewController.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
 				56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */,
 				56B9F7E02B6CABC1005B924F /* BrowseDetailView.swift in Sources */,
@@ -587,12 +600,14 @@
 				0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */,
 				05B034C22B7327400014F110 /* MyPostView.swift in Sources */,
 				0530AB132B6707CC0021625D /* DailyCollectionCell.swift in Sources */,
+				12794B562B7A0B22001C3AF2 /* ProfileView.swift in Sources */,
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
 				05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
+				12794B602B7A0D01001C3AF2 /* InterestView.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
@@ -601,6 +616,7 @@
 				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
 				56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */,
+				12794B5E2B7A0CEB001C3AF2 /* InterestViewController.swift in Sources */,
 				56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */,
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
 				12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */,
