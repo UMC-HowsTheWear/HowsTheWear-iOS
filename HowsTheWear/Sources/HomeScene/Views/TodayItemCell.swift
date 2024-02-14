@@ -12,6 +12,8 @@ import Then
 
 final class TodayItemCell: UITableViewCell {
     
+    static let cellHeight = 120.0
+    
     private let subtitleLabel = UILabel().then {
         $0.text = "Hows The Wear"
         $0.textColor = UIColor(red: 0.769, green: 0.769, blue: 0.769, alpha: 1)
@@ -96,7 +98,6 @@ private extension TodayItemCell {
             $0.top.equalTo(20)
             $0.right.equalTo(-40)
             $0.bottom.equalTo(-20)
-            $0.height.equalTo(100)
         }
     }
     

@@ -12,9 +12,9 @@ import Then
 
 final class DailyWeatherCell: UITableViewCell {
     
-    static let cellHeight = 100.0
+    static let cellHeight = 550.0
     
-    var dailyData: [Daily] = Daily.lists
+    private var dailyData = Daily.lists
     
     private let shadowContainerView = UIView().then {
         $0.backgroundColor = .clear
@@ -26,8 +26,8 @@ final class DailyWeatherCell: UITableViewCell {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.isScrollEnabled = false
         collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.register(
             DailyCollectionCell.self,
             forCellWithReuseIdentifier: DailyCollectionCell.reuseIdentifier
@@ -58,32 +58,20 @@ extension DailyWeatherCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dailyData.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DailyCollectionCell.reuseIdentifier, for: indexPath) as? DailyCollectionCell else {
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DailyCollectionCell.reuseIdentifier,
+            for: indexPath
+        ) as? DailyCollectionCell else {
             return UICollectionViewCell()
         }
-        let data = dailyData[indexPath.item]
-        cell.prepare(data: data)
+        let cellData = dailyData[indexPath.item]
+        cell.prepare(data: cellData)
         return cell
-    }
-    
-}
-
-// MARK: - UICollectionViewDelegate
-
-extension DailyWeatherCell: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let dailyCollectionCell = cell as? DailyCollectionCell else { return }
-        let data = dailyData[indexPath.item]
-        dailyCollectionCell.prepare(data: data)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let dailyCollectionCell = cell as? DailyCollectionCell else { return }
-        let data = dailyData[indexPath.item]
-        dailyCollectionCell.prepare(data: data)
     }
     
 }
@@ -96,9 +84,8 @@ private extension DailyWeatherCell {
         contentView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         contentView.addSubview(shadowContainerView)
         shadowContainerView.snp.makeConstraints {
-            $0.left.equalTo(20)
-            $0.right.equalTo(-20)
-            $0.top.bottom.equalToSuperview()
+            $0.top.left.equalTo(20)
+            $0.bottom.right.equalTo(-20)
         }
 
         shadowContainerView.addSubview(collectionView)
@@ -111,17 +98,15 @@ private extension DailyWeatherCell {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .estimated(50))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.interItemSpacing = .fixed(40)
 
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20)
-        section.interGroupSpacing = 40
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout

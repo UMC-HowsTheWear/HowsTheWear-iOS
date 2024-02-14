@@ -15,6 +15,9 @@ final class HomeViewController: UIViewController {
     var items: [TodayItem] = TodayItem.items
     
     private let customBarButtonItem = CustomBarButtonItem()
+    private let refreshControl = UIRefreshControl().then {
+        $0.tintColor = #colorLiteral(red: 0.4442995787, green: 0.6070379615, blue: 0.9031649232, alpha: 1)
+    }
     private let tableView = UITableView(frame: .zero, style: .plain)
     private let backgroundImageView = UIImageView()
     private let backgroundView = UIView().then {
@@ -75,8 +78,8 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
-            ) as? DailyWeatherCell else {
+                withIdentifier: HourlyWeatherCell.reuseIdentifier, for: indexPath
+            ) as? HourlyWeatherCell else {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
@@ -84,8 +87,8 @@ extension HomeViewController: UITableViewDataSource {
             return cell
         case 4:
             guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: WeeklyWeatherCell.reuseIdentifier, for: indexPath
-            ) as? WeeklyWeatherCell else {
+                withIdentifier: DailyWeatherCell.reuseIdentifier, for: indexPath
+            ) as? DailyWeatherCell else {
                 return UITableViewCell()
             }
             cell.selectionStyle = .none
@@ -109,11 +112,11 @@ extension HomeViewController: UITableViewDelegate {
         case 1:
             return UITableView.automaticDimension
         case 2:
-            return UITableView.automaticDimension
+            return TodayItemCell.cellHeight
         case 3:
-            return DailyWeatherCell.cellHeight
+            return HourlyWeatherCell.cellHeight
         case 4:
-            return WeeklyWeatherCell.cellHeight
+            return DailyWeatherCell.cellHeight
         default:
             return UITableView.automaticDimension
         }
@@ -142,6 +145,8 @@ private extension HomeViewController {
     
     func setupTableView() {
         view.addSubview(tableView)
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        tableView.addSubview(refreshControl)
         
         tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -162,8 +167,31 @@ private extension HomeViewController {
         tableView.register(CurrentWeatherCell.self, forCellReuseIdentifier: CurrentWeatherCell.reuseIdentifier)
         tableView.register(TodayWeatherCell.self, forCellReuseIdentifier: TodayWeatherCell.reuseIdentifier)
         tableView.register(TodayItemCell.self, forCellReuseIdentifier: TodayItemCell.reuseIdentifier)
+        tableView.register(HourlyWeatherCell.self, forCellReuseIdentifier: HourlyWeatherCell.reuseIdentifier)
         tableView.register(DailyWeatherCell.self, forCellReuseIdentifier: DailyWeatherCell.reuseIdentifier)
-        tableView.register(WeeklyWeatherCell.self, forCellReuseIdentifier: WeeklyWeatherCell.reuseIdentifier)
+    }
+    
+    @objc func refreshData() {
+        LocationManager.shared.getCurrentLocation { [weak self] location in
+            WeatherManager.shared.getWeather(for: location) {
+                DispatchQueue.main.async {
+                    self?.updateCurrentWeatherCell()
+                    self?.tableView.reloadData()
+                    self?.refreshControl.endRefreshing()
+                }
+            }
+        }
+    }
+
+    func updateCurrentWeatherCell() {
+        guard let currentWeather = WeatherManager.shared.currentWeather,
+              let location = LocationManager.shared.location else {
+            return
+        }
+        
+        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CurrentWeatherCell {
+            cell.updateWeather(currentWeather: currentWeather, location: location)
+        }
     }
     
 }

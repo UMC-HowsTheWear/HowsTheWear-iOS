@@ -1,5 +1,5 @@
 //
-//  WeeklyWeatherCell.swift
+//  HourlyWeatherCell.swift
 //  HowsTheWear
 //
 //  Created by RAFA on 1/29/24.
@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-final class WeeklyWeatherCell: UITableViewCell {
+final class HourlyWeatherCell: UITableViewCell {
     
-    static let cellHeight = 550.0
+    static let cellHeight = 100.0
     
-    private var weeklyData = Weekly.lists
+    var hourlyData: [Hourly] = Hourly.lists
     
     private let shadowContainerView = UIView().then {
         $0.backgroundColor = .clear
@@ -26,11 +26,10 @@ final class WeeklyWeatherCell: UITableViewCell {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collectionView.isScrollEnabled = false
         collectionView.dataSource = self
         collectionView.register(
-            WeeklyCollectionCell.self,
-            forCellWithReuseIdentifier: WeeklyCollectionCell.reuseIdentifier
+            HourlyCollectionCell.self,
+            forCellWithReuseIdentifier: HourlyCollectionCell.reuseIdentifier
         )
         return collectionView
     }()
@@ -53,18 +52,24 @@ final class WeeklyWeatherCell: UITableViewCell {
 
 // MARK: - UICollectionViewDataSource
 
-extension WeeklyWeatherCell: UICollectionViewDataSource {
+extension HourlyWeatherCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weeklyData.count
+        return hourlyData.count
     }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeeklyCollectionCell.reuseIdentifier, for: indexPath) as? WeeklyCollectionCell else {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: HourlyCollectionCell.reuseIdentifier,
+            for: indexPath
+        ) as? HourlyCollectionCell else {
             return UICollectionViewCell()
         }
-        let cellData = weeklyData[indexPath.item]
-        cell.prepare(data: cellData)
+        let data = hourlyData[indexPath.item]
+        cell.prepare(data: data)
         return cell
     }
     
@@ -72,14 +77,15 @@ extension WeeklyWeatherCell: UICollectionViewDataSource {
 
 // MARK: - UI Configuration
 
-private extension WeeklyWeatherCell {
+private extension HourlyWeatherCell {
     
     func configureUI() {
         contentView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         contentView.addSubview(shadowContainerView)
         shadowContainerView.snp.makeConstraints {
-            $0.top.left.equalTo(20)
-            $0.bottom.right.equalTo(-20)
+            $0.left.equalTo(20)
+            $0.right.equalTo(-20)
+            $0.top.bottom.equalToSuperview()
         }
 
         shadowContainerView.addSubview(collectionView)
@@ -92,15 +98,17 @@ private extension WeeklyWeatherCell {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .estimated(50))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.interItemSpacing = .fixed(40)
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20)
+        section.interGroupSpacing = 40
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
