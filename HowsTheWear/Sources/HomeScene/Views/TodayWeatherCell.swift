@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
@@ -21,7 +22,6 @@ final class TodayWeatherCell: UITableViewCell {
     }
     
     let minimumTemperature = UILabel().then {
-        $0.text = "7℃"
         $0.textColor = UIColor(red: 0.313, green: 0.313, blue: 0.313, alpha: 1)
         $0.font = .pretendard(size: 15, weight: .semibold)
         $0.textAlignment = .center
@@ -36,14 +36,13 @@ final class TodayWeatherCell: UITableViewCell {
     }
     
     let maximumTemperature = UILabel().then {
-        $0.text = "15℃"
         $0.textColor = UIColor(red: 0.313, green: 0.313, blue: 0.313, alpha: 1)
         $0.font = .pretendard(size: 15, weight: .semibold)
         $0.textAlignment = .center
     }
     
     private let precipitationLabel = UILabel().then {
-        $0.text = "강수 확률"
+        $0.text = "강수량"
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
         $0.font = .pretendard(size: 12, weight: .semibold)
         $0.textAlignment = .center
@@ -51,7 +50,6 @@ final class TodayWeatherCell: UITableViewCell {
     }
     
     let precipitationProbabilityLabel = UILabel().then {
-        $0.text = "60%"
         $0.textColor = UIColor(red: 0.313, green: 0.313, blue: 0.313, alpha: 1)
         $0.font = .pretendard(size: 15, weight: .semibold)
         $0.textAlignment = .center
@@ -109,11 +107,50 @@ final class TodayWeatherCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        updateWeatherInfo()
         configureUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+extension TodayWeatherCell {
+    
+    func updateWeatherInfo() {
+        LocationManager.shared.getCurrentLocation { [weak self] location in
+            WeatherManager.shared.getWeather(for: location) {
+                guard let self = self, let currentWeather = WeatherManager.shared.currentWeather else { return }
+
+                DispatchQueue.main.async {
+                    self.applyWeatherData(currentWeather, dailyForecast: WeatherManager.shared.dailyWeather)
+                }
+            }
+        }
+    }
+    
+    func getTodaysForecast(dailyForecast: [DayWeather]) -> DayWeather? {
+        let today = Date()
+        return dailyForecast.first { Calendar.current.isDate($0.date, inSameDayAs: today) }
+    }
+
+    func applyWeatherData(_ weather: CurrentWeather, dailyForecast: [DayWeather]) {
+        guard let todaysForecast = getTodaysForecast(dailyForecast: dailyForecast) else { return }
+        
+        // 소수점 반올림 후 정수로 변환
+        let minTemp = Int(todaysForecast.lowTemperature.value.rounded())
+        let maxTemp = Int(todaysForecast.highTemperature.value.rounded())
+        let precipitationProbability = weather.precipitationIntensity
+
+        // 온도가 0도일 때 음수 부호 제거
+        let minTempText = minTemp >= 0 ? "\(minTemp)℃" : "-\(abs(minTemp))℃"
+        let maxTempText = maxTemp >= 0 ? "\(maxTemp)℃" : "-\(abs(maxTemp))℃"
+        
+        minimumTemperature.text = minTempText
+        maximumTemperature.text = maxTempText
+        precipitationProbabilityLabel.text = "\(precipitationProbability)"
     }
 
 }
