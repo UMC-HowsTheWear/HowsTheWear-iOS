@@ -16,6 +16,8 @@ final class OtherPeopleDescriptionStackView: UIView {
     private var feelTemperature: String = "너무 더워요"
     
     private lazy var feelTemperatureText = feelTemperatureLabel.text ?? ""
+    
+    private let saveStyleContainerView = UIView()
 
     private let saveStyleImage = UIImageView().then {
         $0.contentMode = .scaleAspectFit
@@ -106,7 +108,9 @@ final class OtherPeopleDescriptionStackView: UIView {
 extension OtherPeopleDescriptionStackView {
     private func confiugreSubview() {
         
-        [saveStyleImage, saveNumberLabel].forEach {
+        saveStyleContainerView.addSubview(saveStyleImage)
+        
+        [saveStyleContainerView, saveNumberLabel].forEach {
             saveStyleStackView.addArrangedSubview($0)
         }
         
@@ -130,8 +134,8 @@ extension OtherPeopleDescriptionStackView {
         
         saveStyleImage.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(5)
+            make.top.bottom.trailing.equalToSuperview()
         }
-        
     }
     
 }
