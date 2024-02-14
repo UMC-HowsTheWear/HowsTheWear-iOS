@@ -22,7 +22,24 @@ final class OtherPeopleDetailView: UIView {
         $0.image = UIImage(named: "OtherDetailShadow")
     }
     
+    let bookmarkButton = UIButton().then {
+        $0.setImage(UIImage(named: "tag"), for: .normal)
+    }
+    
     private let bottomDescriptionStackView = OtherPeopleDescriptionStackView()
+    
+    let myPostButton = UIButton().then {
+        $0.backgroundColor = .black
+        $0.setImage(UIImage(systemName: "plus")?
+            .withConfiguration(
+                UIImage.SymbolConfiguration(pointSize: 20, weight: .regular)), for: .normal)
+        $0.tintColor = .white
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureInitialSetting()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,13 +53,28 @@ final class OtherPeopleDetailView: UIView {
     
 }
 
+// MARK: - Configure InitialSetting
+
+extension OtherPeopleDetailView {
+    private func configureInitialSetting() {
+        myPostButton.layer.cornerRadius = myPostButton.frame.height / 2
+        myPostButton.layer.shadowColor = UIColor.black.cgColor
+        myPostButton.layer.shadowOpacity = 0.5
+        myPostButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        myPostButton.layer.shadowRadius = 10
+    }
+    
+}
+
 // MARK: - Configure UI
 
 extension OtherPeopleDetailView {
     private func confiugreSubview() {
-        postImageView.addSubview(postShadowImageview)
+        [postShadowImageview, bookmarkButton].forEach {
+            postImageView.addSubview($0)
+        }
         
-        [profileHeaderView, postImageView, bottomDescriptionStackView].forEach {
+        [profileHeaderView, postImageView, bottomDescriptionStackView, myPostButton].forEach {
             addSubview($0)
         }
         
@@ -69,29 +101,23 @@ extension OtherPeopleDetailView {
             make.leading.equalToSuperview()
         }
         
+        bookmarkButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(10)
+            make.trailing.equalToSuperview().inset(10)
+        }
+        
         bottomDescriptionStackView.snp.makeConstraints { make in
             make.height.equalTo(postImageView).multipliedBy(0.2)
             make.top.equalTo(postImageView.snp.bottom).offset(16)
-//            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(31)
             make.leading.equalTo(postImageView)
             make.trailing.equalTo(postImageView)
         }
+        
+        myPostButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(15)
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(15)
+            $0.width.height.equalTo(55)
+        }
     }
     
-}
-
-// MARK: 프리뷰
-import SwiftUI
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
-    }
-    struct Container: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            return     UINavigationController(rootViewController: OtherPeopleDetailViewController())
-        }
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        }
-        typealias  UIViewControllerType = UIViewController
-    }
 }
