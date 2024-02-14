@@ -105,23 +105,11 @@ extension OtherPeopleViewController {
 
 extension OtherPeopleViewController: UICollectionViewDelegate, browseCollectionReusableDelegate{
     func browseHeaderRightArrowButtonTapped(section: Int) {
-//        switch section {
-//        case 0:
-//            let browseThisWeekViewController = BrowseThisWeekViewController()
-//            navigationController?.pushViewController(browseThisWeekViewController, animated: true)
-//        case 1:
-//            let browseNextWeekViewController = BrowseNextWeekViewController()
-//            navigationController?.pushViewController(browseNextWeekViewController, animated: true)
-//        case 2:
-//            let browseLastYearViewController = BrowseLastYearViewController()
-//            navigationController?.pushViewController(browseLastYearViewController, animated: true)
-//        default:
-//            break
+            print(section)
         }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let otherPeopleDetailViewController =
-        
+            print(indexPath)
     }
 }
 
