@@ -15,6 +15,7 @@ final class OtherPeopleDetailView: UIView {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(named: "DetailTestImage")
         $0.clipsToBounds = true
+        $0.isUserInteractionEnabled = true
     }
     
     private let postShadowImageview = UIImageView().then {

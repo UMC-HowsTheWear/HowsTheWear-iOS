@@ -12,7 +12,7 @@ final class OtherPeopleDetailViewController: UIViewController {
     let otherPeopleDetailView = OtherPeopleDetailView()
 
     override func loadView() {
-        view = OtherPeopleDetailView()
+        view = otherPeopleDetailView
     }
     
     override func viewDidLoad() {
@@ -97,4 +97,5 @@ extension OtherPeopleDetailViewController {
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
     }
+    
 }
