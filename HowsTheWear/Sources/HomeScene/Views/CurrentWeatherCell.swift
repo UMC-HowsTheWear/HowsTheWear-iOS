@@ -5,12 +5,17 @@
 //  Created by RAFA on 1/26/24.
 //
 
+import CoreLocation
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
 
 final class CurrentWeatherCell: UITableViewCell {
+    
+    let locationManager = CLLocationManager()
+    let weatherService = WeatherService()
 
     let weatherIcon = UIImageView().then {
         $0.image = UIImage(named: "clear-cloudy")
@@ -23,14 +28,12 @@ final class CurrentWeatherCell: UITableViewCell {
     }
     
     let locationLabel = UILabel().then {
-        $0.text = "Busan, Korea"
         $0.textAlignment = .center
         $0.font = .pretendard(size: 24, weight: .semibold)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
     }
     
     let temperatureLabel = UILabel().then {
-        $0.text = "7"
         $0.textAlignment = .center
         $0.font = .pretendard(size: 70, weight: .medium)
         $0.textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1)
@@ -40,20 +43,78 @@ final class CurrentWeatherCell: UITableViewCell {
         $0.image = UIImage(named: "temp")
     }
     
-//    let descriptionLabel = UILabel().then {
-//        $0.text = "살짝 쌀쌀해요!"
-//        $0.textAlignment = .center
-//        $0.font = .pretendard(size: 14, weight: .medium)
-//        $0.textColor = UIColor(red: 0.439, green: 0.439, blue: 0.439, alpha: 1)
-//    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configureLocationManager()
         configureUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension CurrentWeatherCell: CLLocationManagerDelegate {
+    
+    func configureLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func getWeather(location: CLLocation) {
+        Task {
+            do {
+                let result = try await weatherService.weather(for: location)
+                DispatchQueue.main.async {
+                    let temperature = result.currentWeather.temperature.converted(to: .celsius).value
+                    self.temperatureLabel.text = String(format: "%.0f", temperature)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+                if let placemark = placemarks?.first, let city = placemark.locality, let country = placemark.country {
+                    DispatchQueue.main.async {
+                        self.locationLabel.text = "\(city), \(country)"
+                    }
+                }
+            }
+
+            locationManager.stopUpdatingLocation()
+            getWeather(location: location)
+        }
+    }
+    
+}
+
+// MARK: - UI Update
+
+extension CurrentWeatherCell {
+    
+    func updateWeather(currentWeather: CurrentWeather, location: CLLocation) {
+        // 온도 레이블 업데이트
+        let temperature = currentWeather.temperature.converted(to: .celsius).value
+        temperatureLabel.text = String(format: "%.0f", temperature)
+
+        // 위치 레이블 업데이트
+        CLGeocoder().reverseGeocodeLocation(location) { [weak self] placemarks, error in
+            guard error == nil, let placemark = placemarks?.first, let city = placemark.locality, let country = placemark.country else {
+                return
+            }
+            DispatchQueue.main.async {
+                self?.locationLabel.text = "\(city), \(country)"
+            }
+        }
     }
     
 }
