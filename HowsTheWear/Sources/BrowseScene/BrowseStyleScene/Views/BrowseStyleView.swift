@@ -9,7 +9,7 @@ import UIKit
 
 final class BrowseStyleView: UIView {
     
-    private let styleHashTagView = StyleHashTagView()
+    private let styleHashTagView = StyleHashTagView("BrowseStyleCollectionViewCell")
 
     private lazy var browseStyleCollectionView = BrowseStyleCollectionView()
     
