@@ -29,6 +29,12 @@ final class OtherPeopleDetailView: UIView {
     
     private let bottomDescriptionStackView = OtherPeopleDescriptionStackView()
     
+    private let leftHashTagLabel = UILabel().then {
+        $0.font = UIFont.pretendard(size: 16, weight: .regular)
+        $0.textColor = .white
+        $0.text = "#테스트"
+    }
+    
     let myPostButton = UIButton().then {
         $0.backgroundColor = .black
         $0.setImage(UIImage(systemName: "plus")?
@@ -71,7 +77,7 @@ extension OtherPeopleDetailView {
 
 extension OtherPeopleDetailView {
     private func confiugreSubview() {
-        [postShadowImageview, bookmarkButton].forEach {
+        [postShadowImageview, leftHashTagLabel, bookmarkButton].forEach {
             postImageView.addSubview($0)
         }
         
@@ -100,6 +106,11 @@ extension OtherPeopleDetailView {
             make.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
             make.leading.equalToSuperview()
+        }
+        
+        leftHashTagLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview().inset(12)
         }
         
         bookmarkButton.snp.makeConstraints { make in
