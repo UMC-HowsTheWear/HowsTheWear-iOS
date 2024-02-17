@@ -55,7 +55,9 @@
 		56475D492B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */; };
 		564E01C62B7DD5F200837828 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01C52B7DD5F200837828 /* MyPageView.swift */; };
 		564E01C82B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */; };
+		564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
+		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
 		56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */; };
@@ -126,7 +128,9 @@
 		56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleDescriptionStackView.swift; sourceTree = "<group>"; };
 		564E01C52B7DD5F200837828 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStyleCollectionViewCell.swift; sourceTree = "<group>"; };
+		564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTemperatureSlider.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -473,6 +477,7 @@
 		564E01C32B7DD58500837828 /* MyPageScene */ = {
 			isa = PBXGroup;
 			children = (
+				564E01CC2B7F498700837828 /* Headers */,
 				564E01C42B7DD5C900837828 /* Views */,
 			);
 			path = MyPageScene;
@@ -483,8 +488,17 @@
 			children = (
 				564E01C52B7DD5F200837828 /* MyPageView.swift */,
 				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
+				564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */,
+				567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		564E01CC2B7F498700837828 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
@@ -673,6 +687,7 @@
 				12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */,
 				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
 				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
+				564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */,
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
 				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
@@ -705,6 +720,7 @@
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
+				567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */,
 				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
 				56C1DC532B73AD1B006580F9 /* OtherPeopleView.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
@@ -858,7 +874,7 @@
 				CODE_SIGN_ENTITLEMENTS = HowsTheWear/HowsTheWear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7WULLR98GP;
+				DEVELOPMENT_TEAM = 5JD4YAFH7N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowsTheWear/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -886,7 +902,7 @@
 				CODE_SIGN_ENTITLEMENTS = HowsTheWear/HowsTheWear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7WULLR98GP;
+				DEVELOPMENT_TEAM = 5JD4YAFH7N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowsTheWear/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

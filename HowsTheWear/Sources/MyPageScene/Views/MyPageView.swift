@@ -61,6 +61,10 @@ final class MyPageView: UIView {
         
     private let styleHashTagCollectionView = StyleHashTagView("MyPageStyleCollectionViewCell")
     
+    private let heatSlider = TemperatureSliderView(temperatureTitleText: "더위")
+    
+    private let coldSlider = TemperatureSliderView(temperatureTitleText: "추위")
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubview()
@@ -95,7 +99,9 @@ extension MyPageView {
          profileUserInfoStackView,
          userFashionStyleTitleLabel,
          editUserFashionStyleLabel,
-         styleHashTagCollectionView
+         styleHashTagCollectionView,
+         heatSlider,
+         coldSlider
         ].forEach {
             contentView.addSubview($0)
         }
@@ -146,6 +152,16 @@ extension MyPageView {
             make.leading.equalTo(userFashionStyleTitleLabel)
             make.trailing.equalTo(safeAreaLayoutGuide)
             make.height.equalTo(35)
+        }
+        
+        heatSlider.snp.makeConstraints { make in
+            make.top.equalTo(styleHashTagCollectionView.snp.bottom).offset(28)
+            make.leading.trailing.equalToSuperview().inset(30)
+        }
+        
+        coldSlider.snp.makeConstraints { make in
+            make.top.equalTo(heatSlider.snp.bottom).offset(28)
+            make.leading.trailing.equalToSuperview().inset(30)
         }
     }
 }
