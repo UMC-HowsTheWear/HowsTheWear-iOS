@@ -58,6 +58,8 @@
 		564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
 		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
+		567C10EF2B80DCB100446C73 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EE2B80DCB100446C73 /* MyPageViewController.swift */; };
+		567C10F12B80DD4C00446C73 /* MyPageSementedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPageSementedControll.swift */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
 		56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */; };
@@ -131,6 +133,8 @@
 		564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTemperatureSlider.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
+		567C10EE2B80DCB100446C73 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		567C10F02B80DD4C00446C73 /* MyPageSementedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSementedControll.swift; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -477,8 +481,8 @@
 		564E01C32B7DD58500837828 /* MyPageScene */ = {
 			isa = PBXGroup;
 			children = (
-				564E01CC2B7F498700837828 /* Headers */,
 				564E01C42B7DD5C900837828 /* Views */,
+				567C10ED2B80DC7900446C73 /* Controllers */,
 			);
 			path = MyPageScene;
 			sourceTree = "<group>";
@@ -490,15 +494,17 @@
 				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
 				564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */,
 				567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */,
+				567C10F02B80DD4C00446C73 /* MyPageSementedControll.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		564E01CC2B7F498700837828 /* Headers */ = {
+		567C10ED2B80DC7900446C73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				567C10EE2B80DCB100446C73 /* MyPageViewController.swift */,
 			);
-			path = Headers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
@@ -670,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567C10EF2B80DCB100446C73 /* MyPageViewController.swift in Sources */,
 				56C1DC502B731D7B006580F9 /* HomeViewController.swift in Sources */,
 				56C1DC4F2B731D77006580F9 /* BrowseMainViewController.swift in Sources */,
 				0519E5D62B761FAD00A306F1 /* LocationManager.swift in Sources */,
@@ -708,6 +715,7 @@
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				56F0C3882B77BC8700C41278 /* OtherPeopleDetailViewController.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
+				567C10F12B80DD4C00446C73 /* MyPageSementedControll.swift in Sources */,
 				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
