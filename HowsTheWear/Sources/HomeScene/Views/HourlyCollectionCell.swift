@@ -16,6 +16,7 @@ final class HourlyCollectionCell: UICollectionViewCell {
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
         $0.font = .pretendard(size: 14, weight: .medium)
         $0.textAlignment = .center
+        $0.adjustsFontSizeToFitWidth = true
     }
     
     let weatherIconImageView = UIImageView().then {
