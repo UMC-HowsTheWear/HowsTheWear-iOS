@@ -37,7 +37,7 @@ final class BrowseMainViewController: UIViewController {
         UIImage(named: "StyleTestImage")
     ]
 
-    private lazy var browseMainCollectionView = BrowseMainCollectionView()
+    private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,8 +99,19 @@ extension BrowseMainViewController {
 
 extension BrowseMainViewController {
     
+    func setCollectionViewCellSelectionHandler(_ handler: @escaping ((IndexPath) -> Void)) {
+        browseMainCollectionView.didSelectCell = handler
+    }
+    
     private func configureCollectionView() {
         browseMainCollectionView.delegate = self
+        
+            setCollectionViewCellSelectionHandler { [weak self] indexPath in
+            let detailViewController = BrowseDetailViewController()
+            self?.navigationController?.pushViewController(detailViewController, animated: true)
+            
+            // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
+        }
         // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
     }
 

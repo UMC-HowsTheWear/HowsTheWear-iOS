@@ -11,6 +11,11 @@ final class BrowseMainCollectionView: UIView {
     
     weak var delegate: browseCollectionReusableDelegate?
     
+    var didSelectCell: ((IndexPath) -> Void)?
+
+    
+    private var isHiddenCellUserId = false
+    
     private var sectionCount = 0
     
     private var sectionTitlesArray: [String] = []
@@ -23,11 +28,12 @@ final class BrowseMainCollectionView: UIView {
 
     lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(isHiddenCellUserID: Bool) {
+        super.init(frame: .zero)
         configureCollectionView()
         configureSubViews()
         configureLayout()
+        isHiddenCellUserId = isHiddenCellUserID
     }
     
     required init?(coder: NSCoder) {
@@ -53,7 +59,9 @@ extension BrowseMainCollectionView {
     
     private func configureCollectionView() {
         browseCollectionView.dataSource = self
+        browseCollectionView.delegate = self
         browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
+        browseCollectionView.register(BrowseMoreCollectionViewCell.self, forCellWithReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier)
         browseCollectionView.backgroundColor = .clear
         
         browseCollectionView.register(BrowseCollectionReusableView.self,
@@ -108,24 +116,34 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard section < imageArray.count else {
-            return 0
-        }
-        
-        return imageArray[section].count
+        return 11
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
-            for: indexPath
-        ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
-        let section = indexPath.section
-        
-        cell.styleImageView.image = imageArray[section][indexPath.item]
+        if indexPath.item == 10 {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier,
+                for: indexPath
+            ) as? BrowseMoreCollectionViewCell else { return UICollectionViewCell() }
+            
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
+                for: indexPath
+            ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+            
+            let section = indexPath.section
+            
+            if indexPath.item < imageArray[section].count {
+                  cell.styleImageView.image = imageArray[section][indexPath.item]
+              }      
+            
+            cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
 
-        return cell
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -144,6 +162,14 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
         return headerView
     }
     
+}
+
+// MARK: - Implement CollectionView Delegate
+
+extension BrowseMainCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectCell?(indexPath)
+    }
 }
 
 // MARK: - Configure UI

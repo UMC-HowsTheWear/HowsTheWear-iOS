@@ -51,7 +51,7 @@ extension BrowseDetailCellPagingImageView {
 extension BrowseDetailCellPagingImageView {
     private func configureInitialSetting() {
         imagePageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.3137255013, green: 0.3137254715, blue: 0.3137255013, alpha: 1)
-        imagePageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9411764741, green: 0.9411764741, blue: 0.9411764741, alpha: 1)
+        imagePageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
     }
     
 }
