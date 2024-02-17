@@ -291,7 +291,7 @@ private extension MyPostView {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(descriptionView.snp.bottom).offset(20)
             $0.left.equalTo(20)
-            $0.bottom.equalTo(scrollView).inset(10)
+            $0.bottom.lessThanOrEqualTo(scrollView).inset(20)
             $0.height.equalTo(50)
         }
     }
