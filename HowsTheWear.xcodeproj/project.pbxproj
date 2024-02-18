@@ -59,7 +59,7 @@
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
 		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
 		567C10EF2B80DCB100446C73 /* PostPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EE2B80DCB100446C73 /* PostPagingViewController.swift */; };
-		567C10F12B80DD4C00446C73 /* MyPageSementedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPageSementedControll.swift */; };
+		567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */; };
 		567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */; };
 		567C10F72B81830D00446C73 /* MyPagePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */; };
 		567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */; };
@@ -139,7 +139,7 @@
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
 		567C10EE2B80DCB100446C73 /* PostPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPagingViewController.swift; sourceTree = "<group>"; };
-		567C10F02B80DD4C00446C73 /* MyPageSementedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSementedControll.swift; sourceTree = "<group>"; };
+		567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostSegmentedControll.swift; sourceTree = "<group>"; };
 		567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCollectionViewController.swift; sourceTree = "<group>"; };
 		567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostCollectionViewCell.swift; sourceTree = "<group>"; };
 		567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostCollectionViewController.swift; sourceTree = "<group>"; };
@@ -505,7 +505,7 @@
 				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
 				564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */,
 				567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */,
-				567C10F02B80DD4C00446C73 /* MyPageSementedControll.swift */,
+				567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */,
 				567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -750,7 +750,7 @@
 				56F0C3882B77BC8700C41278 /* OtherPeopleDetailViewController.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
 				567C10FF2B81969300446C73 /* MyPostImagesDataManager.swift in Sources */,
-				567C10F12B80DD4C00446C73 /* MyPageSementedControll.swift in Sources */,
+				567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */,
 				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,

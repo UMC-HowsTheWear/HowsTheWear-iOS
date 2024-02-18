@@ -11,8 +11,8 @@ final class PostPagingViewController: UIViewController {
     
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
-    private let segmentControl: MyPageSementedControll = {
-        let segmentedcontroll = MyPageSementedControll(
+    private let segmentControl: MyPagePostSegmentedControll = {
+        let segmentedcontroll = MyPagePostSegmentedControll(
             items: ["내 게시물", "저장된 게시물"],
             normalColor: UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1),
             selectedColor:  UIColor(red: 0.251, green: 0.251, blue: 0.251, alpha: 1)

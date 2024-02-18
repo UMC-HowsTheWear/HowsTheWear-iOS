@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MyPageSementedControll: UISegmentedControl {
+final class MyPagePostSegmentedControll: UISegmentedControl {
     
     private let underLine = UIView()
     private let normalColor: UIColor
@@ -46,7 +46,7 @@ final class MyPageSementedControll: UISegmentedControl {
 
 // MARK: - Configure SegmentedControl
 
-extension MyPageSementedControll {
+extension MyPagePostSegmentedControll {
     
     private func setupTitleAttributes() {
         setTitleTextAttributes([.foregroundColor: normalColor, .font: font], for: .normal)
@@ -66,7 +66,7 @@ extension MyPageSementedControll {
 
 // MARK: - Configure UI
 
-extension MyPageSementedControll {
+extension MyPagePostSegmentedControll {
     
     private func configureUnderLineView() {
         let originX: CGFloat = 0
