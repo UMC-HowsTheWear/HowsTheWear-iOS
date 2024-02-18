@@ -13,7 +13,8 @@ final class MyPostCollectionViewController: UIViewController {
         frame: .zero,
         collectionViewLayout: generateCollectionViewLayout()
     )
-    private var postImageArray = [UIImage(named: "")]
+    private var postImageArray: [MyPostImagesDataModel] = []
+    private let myPostImagesDataManager = MyPostImagesDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ extension MyPostCollectionViewController: UICollectionViewDataSource {
                 as? MyPagePostCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.postImageView.image = postImageArray[indexPath.item]
+        cell.postImageView.image = postImageArray[indexPath.item].postImages
         
         return cell
     }
@@ -59,6 +60,8 @@ extension MyPostCollectionViewController {
             forCellWithReuseIdentifier: MyPagePostCollectionViewCell.reuseIdentifier
         )
         postImageCollectionView.backgroundColor = .clear
+        
+        postImageArray = myPostImagesDataManager.fetchMyPostImagesData()
     }
     
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
@@ -92,11 +95,29 @@ extension MyPostCollectionViewController {
     }
     
     private func configureLayout() {
-        let safeArea = view.safeAreaLayoutGuide
         
         postImageCollectionView.snp.makeConstraints { make in
-            make.margins.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
+}
+
+// MARK: 프리뷰
+import SwiftUI
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Container().edgesIgnoringSafeArea(.all)
+    }
+    struct Container: UIViewControllerRepresentable {
+        func makeUIViewController(context: Context) -> UIViewController {
+            return     UINavigationController(rootViewController: MyPostCollectionViewController())
+        }
+        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        }
+        typealias  UIViewControllerType = UIViewController
+    }
 }

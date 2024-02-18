@@ -63,6 +63,8 @@
 		567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */; };
 		567C10F72B81830D00446C73 /* MyPagePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */; };
 		567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */; };
+		567C10FD2B81966300446C73 /* MyPostImagesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */; };
+		567C10FF2B81969300446C73 /* MyPostImagesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
 		56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */; };
@@ -141,6 +143,8 @@
 		567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCollectionViewController.swift; sourceTree = "<group>"; };
 		567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostCollectionViewCell.swift; sourceTree = "<group>"; };
 		567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostCollectionViewController.swift; sourceTree = "<group>"; };
+		567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostImagesDataModel.swift; sourceTree = "<group>"; };
+		567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostImagesDataManager.swift; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -487,6 +491,7 @@
 		564E01C32B7DD58500837828 /* MyPageScene */ = {
 			isa = PBXGroup;
 			children = (
+				567C10FA2B81960900446C73 /* Models */,
 				564E01C42B7DD5C900837828 /* Views */,
 				567C10ED2B80DC7900446C73 /* Controllers */,
 			);
@@ -514,6 +519,23 @@
 				567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		567C10FA2B81960900446C73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				567C10FB2B81963100446C73 /* PostData */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		567C10FB2B81963100446C73 /* PostData */ = {
+			isa = PBXGroup;
+			children = (
+				567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */,
+				567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */,
+			);
+			path = PostData;
 			sourceTree = "<group>";
 		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
@@ -708,6 +730,7 @@
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
 				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
+				567C10FD2B81966300446C73 /* MyPostImagesDataModel.swift in Sources */,
 				05B034B42B7325330014F110 /* Hourly.swift in Sources */,
 				05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
@@ -726,6 +749,7 @@
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				56F0C3882B77BC8700C41278 /* OtherPeopleDetailViewController.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
+				567C10FF2B81969300446C73 /* MyPostImagesDataManager.swift in Sources */,
 				567C10F12B80DD4C00446C73 /* MyPageSementedControll.swift in Sources */,
 				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
