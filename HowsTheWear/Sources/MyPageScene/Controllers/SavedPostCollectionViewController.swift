@@ -24,7 +24,8 @@ final class SavedPostCollectionViewController: UIViewController {
     
 }
 
-  // MARK: Implement ProfileViewController DataSource
+// MARK: - Implement ProfileViewController DataSource
+
 extension SavedPostCollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,10 +47,10 @@ extension SavedPostCollectionViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
 }
       
-  // MARK: Configure CollectionView
-
+// MARK: - Configure CollectionView
 extension SavedPostCollectionViewController {
     private func configureUserPostCollectionView() {
         postImageCollectionView.dataSource = self
@@ -84,7 +85,7 @@ extension SavedPostCollectionViewController {
     
 }
   
-  // MARK: Configure UI
+// MARK: - Configure UI
 
 extension SavedPostCollectionViewController {
     private func configureSubview() {

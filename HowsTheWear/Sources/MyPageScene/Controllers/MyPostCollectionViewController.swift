@@ -47,6 +47,7 @@ extension MyPostCollectionViewController: UICollectionViewDataSource {
         
         return cell
     }
+    
 }
       
   // MARK: Configure CollectionView

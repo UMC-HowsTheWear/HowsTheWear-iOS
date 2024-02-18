@@ -42,6 +42,7 @@ extension MyPageTemperatureSlider {
         minimumTrackTintColor = UIColor(red: 0.444, green: 0.607, blue: 0.901, alpha: 1)
         maximumTrackTintColor = #colorLiteral(red: 0.8534707427, green: 0.8671818376, blue: 0.8862800002, alpha: 1)
     }
+    
 }
 
 // MARK: - Configure Circles
