@@ -216,13 +216,34 @@ extension MyPostViewController: CalendarViewControllerDelegate {
 private extension MyPostViewController {
     
     func setupNavigationBarUI() {
-        title = "오늘 나의 패션은"
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.layer.masksToBounds = false
-        navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
-        navigationController?.navigationBar.layer.shadowOpacity = 0.2
-        navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 4)
-        navigationController?.navigationBar.layer.shadowRadius = 2
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .white
+        appearance.titleTextAttributes = [
+            .font: UIFont.pretendard(size: 16, weight: .semibold),
+            .foregroundColor: UIColor.black
+        ]
+    
+        appearance.shadowColor = .clear
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.tintColor = .black
+
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        
+        let backBarButton = UIBarButtonItem(
+            title: "",
+            style: .plain,
+            target: self,
+            action: nil
+        )
+        
+        navigationItem.title = "오늘 나의 패션은"
+        navigationItem.backBarButtonItem = backBarButton
     }
     
     func configureUI() {
