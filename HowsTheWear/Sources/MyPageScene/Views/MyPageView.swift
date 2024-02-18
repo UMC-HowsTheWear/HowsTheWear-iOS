@@ -76,6 +76,9 @@ final class MyPageView: UIView {
         configureSubview()
         configureLayout()
         backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        [heatSlider, coldSlider].forEach {
+            $0.isUserInteractionEnabled = false
+        }
     }
     
     override func layoutSubviews() {
