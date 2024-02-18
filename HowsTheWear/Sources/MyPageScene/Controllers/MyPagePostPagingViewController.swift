@@ -142,7 +142,7 @@ extension MyPagePostPagingViewController {
         
         pageView.snp.makeConstraints { make in
             make.top.equalTo(segmentControl.snp.bottom)
-            make.bottom.trailing.equalTo(safeArea)
+            make.bottom.equalTo(safeArea)
             make.leading.equalToSuperview().inset(20)
             make.trailing.equalToSuperview().inset(20)
         }

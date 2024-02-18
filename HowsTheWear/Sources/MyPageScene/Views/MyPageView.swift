@@ -52,11 +52,10 @@ final class MyPageView: UIView {
         $0.textColor = UIColor(red: 0.259, green: 0.259, blue: 0.259, alpha: 1)
     }
     
-    private let editUserFashionStyleLabel = UILabel().then {
-        $0.text = "수정하기"
-        $0.font = UIFont.pretendard(size: 14, weight: .medium)
-        $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
-        $0.textAlignment = .right
+    private let editUserFashionStyleButton = UIButton().then {
+        $0.setTitle("수정하기", for: .normal)
+        $0.titleLabel?.font = UIFont.pretendard(size: 14, weight: .medium)
+        $0.setTitleColor(UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1), for: .normal)
     }
         
     private let styleHashTagCollectionView = StyleHashTagView("MyPageStyleCollectionViewCell")
@@ -110,7 +109,7 @@ extension MyPageView {
          postProfileImageButton,
          profileUserInfoStackView,
          userFashionStyleTitleLabel,
-         editUserFashionStyleLabel,
+         editUserFashionStyleButton,
          styleHashTagCollectionView,
          heatSlider,
          coldSlider,
@@ -132,7 +131,6 @@ extension MyPageView {
         
         contentView.snp.makeConstraints { make in
             make.width.equalTo(scrollView)
-            make.height.equalTo(2000)
             make.top.bottom.leading.trailing.equalTo(scrollView.frameLayoutGuide)
         }
         
@@ -159,7 +157,7 @@ extension MyPageView {
             make.leading.equalToSuperview().inset(20)
         }
         
-        editUserFashionStyleLabel.snp.makeConstraints { make in
+        editUserFashionStyleButton.snp.makeConstraints { make in
             make.centerY.equalTo(userFashionStyleTitleLabel)
             make.trailing.equalToSuperview().inset(20)
         }
