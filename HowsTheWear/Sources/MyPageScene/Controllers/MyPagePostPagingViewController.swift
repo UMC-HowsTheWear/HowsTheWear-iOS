@@ -166,7 +166,7 @@ extension MyPagePostPagingViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         segmentControl.snp.makeConstraints { make in
-            make.height.equalTo(safeArea).multipliedBy(0.2)
+            make.height.equalTo(safeArea).multipliedBy(0.15)        // 임시 수정
             make.top.leading.trailing.equalTo(safeArea)
         }
     }

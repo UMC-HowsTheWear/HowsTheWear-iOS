@@ -35,7 +35,7 @@ final class TabBarController: UITabBarController {
         )
     }
     
-    private let myVC = UIViewController().then {
+    private let myVC = MyPageViewController().then {
         $0.tabBarItem = UITabBarItem(
             title: "MY",
             image: UIImage(named: "person.circle"),

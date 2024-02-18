@@ -57,6 +57,7 @@
 		564E01C82B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */; };
 		564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
+		5664CCE52B81F4E1003651F6 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */; };
 		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
 		567C10EF2B80DCB100446C73 /* MyPagePostPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */; };
 		567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */; };
@@ -137,6 +138,7 @@
 		564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStyleCollectionViewCell.swift; sourceTree = "<group>"; };
 		564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTemperatureSlider.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
 		567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostPagingViewController.swift; sourceTree = "<group>"; };
 		567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostSegmentedControll.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 				567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */,
 				567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */,
 				567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */,
+				5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				05B034B42B7325330014F110 /* Hourly.swift in Sources */,
 				05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
+				5664CCE52B81F4E1003651F6 /* MyPageViewController.swift in Sources */,
 				0530AB172B6708D30021625D /* DailyWeatherCell.swift in Sources */,
 				567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */,
 				0530AB112B6707890021625D /* HourlyWeatherCell.swift in Sources */,

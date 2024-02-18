@@ -76,6 +76,7 @@ final class MyPageView: UIView {
         super.init(frame: frame)
         configureSubview()
         configureLayout()
+        backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
     }
     
     override func layoutSubviews() {
@@ -132,13 +133,13 @@ extension MyPageView {
         contentView.snp.makeConstraints { make in
             make.width.equalTo(scrollView)
             make.height.equalTo(2000)
-            make.top.leading.trailing.equalTo(scrollView)
+            make.top.bottom.leading.trailing.equalTo(scrollView.frameLayoutGuide)
         }
         
         profileImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(profileImageView.snp.height)
-            make.top.equalToSuperview().inset(33)
+            make.top.equalToSuperview().inset(15)           // 임시 수정
             make.leading.equalToSuperview().inset(148)
         }
         
@@ -181,7 +182,7 @@ extension MyPageView {
         }
         
         myPagePostPageView.snp.makeConstraints { make in
-            make.top.equalTo(coldSlider.snp.bottom).offset(10)
+            make.top.equalTo(coldSlider.snp.bottom).offset(20)      // 임시 수정
             make.leading.equalTo(safeAreaLayoutGuide)
             make.trailing.equalTo(safeAreaLayoutGuide)
             make.bottom.equalTo(safeAreaLayoutGuide)
