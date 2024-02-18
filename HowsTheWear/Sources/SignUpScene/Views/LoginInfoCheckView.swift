@@ -1,8 +1,8 @@
 //
-//  LoginInfoCheckView.swift
-//  HowsTheWear
+//  ViewController2.swift
+//  login
 //
-//  Created by 성대훈 on 2/7/24.
+//  Created by 성대훈 on 1/29/24.
 //
 
 import UIKit
@@ -32,7 +32,7 @@ class LoginInfoCheckView: UIView {
     private let idLabel: UILabel = {
         let label = UILabel()
         label.text = "아이디"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -44,8 +44,8 @@ class LoginInfoCheckView: UIView {
         textField.placeholder = "아이디를 입력해주세요."
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1.5
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         textField.clipsToBounds = true
         textField.textColor = UIColor.black
         textField.autocapitalizationType = .none
@@ -59,7 +59,7 @@ class LoginInfoCheckView: UIView {
         $0.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
     }
     
-    private lazy var pwView = UIStackView(arrangedSubviews: [pwLabel,pwTextField,passwordSecureButton]).then {
+    private lazy var pwView = UIStackView(arrangedSubviews: [pwLabel,pwTextField,pwSecureButton]).then {
         $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
@@ -71,7 +71,7 @@ class LoginInfoCheckView: UIView {
     private let pwLabel: UILabel = {
         let label = UILabel()
         label.text = "비밀번호"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -83,8 +83,8 @@ class LoginInfoCheckView: UIView {
         textField.placeholder = "대소문자 포함 8자리."
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1.5
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         textField.clipsToBounds = true
         textField.textColor = UIColor.black
         textField.autocapitalizationType = .none
@@ -97,10 +97,10 @@ class LoginInfoCheckView: UIView {
     }()
     
     
-    lazy var passwordSecureButton: UIButton = {
+    lazy var pwSecureButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("표시", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.tintColor = .systemGray
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         button.addTarget(self, action: #selector(passwordSecureModeSetting), for: .touchUpInside)
         return button
@@ -110,7 +110,7 @@ class LoginInfoCheckView: UIView {
         $0.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
     }
     
-    private lazy var pwConfirmView = UIStackView(arrangedSubviews: [pwConfirmLabel,pwConfirmTextField,passwordSecureButton]).then {
+    private lazy var pwConfirmView = UIStackView(arrangedSubviews: [pwConfirmLabel,pwConfirmTextField,pwConfirmSecureButton]).then {
         $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
@@ -120,7 +120,7 @@ class LoginInfoCheckView: UIView {
     private let pwConfirmLabel: UILabel = {
         let label = UILabel()
         label.text = "비밀번호 확인"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -129,11 +129,11 @@ class LoginInfoCheckView: UIView {
     let pwConfirmTextField: UITextField = {
         var textField = UITextField()
         textField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        textField.placeholder = "비밀번호를 입력해주세요."
+        textField.placeholder = "  비밀번호를 입력해주세요."
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1.5
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         textField.clipsToBounds = true
         textField.textColor = UIColor.black
         textField.autocapitalizationType = .none
@@ -142,10 +142,10 @@ class LoginInfoCheckView: UIView {
         return textField
     }()
     
-    lazy var passwordSecureButton2: UIButton = {
+    lazy var pwConfirmSecureButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("표시", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.tintColor = .systemGray
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         button.addTarget(self, action: #selector(passwordConfirmSecureModeSetting), for: .touchUpInside)
         return button
@@ -183,7 +183,7 @@ class LoginInfoCheckView: UIView {
     
     private func configureUI() {
         backgroundColor = #colorLiteral(red: 0.980392158, green: 0.980392158, blue: 0.980392158, alpha: 1)
-        addSubviews(loginTitleLabel,idView,separatorView,pwView,passwordSecureButton,separatorView2,pwConfirmView,passwordSecureButton2,nextButton)
+        addSubviews(loginTitleLabel,idView,separatorView,pwView,pwSecureButton,separatorView2,pwConfirmView,pwConfirmSecureButton,nextButton)
         setupConstraints()
     }
     
@@ -228,10 +228,9 @@ class LoginInfoCheckView: UIView {
             $0.height.equalTo(idView.snp.height)
         }
         
-        passwordSecureButton.snp.makeConstraints {
-            $0.top.equalTo(pwView.snp.top).offset(10)
-            $0.bottom.equalTo(pwTextField.snp.bottom).offset(10)
-            $0.trailing.equalTo(pwTextField.snp.trailing).offset(1)
+        pwSecureButton.snp.makeConstraints {
+            $0.centerY.equalTo(pwTextField)
+            $0.trailing.equalTo(pwView.snp.trailing).offset(-10)
         }
         
         separatorView2.snp.makeConstraints {
@@ -248,28 +247,36 @@ class LoginInfoCheckView: UIView {
             $0.height.equalTo(pwView.snp.height)
         }
         
-        passwordSecureButton2.snp.makeConstraints {
-            $0.top.equalTo(pwConfirmView.snp.top).offset(10)
-            $0.bottom.equalTo(pwConfirmTextField.snp.bottom).offset(10)
-            $0.trailing.equalTo(pwConfirmTextField.snp.trailing).offset(1)
+        pwConfirmSecureButton.snp.makeConstraints {
+            $0.centerY.equalTo(pwConfirmTextField)
+            $0.trailing.equalTo(pwConfirmView.snp.trailing).offset(-10)
         }
         
         nextButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(pwConfirmView.snp.bottom).offset(300)
             $0.left.equalTo(separatorView)
             $0.height.equalTo(60)
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(7)
         }
     }
     
     @objc private func passwordSecureModeSetting() {
+        pwSecureButton.isSelected.toggle()
+        let eyeImage = pwSecureButton.isSelected ? "eye.slash" : "eye"
+        pwSecureButton.setImage(UIImage(systemName: eyeImage), for: .normal)
         pwTextField.isSecureTextEntry.toggle()
         
     }
     
     @objc private func passwordConfirmSecureModeSetting() {
+        pwConfirmSecureButton.isSelected.toggle()
+        let eyeImage = pwConfirmSecureButton.isSelected ? "eye.slash" : "eye"
+        pwConfirmSecureButton.setImage(UIImage(systemName: eyeImage), for: .normal)
         pwConfirmTextField.isSecureTextEntry.toggle()
+        
         
     }
 }
+
+
 
