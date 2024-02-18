@@ -32,7 +32,7 @@ class ProfileView: UIView {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "이름"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -41,18 +41,20 @@ class ProfileView: UIView {
     let nameTextField: UITextField = {
         var textField = UITextField()
         textField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        textField.placeholder = "이름 입력해주세요."
+        textField.attributedPlaceholder = NSAttributedString(
+                        string: "이름을 입력하세요.",
+                        attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
+                                    ])
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1.5
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         textField.clipsToBounds = true
         textField.textColor = UIColor.black
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.leftViewMode = .always
-        
         return textField
     }()
     
@@ -60,7 +62,7 @@ class ProfileView: UIView {
         $0.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
     }
     
-    private lazy var ageView = UIStackView(arrangedSubviews: [ageLabel,ageField]).then {
+    private lazy var ageView = UIStackView(arrangedSubviews: [ageLabel,ageButtonField]).then {
         $0.axis = .horizontal
         $0.alignment = .fill
         $0.distribution = .fillProportionally
@@ -71,27 +73,27 @@ class ProfileView: UIView {
     private let ageLabel: UILabel = {
         let label = UILabel()
         label.text = "나이"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
     
     // 나이 토글로 바꿔
-    let ageField: UIButton = {
+    let ageButtonField: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        button.setTitle("나이대를 선택하려면 꾹 누르세요.", for: .normal)
+        button.setTitle("나이대를 선택하세요.", for: .normal)
         button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 1.5
-        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         button.clipsToBounds = true
         button.setTitleColor(UIColor.lightGray, for: .normal)
         
         let teen = UIAction(title:"10대",handler: { _ in print("10대") })
         let twenties = UIAction(title:"20대",handler: { _ in print("20대") })
         let thirties = UIAction(title:"30대",handler: { _ in print("30대") })
-        button.menu = UIMenu(title: "나이대",
+        button.menu = UIMenu(title: "",
                              identifier: nil,
                              options: .displayInline,
                              children: [ teen, twenties, thirties ])
@@ -113,7 +115,7 @@ class ProfileView: UIView {
     private let selectGenderLabel: UILabel = {
         let label = UILabel()
         label.text = "성별"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -131,8 +133,8 @@ class ProfileView: UIView {
         button.setTitle("남자", for: .normal)
         button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1.5
-        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         button.setTitleColor(UIColor.lightGray, for: .normal)
         button.clipsToBounds = true
         return button
@@ -143,8 +145,8 @@ class ProfileView: UIView {
         button.setTitle("여자", for: .normal)
         button.backgroundColor = UIColor.white
         button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1.5
-        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         button.setTitleColor(UIColor.lightGray, for: .normal)
         button.clipsToBounds = true
         return button
@@ -242,11 +244,13 @@ class ProfileView: UIView {
         
         nextButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(selectGenderView.snp.bottom).offset(300)
             $0.left.equalTo(separatorView)
             $0.height.equalTo(60)
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(7)
         }
     }
     
 }
+
+
 
