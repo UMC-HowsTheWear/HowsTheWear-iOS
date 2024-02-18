@@ -27,7 +27,6 @@
 		05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C52B73276D0014F110 /* CalendarViewController.swift */; };
 		05B034C82B7327910014F110 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C72B7327910014F110 /* CalendarView.swift */; };
 		05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C92B7328DD0014F110 /* PaddedLabel.swift */; };
-		05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
 		126C9D4B2B7327A300C9FF03 /* LoginInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */; };
@@ -96,7 +95,6 @@
 		05B034C72B7327910014F110 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		05B034C92B7328DD0014F110 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		12541C9F2B71F36A00951C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckViewController.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 		05BE62872B45522200BAD63F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05BE628B2B45527900BAD63F /* CustomBarButtonItem.swift */,
 				0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */,
 				0530AB082B63F9A30021625D /* TodayWeatherCell.swift */,
 				0530AB1A2B670DFA0021625D /* TodayItemCell.swift */,
@@ -674,9 +671,7 @@
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
 				0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */,
-				05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
-				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
 				56475D432B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift in Sources */,

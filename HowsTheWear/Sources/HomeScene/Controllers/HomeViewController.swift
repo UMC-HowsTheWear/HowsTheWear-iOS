@@ -14,7 +14,6 @@ final class HomeViewController: UIViewController {
     
     var items: [TodayItem] = TodayItem.items
     
-    private let customBarButtonItem = CustomBarButtonItem()
     private let refreshControl = UIRefreshControl().then {
         $0.tintColor = #colorLiteral(red: 0.4442995787, green: 0.6070379615, blue: 0.9031649232, alpha: 1)
     }
@@ -29,7 +28,6 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        configureAddTargets()
     }
     
 }
@@ -138,9 +136,6 @@ private extension HomeViewController {
         appearance.backgroundColor = .clear
         appearance.shadowColor = nil
         navigationController?.navigationBar.standardAppearance = appearance
-        
-        let rightButton = UIBarButtonItem(customView: customBarButtonItem.locationButton)
-        navigationItem.rightBarButtonItem = rightButton
     }
     
     func setupTableView() {
@@ -192,30 +187,6 @@ private extension HomeViewController {
         if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CurrentWeatherCell {
             cell.updateWeather(currentWeather: currentWeather, location: location)
         }
-    }
-    
-}
-
-// MARK: - Button Target Configuration
-
-private extension HomeViewController {
-    
-    func configureAddTargets() {
-        customBarButtonItem.locationButton.addTarget(
-            self,
-            action: #selector(locationButtonDidTap),
-            for: .touchUpInside
-        )
-    }
-    
-}
-
-// MARK: - Button Action Method
-
-private extension HomeViewController {
-    
-    @objc func locationButtonDidTap() {
-        print("Clicked")
     }
     
 }
