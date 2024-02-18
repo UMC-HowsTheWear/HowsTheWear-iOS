@@ -65,6 +65,13 @@ final class MyPageView: UIView {
     
     private let coldSlider = TemperatureSliderView(temperatureTitleText: "추위")
     
+    private let myPagePostViewController: UIViewController? = {
+        let pageViewController = PostPagingViewController(
+            viewControllers: [MyPostCollectionViewController(), SavedPostCollectionViewController()]
+        )
+        return pageViewController
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubview()
@@ -87,6 +94,10 @@ final class MyPageView: UIView {
 extension MyPageView {
     
     private func configureSubview() {
+        guard let myPagePostPageView = myPagePostViewController?.view else {
+            return
+        }
+        
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         
@@ -101,13 +112,18 @@ extension MyPageView {
          editUserFashionStyleLabel,
          styleHashTagCollectionView,
          heatSlider,
-         coldSlider
+         coldSlider,
+         myPagePostPageView
         ].forEach {
             contentView.addSubview($0)
         }
     }
     
     private func configureLayout() {
+        guard let myPagePostPageView = myPagePostViewController?.view else {
+            return
+        }
+        
         scrollView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
             make.bottom.equalToSuperview()
@@ -163,5 +179,13 @@ extension MyPageView {
             make.top.equalTo(heatSlider.snp.bottom).offset(28)
             make.leading.trailing.equalToSuperview().inset(30)
         }
+        
+        myPagePostPageView.snp.makeConstraints { make in
+            make.top.equalTo(coldSlider.snp.bottom).offset(40)
+            make.leading.equalTo(safeAreaLayoutGuide)
+            make.trailing.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(safeAreaLayoutGuide)
+        }
+
     }
 }

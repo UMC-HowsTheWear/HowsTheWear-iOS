@@ -34,15 +34,13 @@ extension MyPostCollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let post = postImageArray[indexPath.item]
-        
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MyPagePostCollectionViewCell.reuseIdentifier,
             for: indexPath
-        )
-                as? MyPagePostCollectionViewCell else {
+        ) as? MyPagePostCollectionViewCell else {
             return UICollectionViewCell()
         }
+        
         cell.postImageView.image = postImageArray[indexPath.item].postImages
         
         return cell
@@ -67,13 +65,14 @@ extension MyPostCollectionViewController {
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1/2),
-            heightDimension: .fractionalHeight(1/2)
+            heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 1.5, bottom: 0, trailing: 1.5)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
+            heightDimension: .fractionalHeight(0.92)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -104,20 +103,4 @@ extension MyPostCollectionViewController {
         }
     }
     
-}
-
-// MARK: 프리뷰
-import SwiftUI
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
-    }
-    struct Container: UIViewControllerRepresentable {
-        func makeUIViewController(context: Context) -> UIViewController {
-            return     UINavigationController(rootViewController: MyPostCollectionViewController())
-        }
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        }
-        typealias  UIViewControllerType = UIViewController
-    }
 }

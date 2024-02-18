@@ -9,11 +9,10 @@ import UIKit
 
 final class MyPagePostCollectionViewCell: UICollectionViewCell {
     
-    var postImageView: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        return image
-    }()
+    let postImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +34,10 @@ extension MyPagePostCollectionViewCell {
     
     private func configureConstraints() {
         postImageView.snp.makeConstraints { make in
-            make.margins.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
         }
     }
     

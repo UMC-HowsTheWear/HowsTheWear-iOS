@@ -36,7 +36,7 @@ final class PostPagingViewController: UIViewController {
         }
 
         self.viewControllers = viewControllers
-        super.init()    // nibName
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -45,7 +45,10 @@ final class PostPagingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureSegmentedControlInitialSetting()
+        configureSegmentedControlLayout()
+        configurePageViewControllerInitialSetting()
+        configurePageViewControllerLayout()
     }
 
 }
@@ -139,30 +142,31 @@ extension PostPagingViewController {
         
         pageView.snp.makeConstraints { make in
             make.top.equalTo(segmentControl.snp.bottom)
-            make.leading.equalTo(safeArea).offset(-1)
             make.bottom.trailing.equalTo(safeArea)
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
         }
     }
     
 }
 
-// MARK: Configure CommunitySegmentedControl
+// MARK: Configure SegmentedControl
 
 extension PostPagingViewController {
-    @objc private func tapCommunitySegmentedControl(_ sender: UISegmentedControl) {
+    @objc private func tapSegmentedControl(_ sender: UISegmentedControl) {
         currentIndex = sender.selectedSegmentIndex
     }
     
-    private func configureCommunitySegmentedControlInitialSetting() {
+    private func configureSegmentedControlInitialSetting() {
         view.addSubview(segmentControl)
-        segmentControl.addTarget(self, action: #selector(tapCommunitySegmentedControl(_:)), for: .valueChanged)
+        segmentControl.addTarget(self, action: #selector(tapSegmentedControl(_:)), for: .valueChanged)
     }
     
-    private func configureCommunitySegmentedControlLayout() {
+    private func configureSegmentedControlLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
         segmentControl.snp.makeConstraints { make in
-            make.height.equalTo(safeArea).multipliedBy(0.08)
+            make.height.equalTo(safeArea).multipliedBy(0.2)
             make.top.leading.trailing.equalTo(safeArea)
         }
     }
