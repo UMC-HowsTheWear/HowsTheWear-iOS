@@ -1,8 +1,8 @@
 //
-//  ViewController2.swift
-//  login
+//  LoginInfoCheckView.swift
+//  HowsTheWear
 //
-//  Created by 성대훈 on 1/29/24.
+//  Created by 성대훈 on 2/9/24.
 //
 
 import UIKit
