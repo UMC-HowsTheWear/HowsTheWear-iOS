@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PostPagingViewController: UIViewController {
+final class MyPagePostPagingViewController: UIViewController {
     
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
@@ -55,7 +55,7 @@ final class PostPagingViewController: UIViewController {
 
 // MARK: Implement PageViewController Delegate
 
-extension PostPagingViewController: UIPageViewControllerDelegate {
+extension MyPagePostPagingViewController: UIPageViewControllerDelegate {
     func pageViewController(
         _ pageViewController: UIPageViewController,
         willTransitionTo pendingViewControllers: [UIViewController]
@@ -88,7 +88,7 @@ extension PostPagingViewController: UIPageViewControllerDelegate {
 
 // MARK: Implement PageViewController DataSource
 
-extension PostPagingViewController: UIPageViewControllerDataSource {
+extension MyPagePostPagingViewController: UIPageViewControllerDataSource {
     func pageViewController(
         _ pageViewController: UIPageViewController,
         viewControllerBefore viewController: UIViewController
@@ -119,7 +119,7 @@ extension PostPagingViewController: UIPageViewControllerDataSource {
 
 // MARK: Configure PageViewController
 
-extension PostPagingViewController {
+extension MyPagePostPagingViewController {
     private func configurePageViewControllerInitialSetting() {
         if let firstViewController = viewControllers.first {
             pageViewController.setViewControllers(
@@ -152,7 +152,7 @@ extension PostPagingViewController {
 
 // MARK: Configure SegmentedControl
 
-extension PostPagingViewController {
+extension MyPagePostPagingViewController {
     @objc private func tapSegmentedControl(_ sender: UISegmentedControl) {
         currentIndex = sender.selectedSegmentIndex
     }

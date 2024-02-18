@@ -66,7 +66,7 @@ final class MyPageView: UIView {
     private let coldSlider = TemperatureSliderView(temperatureTitleText: "추위")
     
     private let myPagePostViewController: UIViewController? = {
-        let pageViewController = PostPagingViewController(
+        let pageViewController = MyPagePostPagingViewController(
             viewControllers: [MyPostCollectionViewController(), SavedPostCollectionViewController()]
         )
         return pageViewController
