@@ -181,7 +181,7 @@ extension MyPageView {
         }
         
         myPagePostPageView.snp.makeConstraints { make in
-            make.top.equalTo(coldSlider.snp.bottom).offset(40)
+            make.top.equalTo(coldSlider.snp.bottom).offset(10)
             make.leading.equalTo(safeAreaLayoutGuide)
             make.trailing.equalTo(safeAreaLayoutGuide)
             make.bottom.equalTo(safeAreaLayoutGuide)

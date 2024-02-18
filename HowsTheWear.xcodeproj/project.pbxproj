@@ -502,10 +502,9 @@
 			isa = PBXGroup;
 			children = (
 				564E01C52B7DD5F200837828 /* MyPageView.swift */,
-				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
 				564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */,
 				567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */,
-				567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */,
+				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
 				567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */,
 			);
 			path = Views;
@@ -514,6 +513,7 @@
 		567C10ED2B80DC7900446C73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */,
 				567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */,
 				567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */,
 				567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */,
