@@ -50,7 +50,7 @@ extension MyPageSementedControll {
     
     private func setupTitleAttributes() {
         setTitleTextAttributes([.foregroundColor: normalColor, .font: font], for: .normal)
-        setTitleTextAttributes([.foregroundColor: selectedColor, .font: font], for: .normal)
+        setTitleTextAttributes([.foregroundColor: selectedColor, .font: font], for: .selected)
     }
     
     private func setupInitialStatus() {
