@@ -13,13 +13,13 @@ final class MyPageView: UIView {
     
     private let contentView = UIView()
     
-    private let profileImageView = UIImageView().then  {
+    let profileImageView = UIImageView().then  {
         $0.image = UIImage(named: "DefaultProfileImage")
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
     }
     
-    private let postProfileImageButton = UIButton().then {
+    let postProfileImageButton = UIButton().then {
         $0.setImage(UIImage(named: "PostProfileImage"), for: .normal)
     }
     
