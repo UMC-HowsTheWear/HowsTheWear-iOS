@@ -11,7 +11,7 @@ final class BrowseStyleCollectionView: UIView {
     
     var didSelectCell: ((IndexPath) -> Void)?
     
-    private var imageArray: [UIImage?] = [] {
+    private var imageArray: [BrowseStyleDataModel] = [] {
         didSet {
             browseStyleCollectionView.reloadData()
         }
@@ -34,7 +34,7 @@ final class BrowseStyleCollectionView: UIView {
 
 // MARK: - Public Interface
 extension BrowseStyleCollectionView {
-    func configureContents(_ images: [UIImage?]) {
+    func configureContents(_ images: [BrowseStyleDataModel]) {
         self.imageArray = images
     }
     
@@ -99,7 +99,7 @@ extension BrowseStyleCollectionView: UICollectionViewDataSource {
             for: indexPath
         ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.styleImageView.image = imageArray[indexPath.item]
+        cell.styleImageView.image = imageArray[indexPath.item].images
         
         return cell
     }

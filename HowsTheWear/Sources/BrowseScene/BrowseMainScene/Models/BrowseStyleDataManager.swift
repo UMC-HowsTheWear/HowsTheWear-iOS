@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BrowseMainImagesDataManager {
+final class BrowseStyleDataManager {
     
     private var thisWeekImagesDataArray: [BrowseStyleDataModel] = [
     BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage1")),
@@ -20,11 +20,11 @@ final class BrowseMainImagesDataManager {
     BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage8")),
     BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage4")),
     BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage3")),
-    BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage2")),
+    BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage6")),
     BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage7")),
-    BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage1")),
-    BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage9")),
     BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage5")),
+    BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage2")),
+    BrowseStyleDataModel(images: UIImage(named: "ThisWeekTestImage1")),
     ]
     
     private var nextWeekImagesDataArray: [BrowseStyleDataModel] = [

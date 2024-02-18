@@ -10,32 +10,6 @@ import UIKit
 import SnapKit
 
 final class BrowseMainViewController: UIViewController {
-    
-    private var thisWeekStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
-    
-    private var nextWeekStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
-    
-    private var lastYearStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
 
     private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true)
     
@@ -44,7 +18,6 @@ final class BrowseMainViewController: UIViewController {
         configureInitialSetting()
         browseMainCollectionView.configureContents(
             sectionCount: 3,
-            imagesData: [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray],
             sectionTitles: ["이번주 코디", "저번주 코디", "작년 이맘때는"]
         )
         configureCollectionView()

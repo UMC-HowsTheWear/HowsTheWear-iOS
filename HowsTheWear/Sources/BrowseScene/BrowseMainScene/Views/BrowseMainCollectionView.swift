@@ -13,14 +13,18 @@ final class BrowseMainCollectionView: UIView {
     
     var didSelectCell: ((IndexPath) -> Void)?
 
-    
+    private var thisWeekStyleArray:[BrowseStyleDataModel] = []
+    private var nextWeekStyleArray:[BrowseStyleDataModel] = []
+    private var lastYearStyleArray:[BrowseStyleDataModel] = []
+    private let browseStyleDataManager = BrowseStyleDataManager()
+
     private var isHiddenCellUserId = false
     
     private var sectionCount = 0
     
     private var sectionTitlesArray: [String] = []
     
-    private var imageArray: [[UIImage?]] = [] {
+    private var imageArray: [[BrowseStyleDataModel]] = [] {
         didSet {
             browseCollectionView.reloadData()
         }
@@ -45,9 +49,8 @@ final class BrowseMainCollectionView: UIView {
 // MARK: - Public Interface
 
 extension BrowseMainCollectionView {
-    func configureContents(sectionCount count: Int,imagesData images: [[UIImage?]], sectionTitles titles: [String]) {
+    func configureContents(sectionCount count: Int, sectionTitles titles: [String]) {
         sectionCount = count
-        self.imageArray = images
         self.sectionTitlesArray = titles
     }
     
@@ -67,7 +70,12 @@ extension BrowseMainCollectionView {
         browseCollectionView.register(BrowseCollectionReusableView.self,
                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                       withReuseIdentifier: BrowseCollectionReusableView.reuseIdentifier)
-        // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
+        
+        thisWeekStyleArray = browseStyleDataManager.fetchThisWeekImagesData()
+        nextWeekStyleArray = browseStyleDataManager.fetchNextWeekImagesData()
+        lastYearStyleArray = browseStyleDataManager.fetchLastYearImagesData()
+        
+        imageArray = [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray]
     }
 
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
@@ -120,7 +128,7 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+// 더보기 버튼 미구현
 //        if indexPath.item == 10 {
 //            guard let cell = collectionView.dequeueReusableCell(
 //                withReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier,
@@ -153,7 +161,7 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
         let section = indexPath.section
        
         if indexPath.item < imageArray[section].count {
-            cell.styleImageView.image = imageArray[section][indexPath.item]
+            cell.styleImageView.image = imageArray[section][indexPath.item].images
         }
        
         cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId

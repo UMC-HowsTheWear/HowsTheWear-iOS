@@ -9,6 +9,9 @@ import UIKit
 
 final class BrowseThisWeekViewController: UIViewController {
     
+    private var thisWeekStyleArray: [BrowseStyleDataModel] = []
+    private let browseStyleDataManager = BrowseStyleDataManager()
+    
     private let thisWeekStyleView = BrowseStyleView()
     
     override func viewDidLoad() {
@@ -50,12 +53,7 @@ extension BrowseThisWeekViewController {
             self?.navigationController?.pushViewController(detailViewController, animated: true)
         }
         
-        // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
-        thisWeekStyleView.configureContents([
-            UIImage(named: "ThisWeekTestImage"),
-            UIImage(named: "ThisWeekTestImage"),
-            UIImage(named: "ThisWeekTestImage"),
-        ])
+        thisWeekStyleView.configureContents(browseStyleDataManager.fetchThisWeekImagesData())
     }
     
 }

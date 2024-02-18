@@ -44,7 +44,7 @@ extension BrowseStyleView {
         browseStyleCollectionView.didSelectCell = handler
     }
     
-    func configureContents(_ images: [UIImage?]) {
+    func configureContents(_ images: [BrowseStyleDataModel]) {
         browseStyleCollectionView.configureContents(images)
     }
 }

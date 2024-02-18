@@ -92,7 +92,7 @@ extension OtherPeopleView {
     private func fetchData() {
         othersPeopleCollectionView.configureContents(
             sectionCount: hashTagNumber,
-            imagesData: [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray, thisWeekStyleArray, nextWeekStyleArray],
+//            imagesData: [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray, thisWeekStyleArray, nextWeekStyleArray],
             sectionTitles: hashTagTitleArray
         )
     }
