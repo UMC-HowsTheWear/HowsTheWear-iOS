@@ -12,16 +12,18 @@ final class OtherPeopleViewController: UIViewController {
     private let otherPeopleImageArray: [[UIImage]] = [[]]
     
     private let otherPeopleView = OtherPeopleView()
-    
-    override func loadView() {
-        view = otherPeopleView
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view = otherPeopleView
         configureInitialSetting()
         configureCollectionView()
         configureAction()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNaviBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
