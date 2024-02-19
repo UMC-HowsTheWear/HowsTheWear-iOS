@@ -165,6 +165,13 @@
 			path = TabBarScene;
 			sourceTree = "<group>";
 		};
+		056CAEE82B83171F00ED6B81 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		05B034B22B7325260014F110 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +204,7 @@
 		05BE62852B45521000BAD63F /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
+				056CAEE82B83171F00ED6B81 /* Helpers */,
 				0519E5D72B76201000A306F1 /* Manager */,
 				05B034B22B7325260014F110 /* Models */,
 				05BE62872B45522200BAD63F /* Views */,
