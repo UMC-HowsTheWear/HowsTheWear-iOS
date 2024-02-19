@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0519E5D62B761FAD00A306F1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519E5D52B761FAD00A306F1 /* LocationManager.swift */; };
-		0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519E5D82B76201D00A306F1 /* WeatherManager.swift */; };
 		0530AAB22B5D50440021625D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB12B5D50440021625D /* TabBarController.swift */; };
 		0530AAB42B5D508F0021625D /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AAB32B5D508F0021625D /* Vibration.swift */; };
 		0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */; };
@@ -20,7 +19,6 @@
 		0530AB192B6708F50021625D /* DailyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB182B6708F50021625D /* DailyCollectionCell.swift */; };
 		0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0530AB1A2B670DFA0021625D /* TodayItemCell.swift */; };
 		05B034B42B7325330014F110 /* Hourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B32B7325330014F110 /* Hourly.swift */; };
-		05B034B62B73257C0014F110 /* Daily.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B52B73257C0014F110 /* Daily.swift */; };
 		05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B92B7325D90014F110 /* TodayItem.swift */; };
 		05B034C22B7327400014F110 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C12B7327400014F110 /* MyPostView.swift */; };
 		05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C32B7327540014F110 /* MyPostViewController.swift */; };
@@ -75,7 +73,6 @@
 /* Begin PBXFileReference section */
 		0519E5D22B761A3B00A306F1 /* HowsTheWear.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HowsTheWear.entitlements; sourceTree = "<group>"; };
 		0519E5D52B761FAD00A306F1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		0519E5D82B76201D00A306F1 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		0530AAB12B5D50440021625D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0530AAB32B5D508F0021625D /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		0530AB002B63E89A0021625D /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
@@ -87,7 +84,6 @@
 		0530AB182B6708F50021625D /* DailyCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCollectionCell.swift; sourceTree = "<group>"; };
 		0530AB1A2B670DFA0021625D /* TodayItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemCell.swift; sourceTree = "<group>"; };
 		05B034B32B7325330014F110 /* Hourly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourly.swift; sourceTree = "<group>"; };
-		05B034B52B73257C0014F110 /* Daily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily.swift; sourceTree = "<group>"; };
 		05B034B92B7325D90014F110 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		05B034C12B7327400014F110 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		05B034C32B7327540014F110 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				0519E5D52B761FAD00A306F1 /* LocationManager.swift */,
-				0519E5D82B76201D00A306F1 /* WeatherManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -174,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				05B034B32B7325330014F110 /* Hourly.swift */,
-				05B034B52B73257C0014F110 /* Daily.swift */,
 				05B034B92B7325D90014F110 /* TodayItem.swift */,
 			);
 			path = Models;
@@ -635,7 +629,6 @@
 				56C1DC4F2B731D77006580F9 /* BrowseMainViewController.swift in Sources */,
 				0519E5D62B761FAD00A306F1 /* LocationManager.swift in Sources */,
 				05B034C82B7327910014F110 /* CalendarView.swift in Sources */,
-				05B034B62B73257C0014F110 /* Daily.swift in Sources */,
 				12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */,
 				563408B02B6FB34D00B0159B /* BrowseStyleView.swift in Sources */,
 				5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */,
@@ -670,7 +663,6 @@
 				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
-				0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
