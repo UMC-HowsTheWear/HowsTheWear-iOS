@@ -19,7 +19,19 @@ final class HourlyWeatherCell: UITableViewCell {
     var weather: ParsedWeather?
     var hourlyForecast: [HourWeather] = []
     
-    var city: (name: String, placemarkTitle: String, lat: Double, long: Double, timeZone: String) = ("MyCity", "placemarkTitle", 40.86, -74.12, "EST") {
+    var city: (
+        name: String,
+        placemarkTitle: String,
+        lat: Double,
+        long: Double,
+        timeZone: String
+    ) = (
+        "MyCity", 
+        "placemarkTitle",
+        40.86,
+        -74.12,
+        "EST"
+    ) {
         didSet {
             WeatherDataCenter.shared.getWeatherForLocation(
                 location: CLLocation(
@@ -90,8 +102,14 @@ extension HourlyWeatherCell: UICollectionViewDataSource {
         return hourlyForecast.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionCell.reuseIdentifier, for: indexPath) as? HourlyCollectionCell else {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: HourlyCollectionCell.reuseIdentifier,
+            for: indexPath
+        ) as? HourlyCollectionCell else {
             return UICollectionViewCell()
         }
         let hourWeather = hourlyForecast[indexPath.row]

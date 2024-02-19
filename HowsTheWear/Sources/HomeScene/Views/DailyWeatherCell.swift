@@ -19,7 +19,19 @@ final class DailyWeatherCell: UITableViewCell {
     var weather: ParsedWeather?
     var dailyForecast: [DayWeather] = []
     
-    var city: (name: String, placemarkTitle: String, lat: Double, long: Double, timeZone: String) = ("MyCity", "placemarkTitle", 40.86, -74.12, "EST") {
+    var city: (
+        name: String,
+        placemarkTitle: String,
+        lat: Double,
+        long: Double,
+        timeZone: String
+    ) = (
+        "MyCity",
+        "placemarkTitle",
+        40.86,
+        -74.12,
+        "EST"
+    ) {
         didSet {
             WeatherDataCenter.shared.getWeatherForLocation(
                 location: CLLocation(
@@ -90,8 +102,14 @@ extension DailyWeatherCell: UICollectionViewDataSource {
         return dailyForecast.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DailyCollectionCell.reuseIdentifier, for: indexPath) as? DailyCollectionCell else {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: DailyCollectionCell.reuseIdentifier,
+            for: indexPath
+        ) as? DailyCollectionCell else {
             return UICollectionViewCell()
         }
         let dailyWeather = dailyForecast[indexPath.row]
@@ -123,7 +141,10 @@ private extension DailyWeatherCell {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))

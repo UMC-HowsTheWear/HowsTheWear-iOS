@@ -14,8 +14,6 @@ import Then
 
 final class HomeViewController: UIViewController {
     
-    var items: [TodayItem] = TodayItem.items
-    
     private let collectionView = HourlyWeatherCell().collectionView
     
     var weather: ParsedWeather?
@@ -117,8 +115,10 @@ extension HomeViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             if let currentWeather = weather?.currentWeather {
-                cell.setRecommendedItems(temperature: currentWeather.temperature.value,
-                                         precipitationProbability: currentWeather.precipitationIntensity.value)
+                cell.setRecommendedItems(
+                    temperature: currentWeather.temperature.value,
+                    precipitationProbability: currentWeather.precipitationIntensity.value
+                )
             }
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
