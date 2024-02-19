@@ -14,7 +14,7 @@ import Then
 
 final class DailyWeatherCell: UITableViewCell {
     
-    static let cellHeight = 550.0
+    static let cellHeight = 555.0
     
     var weather: ParsedWeather?
     var dailyForecast: [DayWeather] = []
