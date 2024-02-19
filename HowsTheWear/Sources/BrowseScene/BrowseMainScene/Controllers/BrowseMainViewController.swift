@@ -95,7 +95,6 @@ extension BrowseMainViewController {
         )
     }
 
-    
 }
 
 // MARK: - Implement browseCollectionReusableDelegate
