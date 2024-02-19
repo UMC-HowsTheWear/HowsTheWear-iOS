@@ -66,7 +66,7 @@ extension BrowseCollectionViewCell {
         }
         
         browseCollectionViewCellUserIDLabel.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(2)
+            make.bottom.equalToSuperview().inset(8)
             make.leading.equalToSuperview().inset(8)
         }
     }
