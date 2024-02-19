@@ -53,7 +53,7 @@ final class TabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        let homeNavController = UINavigationController(rootViewController: homeVC)
+        let homeNavController = homeVC
         let browseNavController = UINavigationController(rootViewController: browseVC)
         let othersNavController = UINavigationController(rootViewController: othersVC)
         let myNavController = UINavigationController(rootViewController: myVC)
