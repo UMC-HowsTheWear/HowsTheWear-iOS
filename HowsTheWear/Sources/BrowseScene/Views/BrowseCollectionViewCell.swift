@@ -14,6 +14,7 @@ final class BrowseCollectionViewCell: UICollectionViewCell {
     let styleImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(named: "StyleTestImage")
+        $0.clipsToBounds = true
     }
     
     let browseCollectionViewCellUserIDLabel = UILabel().then {

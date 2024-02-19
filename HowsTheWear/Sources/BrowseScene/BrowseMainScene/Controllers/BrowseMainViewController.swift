@@ -11,7 +11,7 @@ import SnapKit
 
 final class BrowseMainViewController: UIViewController {
 
-    private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true)
+    private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true, cellImageCorenerRadius: 8)
     
     override func viewDidLoad() {
         super.viewDidLoad()

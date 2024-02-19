@@ -18,7 +18,8 @@ final class BrowseMainCollectionView: UIView {
     private var lastYearStyleArray:[BrowseStyleDataModel] = []
     private let browseStyleDataManager = BrowseStyleDataManager()
 
-    private var isHiddenCellUserId = false
+    private var isHiddenCellUserID = false
+    private var cellImageCorenerRadius: CGFloat = 0
     
     private var sectionCount = 0
     
@@ -32,12 +33,13 @@ final class BrowseMainCollectionView: UIView {
 
     lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
 
-    init(isHiddenCellUserID: Bool) {
+    init(isHiddenCellUserID: Bool, cellImageCorenerRadius: CGFloat) {
         super.init(frame: .zero)
         configureCollectionView()
         configureSubViews()
         configureLayout()
-        isHiddenCellUserId = isHiddenCellUserID
+        self.isHiddenCellUserID = isHiddenCellUserID
+        self.cellImageCorenerRadius = cellImageCorenerRadius
     }
     
     required init?(coder: NSCoder) {
@@ -85,18 +87,18 @@ extension BrowseMainCollectionView {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 6, leading: 0, bottom: 0, trailing: 10)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.32),
-            heightDimension: .estimated(136)
+            heightDimension: .fractionalHeight(0.234)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         // screen의 height가 890 이상일 시 (XR, Plus, Max기종) header의 높이를 65로 설정 나머지는 35로 설정.
         let screenHeight = UIScreen.main.bounds.height
-        let headerHeight: CGFloat = screenHeight >= 890 ? 65 : 35
+        let headerHeight: CGFloat = screenHeight >= 890 ? 45 : 36
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
         let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
@@ -104,7 +106,7 @@ extension BrowseMainCollectionView {
                                                                         alignment: .top)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 0, bottom: 30, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 0)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [headerElement]
 
@@ -164,7 +166,8 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
             cell.styleImageView.image = imageArray[section][indexPath.item].images
         }
        
-        cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
+        cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserID
+        cell.styleImageView.layer.cornerRadius = cellImageCorenerRadius
 
         return cell
     }
