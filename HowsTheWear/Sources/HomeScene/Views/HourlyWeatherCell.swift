@@ -14,7 +14,7 @@ import Then
 
 final class HourlyWeatherCell: UITableViewCell {
     
-    static let cellHeight = 100.0
+    static let cellHeight = 125.0
     
     var weather: ParsedWeather?
     var hourlyForecast: [HourWeather] = []
@@ -57,6 +57,7 @@ final class HourlyWeatherCell: UITableViewCell {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.isScrollEnabled = false
         collectionView.dataSource = self
         collectionView.register(
             HourlyCollectionCell.self,
@@ -132,7 +133,7 @@ private extension HourlyWeatherCell {
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20)
         section.interGroupSpacing = 40
         
         let layout = UICollectionViewCompositionalLayout(section: section)

@@ -139,7 +139,7 @@ extension TodayWeatherCell {
     func applyWeatherData(_ weather: CurrentWeather, dailyForecast: [DayWeather]) {
          guard let todaysForecast = getTodaysForecast(dailyForecast: dailyForecast) else { return }
          
-         // 최저 온도, 최고 온도, 강수 확률 데이터 가져오기
+         // 최저 온도, 최고 온도, 강수량 데이터 가져오기
          let minTemp = Int(todaysForecast.lowTemperature.value.rounded())
          let maxTemp = Int(todaysForecast.highTemperature.value.rounded())
          var precipitationProbability = "\(weather.precipitationIntensity)"

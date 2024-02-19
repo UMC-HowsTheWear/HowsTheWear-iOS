@@ -83,15 +83,17 @@ final class DailyCollectionCell: UICollectionViewCell {
     }
     
     func prepare(dayWeather: DayWeather, timeZone: String) {
-        weatherIconImageView.image = UIImage(systemName: dayWeather.symbolName + ".fill")?
-            .withRenderingMode(.alwaysOriginal)
-            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
-        
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ko_KR") // 한국어 로케일 설정
         dateFormatter.timeZone = TimeZone(identifier: timeZone) ?? TimeZone.current
         dateFormatter.dateFormat = "EE"
         
+        if let icon = WeatherIcon.icon(for: dayWeather.condition, isDaytime: true, isLargeSize: false) {
+            print("condition: \(dayWeather.condition)")
+            print("symbolName: \(dayWeather.symbolName)")
+            weatherIconImageView.image = icon
+        }
+
         let calendar = Calendar.current
         let today = Date()
         guard let tenDaysLater = calendar.date(byAdding: .day, value: 10, to: today) else {
@@ -106,7 +108,7 @@ final class DailyCollectionCell: UICollectionViewCell {
         } else {
             dayOfWeekLabel.text = ""
         }
-        
+
         // 온도 변환 및 포매팅
         let convertedHighTemperature = UnitConverter.convertTemperature(temperature: dayWeather.highTemperature)
         let convertedLowTemperature = UnitConverter.convertTemperature(temperature: dayWeather.lowTemperature)

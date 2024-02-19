@@ -65,9 +65,12 @@ extension CurrentWeatherCell: CLLocationManagerDelegate {
             do {
                 let result = try await weatherService.weather(for: location)
                 DispatchQueue.main.async {
+                    // 온도 업데이트
                     let temperature = result.currentWeather.temperature.converted(to: .celsius).value
-                    self.weatherIcon.image = UIImage(systemName: result.currentWeather.symbolName + ".fill")?.withRenderingMode(.alwaysOriginal)
                     self.temperatureLabel.text = String(format: "%.0f", temperature)
+
+                    // 날씨 아이콘 업데이트
+                    self.updateWeatherIcon(for: result.currentWeather.condition)
                 }
             } catch {
                 print(error.localizedDescription)
@@ -96,16 +99,24 @@ extension CurrentWeatherCell: CLLocationManagerDelegate {
 
 extension CurrentWeatherCell {
     
-    // 커스텀 날씨 아이콘 쓰면 아래 메서드 사용
-//    func updateWeatherIcon(for condition: WeatherCondition) {
-//        if let icon = WeatherIcon.icon(for: condition) {
-//            weatherIcon.image = icon.withRenderingMode(.alwaysOriginal)
-//        }
-//    }
+    func updateWeatherIcon(for condition: WeatherCondition) {
+        // 낮인지 밤인지 결정하는 로직 추가
+        let isDaytime = checkIfDaytime()
+        if let icon = WeatherIcon.icon(for: condition, isDaytime: isDaytime) {
+            weatherIcon.image = icon
+        }
+    }
+
+    // 낮인지 밤인지를 판단하는 메서드
+    func checkIfDaytime() -> Bool {
+        let currentHour = Calendar.current.component(.hour, from: Date())
+        // 예를 들어, 6시부터 18시 사이를 낮으로 간주
+        return currentHour >= 6 && currentHour <= 18
+    }
     
     func updateWeather(currentWeather: CurrentWeather, location: CLLocation) {
         // 날씨 아이콘 업데이트
-//        updateWeatherIcon(for: currentWeather.condition)
+        updateWeatherIcon(for: currentWeather.condition)
         
         // 온도 레이블 업데이트
         let temperature = currentWeather.temperature.converted(to: .celsius).value
