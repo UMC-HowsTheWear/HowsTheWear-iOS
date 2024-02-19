@@ -148,12 +148,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0519E5D72B76201000A306F1 /* Manager */ = {
+		0519E5D72B76201000A306F1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				0519E5D52B761FAD00A306F1 /* LocationManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		0530AAB52B5D522C0021625D /* TabBarScene */ = {
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				056CAEE82B83171F00ED6B81 /* Helpers */,
-				0519E5D72B76201000A306F1 /* Manager */,
+				0519E5D72B76201000A306F1 /* Managers */,
 				05B034B22B7325260014F110 /* Models */,
 				05BE62872B45522200BAD63F /* Views */,
 				05BE62862B45521D00BAD63F /* Controllers */,
