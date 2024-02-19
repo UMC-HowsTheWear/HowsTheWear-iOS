@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
@@ -52,20 +53,29 @@ final class HourlyCollectionCell: UICollectionViewCell {
         timeLabel.text = nil
         weatherIconImageView.image = nil
         temperatureLabel.text = nil
-        prepare(data: nil)
     }
     
-    func prepare(data: Hourly?) {
-        timeLabel.text = data?.time
-        weatherIconImageView.image = UIImage(systemName: data?.weatherIcon ?? "sun.max.fill")?
+    func prepare(hourWeather: HourWeather, timeZone: String) {
+        let convertedTemperature = UnitConverter.convertTemperature(temperature: hourWeather.temperature)
+        temperatureLabel.text = String(format: "%.0f", convertedTemperature.value) + "℃"
+        weatherIconImageView.image = UIImage(systemName: hourWeather.symbolName + ".fill")?
             .withRenderingMode(.alwaysOriginal)
             .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
-        weatherIconImageView.layer.masksToBounds = false
-        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
-        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        weatherIconImageView.layer.shadowRadius = 20
-        weatherIconImageView.layer.shadowOpacity = 0.2
-        temperatureLabel.text = data?.temperature
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: timeZone) ?? .current
+        dateFormatter.dateFormat = "h"
+        
+        var hourString = dateFormatter.string(from: hourWeather.date)
+        if hourString.hasPrefix("0") {
+            hourString.remove(at: hourString.startIndex)
+        }
+        
+        timeLabel.text = hourString + "시"
+        
+        // 12시간제로 변경되면 아래 코드 적용
+//        let hourInt = Int(hourString) ?? 0
+//        timeLabel.text = hourString + (hourInt < 12 ? "AM " : "PM ")
     }
     
 }
@@ -76,6 +86,12 @@ private extension HourlyCollectionCell {
     
     func configureUI() {
         contentView.addSubview(stackView)
+        
+        weatherIconImageView.layer.masksToBounds = false
+        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
+        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        weatherIconImageView.layer.shadowRadius = 20
+        weatherIconImageView.layer.shadowOpacity = 0.2
         
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()

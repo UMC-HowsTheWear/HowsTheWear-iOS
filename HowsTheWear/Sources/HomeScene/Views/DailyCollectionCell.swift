@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
@@ -79,21 +80,50 @@ final class DailyCollectionCell: UICollectionViewCell {
         dayOfWeekLabel.text = nil
         minTemperatureLabel.text = nil
         maxTemperatureLabel.text = nil
-        prepare(data: nil)
     }
     
-    func prepare(data: Daily?) {
-        weatherIconImageView.image = UIImage(systemName: data?.weatherIcon ?? "sun.max.fill")?
+    func prepare(dayWeather: DayWeather, timeZone: String) {
+        weatherIconImageView.image = UIImage(systemName: dayWeather.symbolName + ".fill")?
             .withRenderingMode(.alwaysOriginal)
             .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
-        weatherIconImageView.layer.masksToBounds = false
-        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
-        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        weatherIconImageView.layer.shadowRadius = 20
-        weatherIconImageView.layer.shadowOpacity = 0.2
-        dayOfWeekLabel.text = data?.day
-        minTemperatureLabel.text = data?.minTemperature
-        maxTemperatureLabel.text = data?.maxTemperature
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR") // 한국어 로케일 설정
+        dateFormatter.timeZone = TimeZone(identifier: timeZone) ?? TimeZone.current
+        dateFormatter.dateFormat = "EE"
+        
+        let calendar = Calendar.current
+        let today = Date()
+        guard let tenDaysLater = calendar.date(byAdding: .day, value: 10, to: today) else {
+            dayOfWeekLabel.text = ""
+            return
+        }
+        
+        if calendar.isDateInToday(dayWeather.date) {
+            dayOfWeekLabel.text = "오늘"
+        } else if dayWeather.date >= today && dayWeather.date <= tenDaysLater {
+            dayOfWeekLabel.text = dateFormatter.string(from: dayWeather.date)
+        } else {
+            dayOfWeekLabel.text = ""
+        }
+        
+        // 온도 변환 및 포매팅
+        let convertedHighTemperature = UnitConverter.convertTemperature(temperature: dayWeather.highTemperature)
+        let convertedLowTemperature = UnitConverter.convertTemperature(temperature: dayWeather.lowTemperature)
+        minTemperatureLabel.attributedText = String.temperatureFormattedString(
+            value: convertedLowTemperature.value,
+            unit: convertedLowTemperature.unit,
+            bFontSize: 16,
+            sFontSize: 16,
+            weight: .semibold
+        )
+        maxTemperatureLabel.attributedText = String.temperatureFormattedString(
+            value: convertedHighTemperature.value,
+            unit: convertedHighTemperature.unit,
+            bFontSize: 16,
+            sFontSize: 16,
+            weight: .semibold
+        )
     }
     
 }
@@ -105,6 +135,12 @@ private extension DailyCollectionCell {
     func configureUI() {
         contentView.backgroundColor = .clear
         contentView.addSubview(dailyView)
+        
+        weatherIconImageView.layer.masksToBounds = false
+        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
+        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        weatherIconImageView.layer.shadowRadius = 20
+        weatherIconImageView.layer.shadowOpacity = 0.2
         
         dailyView.snp.makeConstraints {
             $0.centerX.equalToSuperview()

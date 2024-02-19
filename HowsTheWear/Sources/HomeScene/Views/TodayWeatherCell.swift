@@ -104,7 +104,7 @@ final class TodayWeatherCell: UITableViewCell {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
     }
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         updateWeatherInfo()
@@ -114,18 +114,18 @@ final class TodayWeatherCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 extension TodayWeatherCell {
     
     func updateWeatherInfo() {
         LocationManager.shared.getCurrentLocation { [weak self] location in
-            WeatherManager.shared.getWeather(for: location) {
-                guard let self = self, let currentWeather = WeatherManager.shared.currentWeather else { return }
-
+            WeatherDataCenter.shared.getTodayWeather(for: location) {
+                guard let self = self, let currentWeather = WeatherDataCenter.shared.currentWeather else { return }
+                
                 DispatchQueue.main.async {
-                    self.applyWeatherData(currentWeather, dailyForecast: WeatherManager.shared.dailyWeather)
+                    self.applyWeatherData(currentWeather, dailyForecast: WeatherDataCenter.shared.dailyWeather)
                 }
             }
         }
@@ -135,24 +135,26 @@ extension TodayWeatherCell {
         let today = Date()
         return dailyForecast.first { Calendar.current.isDate($0.date, inSameDayAs: today) }
     }
-
+    
     func applyWeatherData(_ weather: CurrentWeather, dailyForecast: [DayWeather]) {
-        guard let todaysForecast = getTodaysForecast(dailyForecast: dailyForecast) else { return }
-        
-        // 소수점 반올림 후 정수로 변환
-        let minTemp = Int(todaysForecast.lowTemperature.value.rounded())
-        let maxTemp = Int(todaysForecast.highTemperature.value.rounded())
-        let precipitationProbability = weather.precipitationIntensity
-
-        // 온도가 0도일 때 음수 부호 제거
-        let minTempText = minTemp >= 0 ? "\(minTemp)℃" : "-\(abs(minTemp))℃"
-        let maxTempText = maxTemp >= 0 ? "\(maxTemp)℃" : "-\(abs(maxTemp))℃"
-        
-        minimumTemperature.text = minTempText
-        maximumTemperature.text = maxTempText
-        precipitationProbabilityLabel.text = "\(precipitationProbability)"
-    }
-
+         guard let todaysForecast = getTodaysForecast(dailyForecast: dailyForecast) else { return }
+         
+         // 최저 온도, 최고 온도, 강수 확률 데이터 가져오기
+         let minTemp = Int(todaysForecast.lowTemperature.value.rounded())
+         let maxTemp = Int(todaysForecast.highTemperature.value.rounded())
+         var precipitationProbability = "\(weather.precipitationIntensity)"
+         
+         // 온도가 0도일 때 음수 부호 제거
+         let minTempText = minTemp >= 0 ? "\(minTemp)℃" : "-\(abs(minTemp))℃"
+         let maxTempText = maxTemp >= 0 ? "\(maxTemp)℃" : "-\(abs(maxTemp))℃"
+         
+         // 레이블에 데이터 적용
+         minimumTemperature.text = minTempText
+         maximumTemperature.text = maxTempText
+         precipitationProbability = precipitationProbability.replacingOccurrences(of: "/h", with: "")
+         precipitationProbabilityLabel.text = precipitationProbability
+     }
+    
 }
 
 // MARK: - UI Configuration
