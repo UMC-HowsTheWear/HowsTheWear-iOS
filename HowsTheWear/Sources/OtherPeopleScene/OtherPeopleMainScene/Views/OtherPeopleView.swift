@@ -13,31 +13,10 @@ final class OtherPeopleView: UIView {
     
     private var hashTagTitleArray: [String] = ["#캐쥬얼", "#스트릿", "#페미닌", "#미니멀"]
   
-    private var thisWeekStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
+    private let browseStyleDataManager = BrowseStyleDataManager()
     
-    private var nextWeekStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
+    private var dataArray:[[BrowseStyleDataModel]] = []
     
-    private var lastYearStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
     
     let othersPeopleCollectionView = BrowseMainCollectionView(isHiddenCellUserID: false, cellImageCorenerRadius: 8)
     
@@ -77,6 +56,12 @@ extension OtherPeopleView {
         myPostButton.layer.shadowOpacity = 0.5
         myPostButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         myPostButton.layer.shadowRadius = 10
+        
+        dataArray = [
+            browseStyleDataManager.fetchThisWeekImagesData(),
+            browseStyleDataManager.fetchNextWeekImagesData(),
+            browseStyleDataManager.fetchLastYearImagesData()
+        ]
     }
     
 }
@@ -91,7 +76,7 @@ extension OtherPeopleView {
     
     private func fetchData() {
         othersPeopleCollectionView.configureContents(
-            sectionCount: hashTagNumber,
+            sectionCount: hashTagNumber, data: dataArray,
 //            imagesData: [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray, thisWeekStyleArray, nextWeekStyleArray],
             sectionTitles: hashTagTitleArray
         )

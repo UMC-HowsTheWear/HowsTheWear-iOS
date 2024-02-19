@@ -11,15 +11,15 @@ import SnapKit
 
 final class BrowseMainViewController: UIViewController {
 
+    private let browseStyleDataManager = BrowseStyleDataManager()
+    
+    private var dataArray:[[BrowseStyleDataModel]] = []
+    
     private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true, cellImageCorenerRadius: 8)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInitialSetting()
-        browseMainCollectionView.configureContents(
-            sectionCount: 3,
-            sectionTitles: ["이번주 코디", "저번주 코디", "작년 이맘때는"]
-        )
         configureCollectionView()
         configureSubViews()
         configureLayout()
@@ -34,6 +34,11 @@ extension BrowseMainViewController {
     private func configureInitialSetting() {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
+        dataArray = [
+            browseStyleDataManager.fetchThisWeekImagesData(),
+            browseStyleDataManager.fetchNextWeekImagesData(),
+            browseStyleDataManager.fetchLastYearImagesData()
+        ]
     }
     
     private func configureNaviBar() {
@@ -82,10 +87,12 @@ extension BrowseMainViewController {
             setCollectionViewCellSelectionHandler { [weak self] indexPath in
             let detailViewController = BrowseDetailViewController()
             self?.navigationController?.pushViewController(detailViewController, animated: true)
-            
-            // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
         }
-        // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
+        browseMainCollectionView.configureContents(
+            sectionCount: 3,
+            data: dataArray,
+            sectionTitles: ["이번주 코디", "저번주 코디", "작년 이맘때는"]
+        )
     }
 
     

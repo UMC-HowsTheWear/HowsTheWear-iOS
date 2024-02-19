@@ -13,11 +13,6 @@ final class BrowseMainCollectionView: UIView {
     
     var didSelectCell: ((IndexPath) -> Void)?
 
-    private var thisWeekStyleArray:[BrowseStyleDataModel] = []
-    private var nextWeekStyleArray:[BrowseStyleDataModel] = []
-    private var lastYearStyleArray:[BrowseStyleDataModel] = []
-    private let browseStyleDataManager = BrowseStyleDataManager()
-
     private var isHiddenCellUserID = false
     private var cellImageCorenerRadius: CGFloat = 0
     
@@ -25,7 +20,7 @@ final class BrowseMainCollectionView: UIView {
     
     private var sectionTitlesArray: [String] = []
     
-    private var imageArray: [[BrowseStyleDataModel]] = [] {
+    private var dataArray: [[BrowseStyleDataModel]] = [] {
         didSet {
             browseCollectionView.reloadData()
         }
@@ -51,8 +46,9 @@ final class BrowseMainCollectionView: UIView {
 // MARK: - Public Interface
 
 extension BrowseMainCollectionView {
-    func configureContents(sectionCount count: Int, sectionTitles titles: [String]) {
+    func configureContents(sectionCount count: Int, data data: [[BrowseStyleDataModel]], sectionTitles titles: [String]) {
         sectionCount = count
+        self.dataArray = data
         self.sectionTitlesArray = titles
     }
     
@@ -72,12 +68,6 @@ extension BrowseMainCollectionView {
         browseCollectionView.register(BrowseCollectionReusableView.self,
                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                       withReuseIdentifier: BrowseCollectionReusableView.reuseIdentifier)
-        
-        thisWeekStyleArray = browseStyleDataManager.fetchThisWeekImagesData()
-        nextWeekStyleArray = browseStyleDataManager.fetchNextWeekImagesData()
-        lastYearStyleArray = browseStyleDataManager.fetchLastYearImagesData()
-        
-        imageArray = [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray]
     }
 
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
@@ -146,8 +136,8 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
 //            
 //            let section = indexPath.section
 //            
-//            if indexPath.item < imageArray[section].count {
-//                  cell.styleImageView.image = imageArray[section][indexPath.item]
+//            if indexPath.item < dataArray[section].count {
+//                  cell.styleImageView.image = dataArray[section][indexPath.item]
 //              }      
 //            
 //            cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
@@ -162,8 +152,8 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
        
         let section = indexPath.section
        
-        if indexPath.item < imageArray[section].count {
-            cell.styleImageView.image = imageArray[section][indexPath.item].images
+        if indexPath.item < dataArray[section].count {
+            cell.styleImageView.image = dataArray[section][indexPath.item].images
         }
        
         cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserID
