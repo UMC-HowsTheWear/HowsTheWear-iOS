@@ -89,8 +89,6 @@ final class DailyCollectionCell: UICollectionViewCell {
         dateFormatter.dateFormat = "EE"
         
         if let icon = WeatherIcon.icon(for: dayWeather.condition, isDaytime: true, isLargeSize: false) {
-            print("condition: \(dayWeather.condition)")
-            print("symbolName: \(dayWeather.symbolName)")
             weatherIconImageView.image = icon
         }
 
