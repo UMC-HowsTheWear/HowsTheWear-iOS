@@ -253,7 +253,6 @@ final class MyPostView: UIView {
         $0.titleLabel?.textColor = .white
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 10
-        $0.isEnabled = false
     }
     
     override func layoutSubviews() {
