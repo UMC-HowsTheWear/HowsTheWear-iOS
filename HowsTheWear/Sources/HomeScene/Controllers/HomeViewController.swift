@@ -72,6 +72,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         fetchWeatherData()
         configureUI()
+        updateBackgroundImage()
     }
     
 }
@@ -114,6 +115,10 @@ extension HomeViewController: UITableViewDataSource {
                 for: indexPath
             ) as? TodayItemCell else {
                 return UITableViewCell()
+            }
+            if let currentWeather = weather?.currentWeather {
+                cell.setRecommendedItems(temperature: currentWeather.temperature.value,
+                                         precipitationProbability: currentWeather.precipitationIntensity.value)
             }
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
@@ -180,6 +185,16 @@ private extension HomeViewController {
     
     func configureUI() {
         setupTableView()
+    }
+    
+    private func isDaytime() -> Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 6 && hour < 18
+    }
+    
+    private func updateBackgroundImage() {
+        let imageName = isDaytime() ? "background-image" : "background-image-night"
+        backgroundImageView.image = UIImage(named: imageName)
     }
     
     func setupTableView() {
