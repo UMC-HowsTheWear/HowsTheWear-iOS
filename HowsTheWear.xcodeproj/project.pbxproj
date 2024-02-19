@@ -22,7 +22,8 @@
 		056CAEED2B8317C800ED6B81 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CAEEC2B8317C800ED6B81 /* String+Extension.swift */; };
 		056CAEEF2B8317E600ED6B81 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CAEEE2B8317E600ED6B81 /* DateFormatter.swift */; };
 		056CAEF12B8317F300ED6B81 /* UnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CAEF02B8317F300ED6B81 /* UnitConverter.swift */; };
-		05B034B42B7325330014F110 /* Hourly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B32B7325330014F110 /* Hourly.swift */; };
+		056CAEF32B83188D00ED6B81 /* WeatherDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CAEF22B83188D00ED6B81 /* WeatherDataCenter.swift */; };
+		056CAEF52B8318AC00ED6B81 /* ParsedWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056CAEF42B8318AC00ED6B81 /* ParsedWeather.swift */; };
 		05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034B92B7325D90014F110 /* TodayItem.swift */; };
 		05B034C22B7327400014F110 /* MyPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C12B7327400014F110 /* MyPostView.swift */; };
 		05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C32B7327540014F110 /* MyPostViewController.swift */; };
@@ -91,7 +92,8 @@
 		056CAEEC2B8317C800ED6B81 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		056CAEEE2B8317E600ED6B81 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		056CAEF02B8317F300ED6B81 /* UnitConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverter.swift; sourceTree = "<group>"; };
-		05B034B32B7325330014F110 /* Hourly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hourly.swift; sourceTree = "<group>"; };
+		056CAEF22B83188D00ED6B81 /* WeatherDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataCenter.swift; sourceTree = "<group>"; };
+		056CAEF42B8318AC00ED6B81 /* ParsedWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedWeather.swift; sourceTree = "<group>"; };
 		05B034B92B7325D90014F110 /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		05B034C12B7327400014F110 /* MyPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostView.swift; sourceTree = "<group>"; };
 		05B034C32B7327540014F110 /* MyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		056CAEE92B83178100ED6B81 /* Networkings */ = {
 			isa = PBXGroup;
 			children = (
+				056CAEF22B83188D00ED6B81 /* WeatherDataCenter.swift */,
+				056CAEF42B8318AC00ED6B81 /* ParsedWeather.swift */,
 			);
 			path = Networkings;
 			sourceTree = "<group>";
@@ -194,7 +198,6 @@
 		05B034B22B7325260014F110 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				05B034B32B7325330014F110 /* Hourly.swift */,
 				05B034B92B7325D90014F110 /* TodayItem.swift */,
 			);
 			path = Models;
@@ -673,7 +676,7 @@
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
 				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
-				05B034B42B7325330014F110 /* Hourly.swift in Sources */,
+				056CAEF52B8318AC00ED6B81 /* ParsedWeather.swift in Sources */,
 				05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				0530AB172B6708D30021625D /* DailyWeatherCell.swift in Sources */,
@@ -704,6 +707,7 @@
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
 				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
 				56C1DC532B73AD1B006580F9 /* OtherPeopleView.swift in Sources */,
+				056CAEF32B83188D00ED6B81 /* WeatherDataCenter.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
 				56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */,
 				56BF77A92B664B34004C044F /* PagingImageCollectionViewCell.swift in Sources */,
