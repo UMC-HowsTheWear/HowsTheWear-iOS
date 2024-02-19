@@ -87,7 +87,6 @@ extension OtherPeopleViewController {
 
 extension OtherPeopleViewController {
     
-    
     private func configureCollectionView() {
         otherPeopleView.othersPeopleCollectionView.delegate = self
         

@@ -53,7 +53,19 @@
 		56475D432B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */; };
 		56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D462B7474C400D88A62 /* OtherPeopleDetailView.swift */; };
 		56475D492B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */; };
+		564E01C62B7DD5F200837828 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01C52B7DD5F200837828 /* MyPageView.swift */; };
+		564E01C82B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */; };
+		564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */; };
 		566384882B60CED1007E327B /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 566384872B60CED1007E327B /* Pretendard-Medium.otf */; };
+		5664CCE52B81F4E1003651F6 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */; };
+		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
+		567C10EF2B80DCB100446C73 /* MyPagePostPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */; };
+		567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */; };
+		567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */; };
+		567C10F72B81830D00446C73 /* MyPagePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */; };
+		567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */; };
+		567C10FD2B81966300446C73 /* MyPostImagesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */; };
+		567C10FF2B81969300446C73 /* MyPostImagesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */; };
 		56B0600C2B5CE88200CE923C /* BrowseThisWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */; };
 		56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */; };
 		56B060162B5D487D00CE923C /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */; };
@@ -122,7 +134,19 @@
 		56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleProfileHeaderView.swift; sourceTree = "<group>"; };
 		56475D462B7474C400D88A62 /* OtherPeopleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleDetailView.swift; sourceTree = "<group>"; };
 		56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleDescriptionStackView.swift; sourceTree = "<group>"; };
+		564E01C52B7DD5F200837828 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageStyleCollectionViewCell.swift; sourceTree = "<group>"; };
+		564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTemperatureSlider.swift; sourceTree = "<group>"; };
 		566384872B60CED1007E327B /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
+		567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostPagingViewController.swift; sourceTree = "<group>"; };
+		567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostSegmentedControll.swift; sourceTree = "<group>"; };
+		567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostCollectionViewController.swift; sourceTree = "<group>"; };
+		567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostCollectionViewCell.swift; sourceTree = "<group>"; };
+		567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostCollectionViewController.swift; sourceTree = "<group>"; };
+		567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostImagesDataModel.swift; sourceTree = "<group>"; };
+		567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostImagesDataManager.swift; sourceTree = "<group>"; };
 		56B0600B2B5CE88200CE923C /* BrowseThisWeekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseThisWeekViewController.swift; sourceTree = "<group>"; };
 		56B0600F2B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		56B060142B5D487D00CE923C /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
@@ -385,12 +409,13 @@
 		563927422B3EAE8C00A88D43 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				12541C992B71F2E400951C9D /* SignUpScene */,
 				563927442B3EAEF000A88D43 /* Application */,
+				12541C992B71F2E400951C9D /* SignUpScene */,
 				5640F1B62B402ED500D97C65 /* BrowseScene */,
 				05BE62852B45521000BAD63F /* HomeScene */,
 				05B034BB2B73262D0014F110 /* OtherPeopleScene */,
 				05B034C02B7327010014F110 /* MyPostScene */,
+				564E01C32B7DD58500837828 /* MyPageScene */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -463,6 +488,57 @@
 				56475D482B74B2B700D88A62 /* OtherPeopleDescriptionStackView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		564E01C32B7DD58500837828 /* MyPageScene */ = {
+			isa = PBXGroup;
+			children = (
+				567C10FA2B81960900446C73 /* Models */,
+				564E01C42B7DD5C900837828 /* Views */,
+				567C10ED2B80DC7900446C73 /* Controllers */,
+			);
+			path = MyPageScene;
+			sourceTree = "<group>";
+		};
+		564E01C42B7DD5C900837828 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				564E01C52B7DD5F200837828 /* MyPageView.swift */,
+				564E01CE2B7F63C300837828 /* MyPageTemperatureSlider.swift */,
+				567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */,
+				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
+				567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		567C10ED2B80DC7900446C73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */,
+				567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */,
+				567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */,
+				567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */,
+				5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		567C10FA2B81960900446C73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				567C10FB2B81963100446C73 /* PostData */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		567C10FB2B81963100446C73 /* PostData */ = {
+			isa = PBXGroup;
+			children = (
+				567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */,
+				567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */,
+			);
+			path = PostData;
 			sourceTree = "<group>";
 		};
 		56B060092B5CE85400CE923C /* BrowseThisWeekScene */ = {
@@ -634,6 +710,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567C10EF2B80DCB100446C73 /* MyPagePostPagingViewController.swift in Sources */,
+				567C10F72B81830D00446C73 /* MyPagePostCollectionViewCell.swift in Sources */,
 				56C1DC502B731D7B006580F9 /* HomeViewController.swift in Sources */,
 				56C1DC4F2B731D77006580F9 /* BrowseMainViewController.swift in Sources */,
 				0519E5D62B761FAD00A306F1 /* LocationManager.swift in Sources */,
@@ -651,18 +729,23 @@
 				12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */,
 				12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */,
 				56BF77AB2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift in Sources */,
+				564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */,
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
 				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
+				567C10FD2B81966300446C73 /* MyPostImagesDataModel.swift in Sources */,
 				05B034B42B7325330014F110 /* Hourly.swift in Sources */,
 				05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
+				5664CCE52B81F4E1003651F6 /* MyPageViewController.swift in Sources */,
 				0530AB172B6708D30021625D /* DailyWeatherCell.swift in Sources */,
+				567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */,
 				0530AB112B6707890021625D /* HourlyWeatherCell.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
 				56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */,
 				56B9F7E02B6CABC1005B924F /* BrowseDetailView.swift in Sources */,
 				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,
+				564E01C82B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift in Sources */,
 				0530AB012B63E89A0021625D /* CurrentWeatherCell.swift in Sources */,
 				0530AB1B2B670DFA0021625D /* TodayItemCell.swift in Sources */,
 				05B034C22B7327400014F110 /* MyPostView.swift in Sources */,
@@ -670,11 +753,12 @@
 				0530AB052B63EF240021625D /* UIView+Extension.swift in Sources */,
 				56F0C3882B77BC8700C41278 /* OtherPeopleDetailViewController.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
+				567C10FF2B81969300446C73 /* MyPostImagesDataManager.swift in Sources */,
+				567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */,
 				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
 				0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */,
-				05B034BF2B73265E0014F110 /* OthersViewController.swift in Sources */,
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				05BE628C2B45527900BAD63F /* CustomBarButtonItem.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
@@ -683,6 +767,8 @@
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
+				567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */,
+				567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */,
 				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
 				56C1DC532B73AD1B006580F9 /* OtherPeopleView.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
@@ -691,6 +777,7 @@
 				56F0C3832B77B0F700C41278 /* BrowseMoreCollectionViewCell.swift in Sources */,
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
 				12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */,
+				564E01C62B7DD5F200837828 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,7 +922,7 @@
 				CODE_SIGN_ENTITLEMENTS = HowsTheWear/HowsTheWear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7WULLR98GP;
+				DEVELOPMENT_TEAM = 5JD4YAFH7N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowsTheWear/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -863,7 +950,7 @@
 				CODE_SIGN_ENTITLEMENTS = HowsTheWear/HowsTheWear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7WULLR98GP;
+				DEVELOPMENT_TEAM = 5JD4YAFH7N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowsTheWear/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
