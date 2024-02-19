@@ -195,6 +195,24 @@
 			path = Networkings;
 			sourceTree = "<group>";
 		};
+		056CAEF62B831AA700ED6B81 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05B034C12B7327400014F110 /* MyPostView.swift */,
+				05B034C72B7327910014F110 /* CalendarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		056CAEF72B831AB100ED6B81 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05B034C32B7327540014F110 /* MyPostViewController.swift */,
+				05B034C52B73276D0014F110 /* CalendarViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		05B034B22B7325260014F110 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,10 +233,8 @@
 		05B034C02B7327010014F110 /* MyPostScene */ = {
 			isa = PBXGroup;
 			children = (
-				05B034C12B7327400014F110 /* MyPostView.swift */,
-				05B034C32B7327540014F110 /* MyPostViewController.swift */,
-				05B034C72B7327910014F110 /* CalendarView.swift */,
-				05B034C52B73276D0014F110 /* CalendarViewController.swift */,
+				056CAEF62B831AA700ED6B81 /* Views */,
+				056CAEF72B831AB100ED6B81 /* Controllers */,
 			);
 			path = MyPostScene;
 			sourceTree = "<group>";
