@@ -19,7 +19,7 @@ final class OtherPeopleViewController: UIViewController {
 
     private var hashTagNumber: Int = 5
     
-    private var hashTagTitleArray: [String] = ["#캐쥬얼", "#스트릿", "#페미닌", "#미니멀"]
+    private var hashTagTitleArray: [String] = ["#캐쥬얼", "#스트릿", "#페미닌", "#미니멀", "#빈티지"]
     
     let othersPeopleCollectionView = BrowseMainCollectionView(isHiddenCellUserID: false, cellImageCorenerRadius: 8)
     
@@ -80,8 +80,8 @@ extension OtherPeopleViewController {
             browseMainDataManager.fetchLastYearImagesData(),
             browseMainDataManager.fetchThisWeekImagesData(),
             browseMainDataManager.fetchNextWeekImagesData(),
-            browseMainDataManager.fetchLastYearImagesData(),
-            browseMainDataManager.fetchThisWeekImagesData(),
+            browseMainDataManager.fetchMinimalImageData(),
+            browseMainDataManager.fetchVintageImagesData(),
         ]
     }
     

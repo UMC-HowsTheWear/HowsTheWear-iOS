@@ -43,6 +43,7 @@ extension BrowseMainViewController {
             browseMainDataManager.fetchNextWeekImagesData(),
             browseMainDataManager.fetchLastYearImagesData()
         ]
+        browseMainCollectionView.browseCollectionView.isScrollEnabled = false
     }
     
     private func configureNaviBar() {
