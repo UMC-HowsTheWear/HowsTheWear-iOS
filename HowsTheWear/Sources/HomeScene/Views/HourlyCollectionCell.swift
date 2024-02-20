@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
@@ -16,10 +17,11 @@ final class HourlyCollectionCell: UICollectionViewCell {
         $0.textColor = UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1)
         $0.font = .pretendard(size: 14, weight: .medium)
         $0.textAlignment = .center
+        $0.adjustsFontSizeToFitWidth = true
     }
     
     let weatherIconImageView = UIImageView().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleAspectFill
     }
     
     let temperatureLabel = UILabel().then {
@@ -51,20 +53,25 @@ final class HourlyCollectionCell: UICollectionViewCell {
         timeLabel.text = nil
         weatherIconImageView.image = nil
         temperatureLabel.text = nil
-        prepare(data: nil)
     }
     
-    func prepare(data: Hourly?) {
-        timeLabel.text = data?.time
-        weatherIconImageView.image = UIImage(systemName: data?.weatherIcon ?? "sun.max.fill")?
-            .withRenderingMode(.alwaysOriginal)
-            .withConfiguration(UIImage.SymbolConfiguration(pointSize: 30))
-        weatherIconImageView.layer.masksToBounds = false
-        weatherIconImageView.layer.shadowColor = UIColor.black.cgColor
-        weatherIconImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        weatherIconImageView.layer.shadowRadius = 20
-        weatherIconImageView.layer.shadowOpacity = 0.2
-        temperatureLabel.text = data?.temperature
+    func prepare(hourWeather: HourWeather, timeZone: String) {
+        let convertedTemperature = UnitConverter.convertTemperature(temperature: hourWeather.temperature)
+        temperatureLabel.text = String(format: "%.0f", convertedTemperature.value) + "℃"
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: timeZone) ?? .current
+        dateFormatter.dateFormat = "H" // 24시간 형식으로 변경
+        let hour = Int(dateFormatter.string(from: hourWeather.date)) ?? 0
+
+        // 낮과 밤을 결정하는 로직
+        let isDaytime = hour >= 6 && hour <= 18
+
+        if let icon = WeatherIcon.icon(for: hourWeather.condition, isDaytime: isDaytime, isLargeSize: false) {
+            weatherIconImageView.image = icon
+        }
+
+        timeLabel.text = "\(hour)시"
     }
     
 }
