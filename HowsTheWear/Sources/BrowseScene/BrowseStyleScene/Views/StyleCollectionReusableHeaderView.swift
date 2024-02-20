@@ -17,14 +17,14 @@ final class StyleCollectionReusableHeaderView: UICollectionReusableView {
         $0.font = UIFont.pretendard(size: 14, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
-        $0.text = "1월 둘째 주"
+        $0.text = "2월 넷째 주"
     }
     
     let ThisWeekDateRangeLabel = UILabel().then {
         $0.font = UIFont.pretendard(size: 14, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
-        $0.text = "2024년 1월 7일 ~ 1월 13일"
+        $0.text = "2024년 2월 19일 ~ 2월 25일"
     }
 
     override init(frame: CGRect) {
