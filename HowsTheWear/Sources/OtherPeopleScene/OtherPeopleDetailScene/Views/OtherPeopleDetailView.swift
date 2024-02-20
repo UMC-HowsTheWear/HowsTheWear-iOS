@@ -76,8 +76,9 @@ extension OtherPeopleDetailView {
 // MARK: - Public Interface
 
 extension OtherPeopleDetailView {
-    func configureContents(_ image: UIImage?) {
+    func configureContents(_ image: UIImage?, hashTag: String) {
         postImageView.image = image
+        leftHashTagLabel.text = hashTag
     }
 }
 

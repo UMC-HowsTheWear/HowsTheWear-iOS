@@ -63,6 +63,7 @@
 		5664CCF12B83BD7D003651F6 /* BrowseDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF02B83BD7D003651F6 /* BrowseDetailModel.swift */; };
 		5664CCF52B84B6C5003651F6 /* BrowseMainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF42B84B6C5003651F6 /* BrowseMainDataModel.swift */; };
 		5664CCF72B84B6FF003651F6 /* BrowseMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF62B84B6FF003651F6 /* BrowseMainDataManager.swift */; };
+		5664CCF92B85234C003651F6 /* OtherPeopleStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF82B85234C003651F6 /* OtherPeopleStyleViewController.swift */; };
 		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
 		567C10EF2B80DCB100446C73 /* MyPagePostPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */; };
 		567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */; };
@@ -148,6 +149,7 @@
 		5664CCF02B83BD7D003651F6 /* BrowseDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseDetailModel.swift; sourceTree = "<group>"; };
 		5664CCF42B84B6C5003651F6 /* BrowseMainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainDataModel.swift; sourceTree = "<group>"; };
 		5664CCF62B84B6FF003651F6 /* BrowseMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainDataManager.swift; sourceTree = "<group>"; };
+		5664CCF82B85234C003651F6 /* OtherPeopleStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleStyleViewController.swift; sourceTree = "<group>"; };
 		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
 		567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostPagingViewController.swift; sourceTree = "<group>"; };
 		567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostSegmentedControll.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */,
+				5664CCF82B85234C003651F6 /* OtherPeopleStyleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -474,7 +477,6 @@
 		56475D3F2B746ADB00D88A62 /* OtherPeopleMainScene */ = {
 			isa = PBXGroup;
 			children = (
-				56C1DC512B73AD0B006580F9 /* Views */,
 				56475D3B2B73C6C400D88A62 /* Controllers */,
 			);
 			path = OtherPeopleMainScene;
@@ -641,13 +643,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		56C1DC512B73AD0B006580F9 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		56F0C3842B77BBAE00C41278 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +766,7 @@
 				5664CCEC2B823997003651F6 /* BrowseStyleDataModel.swift in Sources */,
 				0530AB172B6708D30021625D /* DailyWeatherCell.swift in Sources */,
 				567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */,
+				5664CCF92B85234C003651F6 /* OtherPeopleStyleViewController.swift in Sources */,
 				0530AB112B6707890021625D /* HourlyWeatherCell.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
 				56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */,

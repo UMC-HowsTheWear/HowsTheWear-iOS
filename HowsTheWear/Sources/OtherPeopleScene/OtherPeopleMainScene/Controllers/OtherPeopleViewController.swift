@@ -14,8 +14,9 @@ final class OtherPeopleViewController: UIViewController {
     private var dataArray:[[BrowseMainDataModel]] = []
 
     private let detailViewController = OtherPeopleDetailViewController()
-
     
+    private let otherPeopleStyleViewController = OtherPeopleStyleViewController()
+
     private var hashTagNumber: Int = 5
     
     private var hashTagTitleArray: [String] = ["#캐쥬얼", "#스트릿", "#페미닌", "#미니멀"]
@@ -76,11 +77,11 @@ extension OtherPeopleViewController {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
         dataArray = [
+            browseMainDataManager.fetchLastYearImagesData(),
             browseMainDataManager.fetchThisWeekImagesData(),
             browseMainDataManager.fetchNextWeekImagesData(),
             browseMainDataManager.fetchLastYearImagesData(),
             browseMainDataManager.fetchThisWeekImagesData(),
-            browseMainDataManager.fetchNextWeekImagesData(),
         ]
     }
     
@@ -137,11 +138,11 @@ extension OtherPeopleViewController {
         
         setCollectionViewCellSelectionHandler { [weak self] indexPath in
             guard let self = self else { return }
-            detailViewController.dataArray = self.dataArray[indexPath.section][indexPath.item].images
-            detailViewController.fetchData()
+            detailViewController.otherPeopleDetailView.configureContents(
+                self.dataArray[indexPath.section][indexPath.item].images,
+                hashTag: hashTagTitleArray[indexPath.section]
+            )
             self.navigationController?.pushViewController(detailViewController, animated: true)
-            
-//            // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
         }
         
         othersPeopleCollectionView.configureContents(
@@ -157,12 +158,11 @@ extension OtherPeopleViewController {
 
 extension OtherPeopleViewController: UICollectionViewDelegate, browseCollectionReusableDelegate{
     func browseHeaderRightArrowButtonTapped(section: Int) {
-            print(section)
+          
+        otherPeopleStyleViewController.configureContents(naviBarTitle: hashTagTitleArray[section], data: dataArray[section])
+        navigationController?.pushViewController(otherPeopleStyleViewController, animated: true)
         }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            print(indexPath)
-    }
 }
 
 
