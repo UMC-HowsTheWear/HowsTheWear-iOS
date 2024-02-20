@@ -9,8 +9,7 @@ import UIKit
 
 final class BrowseThisWeekViewController: UIViewController {
     
-    private var thisWeekStyleArray: [BrowseStyleDataModel] = []
-    private let browseStyleDataManager = BrowseStyleDataManager()
+    private let browseMainDataManager = BrowseMainDataManager()
     
     private let thisWeekStyleView = BrowseStyleView()
     
@@ -53,7 +52,7 @@ extension BrowseThisWeekViewController {
             self?.navigationController?.pushViewController(detailViewController, animated: true)
         }
         
-        thisWeekStyleView.configureContents(browseStyleDataManager.fetchThisWeekImagesData())
+        thisWeekStyleView.configureContents(browseMainDataManager.fetchThisWeekImagesData())
     }
     
 }

@@ -11,9 +11,13 @@ import SnapKit
 
 final class BrowseMainViewController: UIViewController {
 
-    private let browseStyleDataManager = BrowseStyleDataManager()
+    private let browseMainDataManager = BrowseMainDataManager()
     
-    private var dataArray:[[BrowseStyleDataModel]] = []
+    private var dataArray:[[BrowseMainDataModel]] = []
+    
+    private let browseDetailView = BrowseDetailView()
+    
+    private let browseDetailViewController = BrowseDetailViewController()
     
     private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true, cellImageCorenerRadius: 8)
     
@@ -35,9 +39,9 @@ extension BrowseMainViewController {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
         dataArray = [
-            browseStyleDataManager.fetchThisWeekImagesData(),
-            browseStyleDataManager.fetchNextWeekImagesData(),
-            browseStyleDataManager.fetchLastYearImagesData()
+            browseMainDataManager.fetchThisWeekImagesData(),
+            browseMainDataManager.fetchNextWeekImagesData(),
+            browseMainDataManager.fetchLastYearImagesData()
         ]
     }
     
@@ -85,8 +89,10 @@ extension BrowseMainViewController {
         browseMainCollectionView.delegate = self
         
             setCollectionViewCellSelectionHandler { [weak self] indexPath in
+                guard let self = self else { return }
+                browseDetailViewController.dataArray = self.dataArray
             let detailViewController = BrowseDetailViewController()
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
+            self.navigationController?.pushViewController(detailViewController, animated: true)
         }
         browseMainCollectionView.configureContents(
             sectionCount: 3,

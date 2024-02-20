@@ -9,10 +9,10 @@ import UIKit
 
 final class OtherPeopleViewController: UIViewController {
     
-    private let browseStyleDataManager = BrowseStyleDataManager()
+    private let browseMainDataManager = BrowseMainDataManager()
     
-    private var dataArray:[[BrowseStyleDataModel]] = []
-    
+    private var dataArray:[[BrowseMainDataModel]] = []
+
 //    private let otherPeopleView = OtherPeopleView()
     
     private var hashTagNumber: Int = 5
@@ -75,11 +75,11 @@ extension OtherPeopleViewController {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
         dataArray = [
-            browseStyleDataManager.fetchThisWeekImagesData(),
-            browseStyleDataManager.fetchNextWeekImagesData(),
-            browseStyleDataManager.fetchLastYearImagesData(),
-            browseStyleDataManager.fetchThisWeekImagesData(),
-            browseStyleDataManager.fetchNextWeekImagesData(),
+            browseMainDataManager.fetchThisWeekImagesData(),
+            browseMainDataManager.fetchNextWeekImagesData(),
+            browseMainDataManager.fetchLastYearImagesData(),
+            browseMainDataManager.fetchThisWeekImagesData(),
+            browseMainDataManager.fetchNextWeekImagesData(),
         ]
     }
     

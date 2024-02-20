@@ -8,7 +8,7 @@
 import UIKit
 
 final class BrowseDetailCellPagingImageView: UIView {
-    private var images: [UIImage?] = [] {
+    private var images: [BrowseMainDataModel] = [] {
         didSet {
             configurePageControl()
             pagingImageCollectionView.reloadData()
@@ -41,8 +41,11 @@ final class BrowseDetailCellPagingImageView: UIView {
 
 // MARK: - Public Interface
 extension BrowseDetailCellPagingImageView {
-    func configureContents(_ images: [UIImage?]) {
-        self.images = images
+    func configureContents(_ images: [[BrowseMainDataModel]]) {
+//        var tempData: [BrowseMainDataModel] = []
+        for i in images {
+            self.images = i
+        }
     }
     
 }
@@ -106,7 +109,7 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.pagingImageView.image = images[indexPath.row]
+        cell.pagingImageView.image = images[indexPath.row].images
         return cell
     }
     

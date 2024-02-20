@@ -20,7 +20,7 @@ final class BrowseMainCollectionView: UIView {
     
     private var sectionTitlesArray: [String] = []
     
-    private var dataArray: [[BrowseStyleDataModel]] = [] {
+    private var dataArray: [[BrowseMainDataModel]] = [] {
         didSet {
             browseCollectionView.reloadData()
         }
@@ -46,7 +46,7 @@ final class BrowseMainCollectionView: UIView {
 // MARK: - Public Interface
 
 extension BrowseMainCollectionView {
-    func configureContents(sectionCount count: Int, data data: [[BrowseStyleDataModel]], sectionTitles titles: [String]) {
+    func configureContents(sectionCount count: Int, data: [[BrowseMainDataModel]], sectionTitles titles: [String]) {
         sectionCount = count
         self.dataArray = data
         self.sectionTitlesArray = titles

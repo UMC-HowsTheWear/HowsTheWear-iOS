@@ -9,7 +9,7 @@ import UIKit
 
 final class BrowseLastYearViewController: UIViewController {
 
-    private let browseStyleDataManager = BrowseStyleDataManager()
+    private let browseMainDataManager = BrowseMainDataManager()
     
     private let lastYearStyleView = BrowseStyleView()
     
@@ -52,7 +52,7 @@ extension BrowseLastYearViewController {
             self?.navigationController?.pushViewController(detailViewController, animated: true)
         }
         
-        lastYearStyleView.configureContents(browseStyleDataManager.fetchLastYearImagesData())
+        lastYearStyleView.configureContents(browseMainDataManager.fetchLastYearImagesData())
     }
     
 }

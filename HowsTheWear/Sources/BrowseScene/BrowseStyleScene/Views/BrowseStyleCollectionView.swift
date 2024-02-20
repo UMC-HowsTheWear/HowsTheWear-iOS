@@ -13,7 +13,7 @@ final class BrowseStyleCollectionView: UIView {
     
     var didSelectCell: ((IndexPath) -> Void)?
     
-    private var imageArray: [BrowseStyleDataModel] = [] {
+    private var imageArray: [BrowseMainDataModel] = [] {
         didSet {
             browseStyleCollectionView.reloadData()
         }
@@ -37,7 +37,7 @@ final class BrowseStyleCollectionView: UIView {
 
 // MARK: - Public Interface
 extension BrowseStyleCollectionView {
-    func configureContents(_ images: [BrowseStyleDataModel]) {
+    func configureContents(_ images: [BrowseMainDataModel]) {
         self.imageArray = images
     }
     

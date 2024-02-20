@@ -9,7 +9,7 @@ import UIKit
 
 final class BrowseNextWeekViewController: UIViewController {
     
-    private let browseStyleDataManager = BrowseStyleDataManager()
+    private let browseMainDataManager = BrowseMainDataManager()
     
     private let nextWeekStyleView = BrowseStyleView()
     
@@ -52,7 +52,7 @@ extension BrowseNextWeekViewController {
             let detailViewController = BrowseDetailViewController()
             self?.navigationController?.pushViewController(detailViewController, animated: true)
         }
-        nextWeekStyleView.configureContents(browseStyleDataManager.fetchNextWeekImagesData())
+        nextWeekStyleView.configureContents(browseMainDataManager.fetchNextWeekImagesData())
     }
     
 }
