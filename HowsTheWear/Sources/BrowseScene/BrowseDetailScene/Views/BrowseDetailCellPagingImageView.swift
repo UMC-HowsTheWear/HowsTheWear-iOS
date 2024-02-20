@@ -8,7 +8,7 @@
 import UIKit
 
 final class BrowseDetailCellPagingImageView: UIView {
-    private var images: [BrowseMainDataModel] = [] {
+    private var images: [UIImage?] = [] {
         didSet {
             configurePageControl()
             pagingImageCollectionView.reloadData()
@@ -41,11 +41,8 @@ final class BrowseDetailCellPagingImageView: UIView {
 
 // MARK: - Public Interface
 extension BrowseDetailCellPagingImageView {
-    func configureContents(_ images: [[BrowseMainDataModel]]) {
-//        var tempData: [BrowseMainDataModel] = []
-        for i in images {
-            self.images = i
-        }
+    func configureContents(_ images: [UIImage?]) {
+        self.images = images
     }
     
 }
@@ -97,19 +94,13 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
         return images.count
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "PagingImageCollectionViewCell",
             for: indexPath
-        ) as? PagingImageCollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
+        ) as? PagingImageCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.pagingImageView.image = images[indexPath.row].images
+        cell.pagingImageView.image = images[indexPath.row]
         return cell
     }
     
@@ -119,7 +110,7 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
 extension BrowseDetailCellPagingImageView {
     private func configurePageControl() {
         imagePageControl.numberOfPages = images.count
-        imagePageControl.hidesForSinglePage = true
+        imagePageControl.hidesForSinglePage = false
     }
     
     private func configurePagingImageCollectionView() {

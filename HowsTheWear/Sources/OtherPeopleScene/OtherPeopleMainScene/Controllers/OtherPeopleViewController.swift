@@ -13,7 +13,8 @@ final class OtherPeopleViewController: UIViewController {
     
     private var dataArray:[[BrowseMainDataModel]] = []
 
-//    private let otherPeopleView = OtherPeopleView()
+    private let detailViewController = OtherPeopleDetailViewController()
+
     
     private var hashTagNumber: Int = 5
     
@@ -135,8 +136,10 @@ extension OtherPeopleViewController {
         othersPeopleCollectionView.delegate = self
         
         setCollectionViewCellSelectionHandler { [weak self] indexPath in
-            let detailViewController = OtherPeopleDetailViewController()
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
+            guard let self = self else { return }
+            detailViewController.dataArray = self.dataArray[indexPath.section][indexPath.item].images
+            detailViewController.fetchData()
+            self.navigationController?.pushViewController(detailViewController, animated: true)
             
 //            // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
         }

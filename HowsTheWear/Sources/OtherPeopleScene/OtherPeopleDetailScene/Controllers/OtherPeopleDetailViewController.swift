@@ -10,7 +10,9 @@ import UIKit
 final class OtherPeopleDetailViewController: UIViewController {
 
     let otherPeopleDetailView = OtherPeopleDetailView()
-
+    
+    var dataArray: UIImage? = UIImage(named: "")
+    
     override func loadView() {
         view = otherPeopleDetailView
     }
@@ -50,6 +52,10 @@ extension OtherPeopleDetailViewController {
     private func configureInitialSetting() {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
+    }
+    
+    func fetchData() {
+        otherPeopleDetailView.configureContents(dataArray)
     }
     
     private func configureNaviBar() {

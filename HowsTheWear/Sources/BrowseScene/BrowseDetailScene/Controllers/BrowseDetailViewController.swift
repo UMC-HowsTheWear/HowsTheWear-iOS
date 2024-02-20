@@ -11,7 +11,7 @@ final class BrowseDetailViewController: UIViewController {
     
     let browseDetailView = BrowseDetailView()
     
-    var dataArray:[[BrowseMainDataModel]] = []
+    var dataArray: [UIImage?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,7 @@ extension BrowseDetailViewController {
     }
     
     func fetchData() {
-//        dataArray = browseDetailView.browseDetailCellPagingImageView.configureContents(<#T##images: [UIImage?]##[UIImage?]#>)
         browseDetailView.browseDetailCellPagingImageView.configureContents(dataArray)
-
     }
     
 }

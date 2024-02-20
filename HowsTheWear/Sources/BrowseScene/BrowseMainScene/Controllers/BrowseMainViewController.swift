@@ -90,9 +90,9 @@ extension BrowseMainViewController {
         
             setCollectionViewCellSelectionHandler { [weak self] indexPath in
                 guard let self = self else { return }
-                browseDetailViewController.dataArray = self.dataArray
-            let detailViewController = BrowseDetailViewController()
-            self.navigationController?.pushViewController(detailViewController, animated: true)
+                browseDetailViewController.dataArray = [self.dataArray[indexPath.section][indexPath.item].images]
+                browseDetailViewController.fetchData()
+            self.navigationController?.pushViewController(browseDetailViewController, animated: true)
         }
         browseMainCollectionView.configureContents(
             sectionCount: 3,

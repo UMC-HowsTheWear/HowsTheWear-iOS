@@ -73,6 +73,14 @@ extension OtherPeopleDetailView {
     
 }
 
+// MARK: - Public Interface
+
+extension OtherPeopleDetailView {
+    func configureContents(_ image: UIImage?) {
+        postImageView.image = image
+    }
+}
+
 // MARK: - Configure UI
 
 extension OtherPeopleDetailView {
