@@ -92,7 +92,26 @@ extension OtherPeopleDetailViewController {
     }
     
     @objc private func bookmarkButtonDidTapped() {
-        print("HI")
+        
+        let transparentColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        let semiTransparentColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.66)
+        let textColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1)
+        
+        UIView.animate(withDuration: 0.2) {
+            if self.otherPeopleDetailView.itemTagLabelContainerView.backgroundColor?.isEqual(transparentColor) ?? false {
+                self.otherPeopleDetailView.itemTagLabelContainerView.backgroundColor = semiTransparentColor
+                let transition = CATransition()
+                transition.duration = 0.3
+                self.otherPeopleDetailView.itemTagLabel.layer.add(transition, forKey: nil)
+                self.otherPeopleDetailView.itemTagLabel.textColor = textColor
+            } else {
+                self.otherPeopleDetailView.itemTagLabelContainerView.backgroundColor = transparentColor
+                let transition = CATransition()
+                transition.duration = 0.3
+                self.otherPeopleDetailView.itemTagLabel.layer.add(transition, forKey: nil)
+                self.otherPeopleDetailView.itemTagLabel.textColor = transparentColor
+            }
+        }
     }
     
     @objc private func myPostButtonDidTap() {
