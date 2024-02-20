@@ -15,6 +15,8 @@ final class StyleHashTagView: UIView {
         }
     }
     
+    private var cellName = ""
+    
     let hashTagCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -28,8 +30,9 @@ final class StyleHashTagView: UIView {
         return collectionView
     }()
     
-    convenience init() {
+    convenience init(_ cell: String) {
         self.init(frame: .zero)
+        cellName = cell
         configurePagingImageCollectionView()
         configureSubview()
         configureLayout()
@@ -51,9 +54,14 @@ extension StyleHashTagView {
     private func configurePagingImageCollectionView() {
         hashTagCollectionView.dataSource = self
         hashTagCollectionView.delegate = self
-        hashTagCollectionView.register(StyleHashTagCollectionViewCell.self, forCellWithReuseIdentifier: "StyleHashTagCollectionViewCell")
         hashTagCollectionView.showsHorizontalScrollIndicator = false
-    }
+        
+        if cellName == "BrowseStyleCollectionViewCell" {
+            hashTagCollectionView.register(StyleHashTagCollectionViewCell.self, forCellWithReuseIdentifier: cellName)
+        } else {
+            hashTagCollectionView.register(MyPageStyleCollectionViewCell.self, forCellWithReuseIdentifier: cellName)
+        }
+    } 
     
 }
 
@@ -97,14 +105,23 @@ extension StyleHashTagView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StyleHashTagCollectionViewCell", for: indexPath)
-                as? StyleHashTagCollectionViewCell
-        else {
-            return UICollectionViewCell()
+        if cellName == "BrowseStyleCollectionViewCell" {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
+                    as? StyleHashTagCollectionViewCell
+            else {
+                return UICollectionViewCell()
+            }
+            cell.styleHashTagButton.setTitle(hashTags[indexPath.row], for: .normal)
+            return cell
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
+                    as? MyPageStyleCollectionViewCell
+            else {
+                return UICollectionViewCell()
+            }
+            cell.styleHashTagLabel.text = hashTags[indexPath.row]
+            return cell
         }
-        
-        cell.styleHashTagButton.setTitle(hashTags[indexPath.row], for: .normal)
-        return cell
     }
     
 }
