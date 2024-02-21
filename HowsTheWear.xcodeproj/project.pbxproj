@@ -35,6 +35,8 @@
 		05C9E2A92B85BFF600DA0762 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2A82B85BFF600DA0762 /* Onboarding.swift */; };
 		05C9E2AB2B85C00F00DA0762 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2AA2B85C00F00DA0762 /* OnboardingView.swift */; };
 		05C9E2AD2B85C1D700DA0762 /* FirstStepJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2AC2B85C1D700DA0762 /* FirstStepJoinView.swift */; };
+		05C9E2AF2B85C22A00DA0762 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2AE2B85C22A00DA0762 /* OnboardingViewController.swift */; };
+		05C9E2B12B85C23B00DA0762 /* FirstStepJoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2B02B85C23B00DA0762 /* FirstStepJoinVC.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
 		126C9D4B2B7327A300C9FF03 /* LoginInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */; };
@@ -130,6 +132,8 @@
 		05C9E2A82B85BFF600DA0762 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Onboarding.swift; path = HowsTheWear/Sources/SignUpScene/Views/Onboarding.swift; sourceTree = SOURCE_ROOT; };
 		05C9E2AA2B85C00F00DA0762 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		05C9E2AC2B85C1D700DA0762 /* FirstStepJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepJoinView.swift; sourceTree = "<group>"; };
+		05C9E2AE2B85C22A00DA0762 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		05C9E2B02B85C23B00DA0762 /* FirstStepJoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepJoinVC.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		12541C9F2B71F36A00951C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +367,8 @@
 				12541C9F2B71F36A00951C9D /* LoginViewController.swift */,
 				12DA90502B721A730059E55D /* LoginInfoViewController.swift */,
 				126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */,
+				05C9E2AE2B85C22A00DA0762 /* OnboardingViewController.swift */,
+				05C9E2B02B85C23B00DA0762 /* FirstStepJoinVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -892,6 +898,7 @@
 				056CAEED2B8317C800ED6B81 /* String+Extension.swift in Sources */,
 				056CAF022B83715100ED6B81 /* WeatherIcon.swift in Sources */,
 				056CAEEF2B8317E600ED6B81 /* DateFormatter.swift in Sources */,
+				05C9E2AF2B85C22A00DA0762 /* OnboardingViewController.swift in Sources */,
 				567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */,
 				5664CCF92B85234C003651F6 /* OtherPeopleStyleViewController.swift in Sources */,
 				0530AB112B6707890021625D /* HourlyWeatherCell.swift in Sources */,
@@ -925,6 +932,7 @@
 				5664CCFD2B856237003651F6 /* MyPageInterestedButton.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
+				05C9E2B12B85C23B00DA0762 /* FirstStepJoinVC.swift in Sources */,
 				567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */,
 				567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */,
 				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
