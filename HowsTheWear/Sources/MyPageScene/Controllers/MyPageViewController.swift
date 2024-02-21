@@ -36,23 +36,9 @@ final class MyPageViewController: UIViewController {
         configureAddTarget()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tabBarController?.tabBar.isHidden = false
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myPageView.styleHashTagCollectionView.configureContents(hashTagArray)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let navigationController = navigationController,
-           navigationController.topViewController is MyPageViewController
-        {
-            tabBarController?.tabBar.isHidden = true
-        }
     }
     
     private func configureNaviBar() {
