@@ -89,7 +89,7 @@ final class BrowseDetailView: UIView {
         configureSubview()
         configureLayout()
         // CellPagingImageView 테스트
-        browseDetailCellPagingImageView.configureContents([UIImage(named: "DetailTestImage"), UIImage(named: "DetailTestImage"), UIImage(named: "DetailTestImage")])
+//        browseDetailCellPagingImageView.configureContents([UIImage(named: "DetailTestImage"), UIImage(named: "DetailTestImage"), UIImage(named: "DetailTestImage")])
     }
     
     required init?(coder: NSCoder) {

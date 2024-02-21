@@ -18,13 +18,13 @@ final class OtherPeopleProfileHeaderView: UIView {
     private let profileID = UILabel().then {
         $0.textColor = #colorLiteral(red: 0.3278294206, green: 0.3278294206, blue: 0.3278294206, alpha: 1)
         $0.font = UIFont.pretendard(size: 15, weight: .medium)
-        $0.text = "abc123"
+        $0.text = "yvmuini"
     }
     
     private let postingDate = UILabel().then {
         $0.textColor = #colorLiteral(red: 0.7411764264, green: 0.7411764264, blue: 0.7411764264, alpha: 1)
         $0.font = UIFont.pretendard(size: 12, weight: .medium)
-        $0.text = "2024년 12월 31일"
+        $0.text = "2023년 12월 31일"
     }
     
     private let headerLabelStackView = UIStackView().then {

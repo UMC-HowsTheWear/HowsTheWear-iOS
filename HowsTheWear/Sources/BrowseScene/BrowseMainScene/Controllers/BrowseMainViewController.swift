@@ -10,43 +10,20 @@ import UIKit
 import SnapKit
 
 final class BrowseMainViewController: UIViewController {
-    
-    private var thisWeekStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
-    
-    private var nextWeekStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
-    
-    private var lastYearStyleArray:[UIImage?] = [
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage"),
-        UIImage(named: "StyleTestImage")
-    ]
 
-    private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true)
+    private let browseMainDataManager = BrowseMainDataManager()
+    
+    private var dataArray:[[BrowseMainDataModel]] = []
+    
+    private let browseDetailView = BrowseDetailView()
+    
+    private let browseDetailViewController = BrowseDetailViewController()
+    
+    private lazy var browseMainCollectionView = BrowseMainCollectionView(isHiddenCellUserID: true, cellImageCorenerRadius: 8)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInitialSetting()
-        browseMainCollectionView.configureContents(
-            sectionCount: 3,
-            imagesData: [thisWeekStyleArray, nextWeekStyleArray, lastYearStyleArray],
-            sectionTitles: ["이번주 코디", "저번주 코디", "작년 이맘때는"]
-        )
         configureCollectionView()
         configureSubViews()
         configureLayout()
@@ -61,6 +38,12 @@ extension BrowseMainViewController {
     private func configureInitialSetting() {
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
+        dataArray = [
+            browseMainDataManager.fetchThisWeekImagesData(),
+            browseMainDataManager.fetchNextWeekImagesData(),
+            browseMainDataManager.fetchLastYearImagesData()
+        ]
+        browseMainCollectionView.browseCollectionView.isScrollEnabled = false
     }
     
     private func configureNaviBar() {
@@ -107,15 +90,18 @@ extension BrowseMainViewController {
         browseMainCollectionView.delegate = self
         
             setCollectionViewCellSelectionHandler { [weak self] indexPath in
-            let detailViewController = BrowseDetailViewController()
-            self?.navigationController?.pushViewController(detailViewController, animated: true)
-            
-            // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
+                guard let self = self else { return }
+                browseDetailViewController.dataArray = [self.dataArray[indexPath.section][indexPath.item].images]
+                browseDetailViewController.fetchData()
+            self.navigationController?.pushViewController(browseDetailViewController, animated: true)
         }
-        // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
+        browseMainCollectionView.configureContents(
+            sectionCount: 3,
+            data: dataArray,
+            sectionTitles: ["이번주 코디", "저번주 코디", "작년 이맘때는"]
+        )
     }
 
-    
 }
 
 // MARK: - Implement browseCollectionReusableDelegate
