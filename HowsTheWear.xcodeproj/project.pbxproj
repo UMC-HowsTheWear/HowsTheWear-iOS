@@ -31,6 +31,10 @@
 		05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C52B73276D0014F110 /* CalendarViewController.swift */; };
 		05B034C82B7327910014F110 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C72B7327910014F110 /* CalendarView.swift */; };
 		05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B034C92B7328DD0014F110 /* PaddedLabel.swift */; };
+		05C9E2A72B85BFD500DA0762 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2A62B85BFD500DA0762 /* OnboardingCell.swift */; };
+		05C9E2A92B85BFF600DA0762 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2A82B85BFF600DA0762 /* Onboarding.swift */; };
+		05C9E2AB2B85C00F00DA0762 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2AA2B85C00F00DA0762 /* OnboardingView.swift */; };
+		05C9E2AD2B85C1D700DA0762 /* FirstStepJoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9E2AC2B85C1D700DA0762 /* FirstStepJoinView.swift */; };
 		12541C9E2B71F32B00951C9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9D2B71F32B00951C9D /* LoginView.swift */; };
 		12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12541C9F2B71F36A00951C9D /* LoginViewController.swift */; };
 		126C9D4B2B7327A300C9FF03 /* LoginInfoCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */; };
@@ -122,6 +126,10 @@
 		05B034C72B7327910014F110 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		05B034C92B7328DD0014F110 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		05BE62892B45526400BAD63F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		05C9E2A62B85BFD500DA0762 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		05C9E2A82B85BFF600DA0762 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Onboarding.swift; path = HowsTheWear/Sources/SignUpScene/Views/Onboarding.swift; sourceTree = SOURCE_ROOT; };
+		05C9E2AA2B85C00F00DA0762 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		05C9E2AC2B85C1D700DA0762 /* FirstStepJoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStepJoinView.swift; sourceTree = "<group>"; };
 		12541C9D2B71F32B00951C9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		12541C9F2B71F36A00951C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		126C9D4A2B7327A300C9FF03 /* LoginInfoCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +339,7 @@
 		12541C9A2B71F2F100951C9D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				05C9E2A82B85BFF600DA0762 /* Onboarding.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,8 +348,11 @@
 			isa = PBXGroup;
 			children = (
 				12541C9D2B71F32B00951C9D /* LoginView.swift */,
+				05C9E2AC2B85C1D700DA0762 /* FirstStepJoinView.swift */,
 				12DA904E2B7219FA0059E55D /* LoginInfoView.swift */,
 				126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */,
+				05C9E2A62B85BFD500DA0762 /* OnboardingCell.swift */,
+				05C9E2AA2B85C00F00DA0762 /* OnboardingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -866,6 +878,7 @@
 				564E01CF2B7F63C300837828 /* MyPageTemperatureSlider.swift in Sources */,
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
+				05C9E2A72B85BFD500DA0762 /* OnboardingCell.swift in Sources */,
 				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
 				056CAEF52B8318AC00ED6B81 /* ParsedWeather.swift in Sources */,
 				567C10FD2B81966300446C73 /* MyPostImagesDataModel.swift in Sources */,
@@ -883,6 +896,7 @@
 				5664CCF92B85234C003651F6 /* OtherPeopleStyleViewController.swift in Sources */,
 				0530AB112B6707890021625D /* HourlyWeatherCell.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
+				05C9E2AD2B85C1D700DA0762 /* FirstStepJoinView.swift in Sources */,
 				56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */,
 				56B9F7E02B6CABC1005B924F /* BrowseDetailView.swift in Sources */,
 				56B0601E2B5D524000CE923C /* StyleHashTagView.swift in Sources */,
@@ -922,6 +936,8 @@
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
 				12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */,
 				5664CCFB2B856001003651F6 /* EditInterestView.swift in Sources */,
+				05C9E2A92B85BFF600DA0762 /* Onboarding.swift in Sources */,
+				05C9E2AB2B85C00F00DA0762 /* OnboardingView.swift in Sources */,
 				564E01C62B7DD5F200837828 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
