@@ -14,6 +14,17 @@ final class BrowseCollectionViewCell: UICollectionViewCell {
     let styleImageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.image = UIImage(named: "StyleTestImage")
+        $0.clipsToBounds = true
+    }
+    
+    let browseCollectionViewCellUserIDLabel = UILabel().then {
+        $0.font = UIFont.pretendard(size: 12, weight: .medium)
+        $0.textColor = .white
+        $0.numberOfLines = 1
+        $0.textAlignment = .left
+        $0.lineBreakMode = .byTruncatingTail
+        $0.isHidden = true
+        $0.text = "@alalal"
     }
     
     override init(frame: CGRect) {
@@ -28,18 +39,36 @@ final class BrowseCollectionViewCell: UICollectionViewCell {
     
 }
 
+// MARK: - Public Interface
+
+extension BrowseCollectionViewCell {
+    
+    func configureCellContents(isHiddenUserIDLabel: Bool) {
+        browseCollectionViewCellUserIDLabel.isHidden = isHiddenUserIDLabel
+    }
+    
+}
+
+
 // MARK: - Configure UI
 
 extension BrowseCollectionViewCell {
     
     private func configureSubviews() {
-        contentView.addSubview(styleImageView)
+        [styleImageView, browseCollectionViewCellUserIDLabel].forEach {
+            contentView.addSubview($0)
+        }
     }
     
     private func configureLayout() {
         styleImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        browseCollectionViewCellUserIDLabel.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(8)
+            make.leading.equalToSuperview().inset(8)
+        }
     }
-    
+
 }

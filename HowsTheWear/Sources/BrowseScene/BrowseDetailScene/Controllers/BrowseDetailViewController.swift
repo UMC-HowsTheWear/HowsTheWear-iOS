@@ -11,6 +11,8 @@ final class BrowseDetailViewController: UIViewController {
     
     let browseDetailView = BrowseDetailView()
     
+    var dataArray: [UIImage?] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureInitialSetting()
@@ -24,8 +26,12 @@ final class BrowseDetailViewController: UIViewController {
 
 extension BrowseDetailViewController {
     private func configureInitialSetting() {
+        fetchData()
         view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
-//        navigationItem.title = "작년 이맘때는"
+    }
+    
+    func fetchData() {
+        browseDetailView.browseDetailCellPagingImageView.configureContents(dataArray)
     }
     
 }

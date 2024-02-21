@@ -11,11 +11,16 @@ final class BrowseMainCollectionView: UIView {
     
     weak var delegate: browseCollectionReusableDelegate?
     
+    var didSelectCell: ((IndexPath) -> Void)?
+
+    private var isHiddenCellUserID = false
+    private var cellImageCorenerRadius: CGFloat = 0
+    
     private var sectionCount = 0
     
     private var sectionTitlesArray: [String] = []
     
-    private var imageArray: [[UIImage?]] = [] {
+    private var dataArray: [[BrowseMainDataModel]] = [] {
         didSet {
             browseCollectionView.reloadData()
         }
@@ -23,11 +28,13 @@ final class BrowseMainCollectionView: UIView {
 
     lazy var browseCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(isHiddenCellUserID: Bool, cellImageCorenerRadius: CGFloat) {
+        super.init(frame: .zero)
         configureCollectionView()
         configureSubViews()
         configureLayout()
+        self.isHiddenCellUserID = isHiddenCellUserID
+        self.cellImageCorenerRadius = cellImageCorenerRadius
     }
     
     required init?(coder: NSCoder) {
@@ -39,9 +46,9 @@ final class BrowseMainCollectionView: UIView {
 // MARK: - Public Interface
 
 extension BrowseMainCollectionView {
-    func configureContents(sectionCount count: Int,imagesData images: [[UIImage?]], sectionTitles titles: [String]) {
+    func configureContents(sectionCount count: Int, data: [[BrowseMainDataModel]], sectionTitles titles: [String]) {
         sectionCount = count
-        self.imageArray = images
+        self.dataArray = data
         self.sectionTitlesArray = titles
     }
     
@@ -53,13 +60,14 @@ extension BrowseMainCollectionView {
     
     private func configureCollectionView() {
         browseCollectionView.dataSource = self
+        browseCollectionView.delegate = self
         browseCollectionView.register(BrowseCollectionViewCell.self, forCellWithReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier)
+//        browseCollectionView.register(BrowseMoreCollectionViewCell.self, forCellWithReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier)
         browseCollectionView.backgroundColor = .clear
         
         browseCollectionView.register(BrowseCollectionReusableView.self,
                                       forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                       withReuseIdentifier: BrowseCollectionReusableView.reuseIdentifier)
-        // 모델, 데이터매니저 구현 후 데이터 받아오는 메서드 작성예정
     }
 
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
@@ -69,18 +77,18 @@ extension BrowseMainCollectionView {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 6, leading: 0, bottom: 0, trailing: 10)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.32),
-            heightDimension: .estimated(136)
+            heightDimension: .fractionalHeight(0.234)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         // screen의 height가 890 이상일 시 (XR, Plus, Max기종) header의 높이를 65로 설정 나머지는 35로 설정.
         let screenHeight = UIScreen.main.bounds.height
-        let headerHeight: CGFloat = screenHeight >= 890 ? 65 : 35
+        let headerHeight: CGFloat = screenHeight >= 890 ? 45 : 36
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(headerHeight))
         let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
@@ -88,7 +96,7 @@ extension BrowseMainCollectionView {
                                                                         alignment: .top)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 0, bottom: 30, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 24, trailing: 0)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [headerElement]
 
@@ -108,22 +116,48 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard section < imageArray.count else {
-            return 0
-        }
-        
-        return imageArray[section].count
+        return 11
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+// 더보기 버튼 미구현
+//        if indexPath.item == 10 {
+//            guard let cell = collectionView.dequeueReusableCell(
+//                withReuseIdentifier: BrowseMoreCollectionViewCell.reuseIdentifier,
+//                for: indexPath
+//            ) as? BrowseMoreCollectionViewCell else { return UICollectionViewCell() }
+//            
+//            return cell
+//        } else {
+//            guard let cell = collectionView.dequeueReusableCell(
+//                withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
+//                for: indexPath
+//            ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
+//            
+//            let section = indexPath.section
+//            
+//            if indexPath.item < dataArray[section].count {
+//                  cell.styleImageView.image = dataArray[section][indexPath.item]
+//              }      
+//            
+//            cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserId
+//
+//            return cell
+//        }
+        
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: BrowseCollectionViewCell.reuseIdentifier,
             for: indexPath
         ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
-        
+       
         let section = indexPath.section
-        
-        cell.styleImageView.image = imageArray[section][indexPath.item]
+       
+        if indexPath.item < dataArray[section].count {
+            cell.styleImageView.image = dataArray[section][indexPath.item].images
+        }
+       
+        cell.browseCollectionViewCellUserIDLabel.isHidden = isHiddenCellUserID
+        cell.styleImageView.layer.cornerRadius = cellImageCorenerRadius
 
         return cell
     }
@@ -144,6 +178,14 @@ extension BrowseMainCollectionView: UICollectionViewDataSource {
         return headerView
     }
     
+}
+
+// MARK: - Implement CollectionView Delegate
+
+extension BrowseMainCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectCell?(indexPath)
+    }
 }
 
 // MARK: - Configure UI

@@ -27,7 +27,7 @@ final class TabBarController: UITabBarController {
         )
     }
     
-    private let othersVC = OthersViewController().then {
+    private let othersVC = OtherPeopleViewController().then {
         $0.tabBarItem = UITabBarItem(
             title: "OTHERS",
             image: UIImage(named: "user.group"),
@@ -35,7 +35,7 @@ final class TabBarController: UITabBarController {
         )
     }
     
-    private let myVC = UIViewController().then {
+    private let myVC = MyPageViewController().then {
         $0.tabBarItem = UITabBarItem(
             title: "MY",
             image: UIImage(named: "person.circle"),
@@ -53,7 +53,7 @@ final class TabBarController: UITabBarController {
     }
     
     private func configureTabBar() {
-        let homeNavController = UINavigationController(rootViewController: homeVC)
+        let homeNavController = homeVC
         let browseNavController = UINavigationController(rootViewController: browseVC)
         let othersNavController = UINavigationController(rootViewController: othersVC)
         let myNavController = UINavigationController(rootViewController: myVC)

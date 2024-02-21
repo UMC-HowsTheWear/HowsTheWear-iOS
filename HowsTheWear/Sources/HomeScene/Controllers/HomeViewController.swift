@@ -5,16 +5,56 @@
 //  Created by Rafael on 1/3/24.
 //
 
+import CoreLocation
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
 
 final class HomeViewController: UIViewController {
     
-    var items: [TodayItem] = TodayItem.items
+    private let collectionView = HourlyWeatherCell().collectionView
     
-    private let customBarButtonItem = CustomBarButtonItem()
+    var weather: ParsedWeather?
+    var hourlyForecast: [HourWeather] = []
+    var dailyForecast: [DayWeather] = []
+    
+    var city: (name: String, placemarkTitle: String, lat: Double, long: Double, timeZone: String)? {
+        didSet {
+            guard let city = city else { return }
+            WeatherDataCenter.shared.getWeatherForLocation(
+                location: CLLocation(
+                    latitude: city.lat,
+                    longitude: city.long
+                )
+            ) { result in
+                switch result {
+                case .success(let weather):
+                    self.weather = weather
+                    self.parse(weather: weather)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+            collectionView.reloadData()
+        }
+    }
+    
+    func parse(weather: ParsedWeather) {
+        for idx in 0..<weather.hourlyForecast.count {
+            let item = weather.hourlyForecast[idx]
+            hourlyForecast.append(item)
+        }
+        
+        for item in weather.dailyForecast {
+            dailyForecast.append(item)
+        }
+            
+        collectionView.reloadData()
+    }
+    
     private let refreshControl = UIRefreshControl().then {
         $0.tintColor = #colorLiteral(red: 0.4442995787, green: 0.6070379615, blue: 0.9031649232, alpha: 1)
     }
@@ -28,8 +68,9 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchWeatherData()
         configureUI()
-        configureAddTargets()
+        updateBackgroundImage()
     }
     
 }
@@ -73,6 +114,12 @@ extension HomeViewController: UITableViewDataSource {
             ) as? TodayItemCell else {
                 return UITableViewCell()
             }
+            if let currentWeather = weather?.currentWeather {
+                cell.setRecommendedItems(
+                    temperature: currentWeather.temperature.value,
+                    precipitationProbability: currentWeather.precipitationIntensity.value
+                )
+            }
             cell.backgroundColor = .clear
             cell.selectionStyle = .none
             return cell
@@ -82,6 +129,10 @@ extension HomeViewController: UITableViewDataSource {
             ) as? HourlyWeatherCell else {
                 return UITableViewCell()
             }
+            if let city = city {
+                cell.city = city
+            }
+            cell.hourlyForecast = hourlyForecast
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
@@ -91,6 +142,10 @@ extension HomeViewController: UITableViewDataSource {
             ) as? DailyWeatherCell else {
                 return UITableViewCell()
             }
+            if let city = city {
+                cell.city = city
+            }
+            cell.dailyForecast = dailyForecast
             cell.selectionStyle = .none
             cell.backgroundColor = .clear
             return cell
@@ -129,18 +184,17 @@ extension HomeViewController: UITableViewDelegate {
 private extension HomeViewController {
     
     func configureUI() {
-        setupNavigationBarUI()
         setupTableView()
     }
     
-    func setupNavigationBarUI() {
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .clear
-        appearance.shadowColor = nil
-        navigationController?.navigationBar.standardAppearance = appearance
-        
-        let rightButton = UIBarButtonItem(customView: customBarButtonItem.locationButton)
-        navigationItem.rightBarButtonItem = rightButton
+    private func isDaytime() -> Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour >= 6 && hour < 18
+    }
+    
+    private func updateBackgroundImage() {
+        let imageName = isDaytime() ? "background-image" : "background-image-night"
+        backgroundImageView.image = UIImage(named: imageName)
     }
     
     func setupTableView() {
@@ -171,51 +225,60 @@ private extension HomeViewController {
         tableView.register(DailyWeatherCell.self, forCellReuseIdentifier: DailyWeatherCell.reuseIdentifier)
     }
     
+    func fetchWeatherData() {
+        LocationManager.shared.startLocationManagerIfNeeded()
+        LocationManager.shared.onLocationChange = { [weak self] location in
+            guard let self = self, let location = location else { return }
+            self.city = (
+                name: "Current Location",
+                placemarkTitle: "",
+                lat: location.coordinate.latitude,
+                long: location.coordinate.longitude,
+                timeZone: TimeZone.current.identifier
+            )
+            
+            WeatherDataCenter.shared.getWeatherForLocation(location: location) { result in
+                switch result {
+                case .success(let weatherData):
+                    self.updateWeatherData(weatherData)
+                case .failure(let error):
+                    print("Error fetching weather data: \(error)")
+                }
+            }
+        }
+    }
+    
     @objc func refreshData() {
-        LocationManager.shared.getCurrentLocation { [weak self] location in
-            WeatherManager.shared.getWeather(for: location) {
-                DispatchQueue.main.async {
-                    self?.updateCurrentWeatherCell()
-                    self?.tableView.reloadData()
-                    self?.refreshControl.endRefreshing()
+        LocationManager.shared.startLocationManagerIfNeeded()
+        LocationManager.shared.onLocationChange = { [weak self] location in
+            guard let self = self, let location = location else { return }
+            self.city = (
+                name: "Current Location",
+                placemarkTitle: "",
+                lat: location.coordinate.latitude,
+                long: location.coordinate.longitude,
+                timeZone: TimeZone.current.identifier
+            )
+
+            WeatherDataCenter.shared.getWeatherForLocation(location: location) { result in
+                switch result {
+                case .success(let weatherData):
+                    self.updateWeatherData(weatherData)
+                case .failure(let error):
+                    print("Error fetching weather data: \(error)")
                 }
             }
         }
     }
 
-    func updateCurrentWeatherCell() {
-        guard let currentWeather = WeatherManager.shared.currentWeather,
-              let location = LocationManager.shared.location else {
-            return
+    func updateWeatherData(_ weatherData: ParsedWeather) {
+        self.weather = weatherData
+        self.hourlyForecast = Array(weatherData.hourlyForecast)
+        self.dailyForecast = Array(weatherData.dailyForecast)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
-        
-        if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? CurrentWeatherCell {
-            cell.updateWeather(currentWeather: currentWeather, location: location)
-        }
-    }
-    
-}
-
-// MARK: - Button Target Configuration
-
-private extension HomeViewController {
-    
-    func configureAddTargets() {
-        customBarButtonItem.locationButton.addTarget(
-            self,
-            action: #selector(locationButtonDidTap),
-            for: .touchUpInside
-        )
-    }
-    
-}
-
-// MARK: - Button Action Method
-
-private extension HomeViewController {
-    
-    @objc func locationButtonDidTap() {
-        print("Clicked")
     }
     
 }

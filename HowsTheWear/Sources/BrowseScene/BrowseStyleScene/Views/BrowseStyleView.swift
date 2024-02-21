@@ -9,9 +9,9 @@ import UIKit
 
 final class BrowseStyleView: UIView {
     
-    private let styleHashTagView = StyleHashTagView()
+    private let styleHashTagView = StyleHashTagView("BrowseStyleCollectionViewCell")
 
-    private lazy var browseStyleCollectionView = BrowseStyleCollectionView()
+    private lazy var browseStyleCollectionView = BrowseStyleCollectionView(cellImageCorenerRadius: 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,7 +44,7 @@ extension BrowseStyleView {
         browseStyleCollectionView.didSelectCell = handler
     }
     
-    func configureContents(_ images: [UIImage?]) {
+    func configureContents(_ images: [BrowseMainDataModel]) {
         browseStyleCollectionView.configureContents(images)
     }
 }

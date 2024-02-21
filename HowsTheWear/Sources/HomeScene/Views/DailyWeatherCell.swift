@@ -5,16 +5,59 @@
 //  Created by RAFA on 1/29/24.
 //
 
+import CoreLocation
 import UIKit
+import WeatherKit
 
 import SnapKit
 import Then
 
 final class DailyWeatherCell: UITableViewCell {
     
-    static let cellHeight = 550.0
+    static let cellHeight = 555.0
     
-    private var dailyData = Daily.lists
+    var weather: ParsedWeather?
+    var dailyForecast: [DayWeather] = []
+    
+    var city: (
+        name: String,
+        placemarkTitle: String,
+        lat: Double,
+        long: Double,
+        timeZone: String
+    ) = (
+        "MyCity",
+        "placemarkTitle",
+        40.86,
+        -74.12,
+        "EST"
+    ) {
+        didSet {
+            WeatherDataCenter.shared.getWeatherForLocation(
+                location: CLLocation(
+                    latitude: city.lat,
+                    longitude: city.long
+                )
+            ) { result in
+                switch result {
+                case .success(let weather):
+                    self.weather = weather
+                    self.parse(weather: weather)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
+            collectionView.reloadData()
+        }
+    }
+    
+    func parse(weather: ParsedWeather) {
+        self.dailyForecast = Array(weather.dailyForecast)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
     
     private let shadowContainerView = UIView().then {
         $0.backgroundColor = .clear
@@ -56,7 +99,7 @@ final class DailyWeatherCell: UITableViewCell {
 extension DailyWeatherCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dailyData.count
+        return dailyForecast.count
     }
 
     func collectionView(
@@ -69,8 +112,8 @@ extension DailyWeatherCell: UICollectionViewDataSource {
         ) as? DailyCollectionCell else {
             return UICollectionViewCell()
         }
-        let cellData = dailyData[indexPath.item]
-        cell.prepare(data: cellData)
+        let dailyWeather = dailyForecast[indexPath.row]
+        cell.prepare(dayWeather: dailyWeather, timeZone: city.timeZone)
         return cell
     }
     
@@ -98,7 +141,10 @@ private extension DailyWeatherCell {
     }
     
     func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50))

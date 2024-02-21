@@ -9,9 +9,11 @@ import UIKit
 
 final class BrowseStyleCollectionView: UIView {
     
+    private var cellImageCorenerRadius: CGFloat = 0
+    
     var didSelectCell: ((IndexPath) -> Void)?
     
-    private var imageArray: [UIImage?] = [] {
+    private var imageArray: [BrowseMainDataModel] = [] {
         didSet {
             browseStyleCollectionView.reloadData()
         }
@@ -19,11 +21,12 @@ final class BrowseStyleCollectionView: UIView {
     
     private lazy var browseStyleCollectionView = UICollectionView(frame: .zero, collectionViewLayout: generateCollectionViewLayout())
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(cellImageCorenerRadius: CGFloat) {
+        super.init(frame: .zero)
         configureCollectionView()
         configureSubview()
         configureLayout()
+        self.cellImageCorenerRadius = cellImageCorenerRadius
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +37,7 @@ final class BrowseStyleCollectionView: UIView {
 
 // MARK: - Public Interface
 extension BrowseStyleCollectionView {
-    func configureContents(_ images: [UIImage?]) {
+    func configureContents(_ images: [BrowseMainDataModel]) {
         self.imageArray = images
     }
     
@@ -99,7 +102,8 @@ extension BrowseStyleCollectionView: UICollectionViewDataSource {
             for: indexPath
         ) as? BrowseCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.styleImageView.image = imageArray[indexPath.item]
+        cell.styleImageView.image = imageArray[indexPath.item].images
+        cell.styleImageView.layer.cornerRadius = cellImageCorenerRadius
         
         return cell
     }

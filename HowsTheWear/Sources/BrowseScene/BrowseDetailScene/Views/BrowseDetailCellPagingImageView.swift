@@ -51,7 +51,7 @@ extension BrowseDetailCellPagingImageView {
 extension BrowseDetailCellPagingImageView {
     private func configureInitialSetting() {
         imagePageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.3137255013, green: 0.3137254715, blue: 0.3137255013, alpha: 1)
-        imagePageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9411764741, green: 0.9411764741, blue: 0.9411764741, alpha: 1)
+        imagePageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9411764706, green: 0.9411764706, blue: 0.9411764706, alpha: 1)
     }
     
 }
@@ -94,17 +94,11 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
         return images.count
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "PagingImageCollectionViewCell",
             for: indexPath
-        ) as? PagingImageCollectionViewCell
-        else {
-            return UICollectionViewCell()
-        }
+        ) as? PagingImageCollectionViewCell else { return UICollectionViewCell() }
         
         cell.pagingImageView.image = images[indexPath.row]
         return cell
@@ -116,7 +110,7 @@ extension BrowseDetailCellPagingImageView: UICollectionViewDataSource {
 extension BrowseDetailCellPagingImageView {
     private func configurePageControl() {
         imagePageControl.numberOfPages = images.count
-        imagePageControl.hidesForSinglePage = true
+        imagePageControl.hidesForSinglePage = false
     }
     
     private func configurePagingImageCollectionView() {
