@@ -74,7 +74,7 @@ final class OtherPeopleViewController: UIViewController {
 extension OtherPeopleViewController {
     
     private func configureInitialSetting() {
-        view.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        view.backgroundColor = UIColor(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         configureNaviBar()
         dataArray = [
             browseMainDataManager.fetchLastYearImagesData(),
@@ -88,7 +88,7 @@ extension OtherPeopleViewController {
     private func configureNaviBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
+        appearance.backgroundColor = UIColor(red: 0.9803921569, green: 0.9803921569, blue: 0.9803921569, alpha: 1)
         appearance.titleTextAttributes = [
             .font: UIFont.pretendard(size: 16, weight: .semibold),
             .foregroundColor: UIColor.black
