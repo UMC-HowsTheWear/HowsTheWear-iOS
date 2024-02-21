@@ -64,6 +64,9 @@
 		5664CCF52B84B6C5003651F6 /* BrowseMainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF42B84B6C5003651F6 /* BrowseMainDataModel.swift */; };
 		5664CCF72B84B6FF003651F6 /* BrowseMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF62B84B6FF003651F6 /* BrowseMainDataManager.swift */; };
 		5664CCF92B85234C003651F6 /* OtherPeopleStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCF82B85234C003651F6 /* OtherPeopleStyleViewController.swift */; };
+		5664CCFB2B856001003651F6 /* EditInterestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCFA2B856001003651F6 /* EditInterestView.swift */; };
+		5664CCFD2B856237003651F6 /* MyPageInterestedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCFC2B856237003651F6 /* MyPageInterestedButton.swift */; };
+		5664CCFF2B85732A003651F6 /* EditInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664CCFE2B85732A003651F6 /* EditInterestViewController.swift */; };
 		567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */; };
 		567C10EF2B80DCB100446C73 /* MyPagePostPagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */; };
 		567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */; };
@@ -150,6 +153,9 @@
 		5664CCF42B84B6C5003651F6 /* BrowseMainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainDataModel.swift; sourceTree = "<group>"; };
 		5664CCF62B84B6FF003651F6 /* BrowseMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainDataManager.swift; sourceTree = "<group>"; };
 		5664CCF82B85234C003651F6 /* OtherPeopleStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleStyleViewController.swift; sourceTree = "<group>"; };
+		5664CCFA2B856001003651F6 /* EditInterestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInterestView.swift; sourceTree = "<group>"; };
+		5664CCFC2B856237003651F6 /* MyPageInterestedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageInterestedButton.swift; sourceTree = "<group>"; };
+		5664CCFE2B85732A003651F6 /* EditInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInterestViewController.swift; sourceTree = "<group>"; };
 		567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureSliderView.swift; sourceTree = "<group>"; };
 		567C10EE2B80DCB100446C73 /* MyPagePostPagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostPagingViewController.swift; sourceTree = "<group>"; };
 		567C10F02B80DD4C00446C73 /* MyPagePostSegmentedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostSegmentedControll.swift; sourceTree = "<group>"; };
@@ -519,6 +525,8 @@
 				567C10EB2B805D5900446C73 /* TemperatureSliderView.swift */,
 				564E01C72B7DEB6D00837828 /* MyPageStyleCollectionViewCell.swift */,
 				567C10F62B81830D00446C73 /* MyPagePostCollectionViewCell.swift */,
+				5664CCFA2B856001003651F6 /* EditInterestView.swift */,
+				5664CCFC2B856237003651F6 /* MyPageInterestedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,6 +558,7 @@
 				567C10F42B80F0A800446C73 /* MyPostCollectionViewController.swift */,
 				567C10F82B81853100446C73 /* SavedPostCollectionViewController.swift */,
 				5664CCE42B81F4E1003651F6 /* MyPageViewController.swift */,
+				5664CCFE2B85732A003651F6 /* EditInterestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -781,6 +790,7 @@
 				56F0C3882B77BC8700C41278 /* OtherPeopleDetailViewController.swift in Sources */,
 				05B034BA2B7325D90014F110 /* TodayItem.swift in Sources */,
 				567C10FF2B81969300446C73 /* MyPostImagesDataManager.swift in Sources */,
+				5664CCFF2B85732A003651F6 /* EditInterestViewController.swift in Sources */,
 				567C10F12B80DD4C00446C73 /* MyPagePostSegmentedControll.swift in Sources */,
 				56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */,
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
@@ -794,6 +804,7 @@
 				56B1F1F02B52D1BB0042E6F7 /* BrowseCollectionReusableView.swift in Sources */,
 				5664CCF12B83BD7D003651F6 /* BrowseDetailModel.swift in Sources */,
 				5664CCEE2B82399E003651F6 /* BrowseStyleDataManager.swift in Sources */,
+				5664CCFD2B856237003651F6 /* MyPageInterestedButton.swift in Sources */,
 				56B0601A2B5D4AE400CE923C /* PretendardFontExtension.swift in Sources */,
 				563408AE2B6F40D100B0159B /* BrowseMainCollectionView.swift in Sources */,
 				567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */,
@@ -805,6 +816,7 @@
 				56F0C3832B77B0F700C41278 /* BrowseMoreCollectionViewCell.swift in Sources */,
 				56B0601C2B5D4CCD00CE923C /* StyleHashTagCollectionViewCell.swift in Sources */,
 				12541CA02B71F36A00951C9D /* LoginViewController.swift in Sources */,
+				5664CCFB2B856001003651F6 /* EditInterestView.swift in Sources */,
 				564E01C62B7DD5F200837828 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
