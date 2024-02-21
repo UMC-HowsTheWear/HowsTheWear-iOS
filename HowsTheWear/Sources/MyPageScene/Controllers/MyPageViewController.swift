@@ -13,6 +13,19 @@ final class MyPageViewController: UIViewController {
     
     private let myPageView = MyPageView()
     
+    var hashTagArray:[String] = []
+    
+    var heatNumber:Float = 0.0 {
+        didSet {
+            myPageView.heatSlider.temperatureSlider.value = heatNumber
+        }
+    }
+    var coldNumber:Float = 0.0 {
+        didSet {
+            myPageView.coldSlider.temperatureSlider.value = coldNumber
+        }
+    }
+    
     override func loadView() {
         view = myPageView
     }
@@ -26,6 +39,11 @@ final class MyPageViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myPageView.styleHashTagCollectionView.configureContents(hashTagArray)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

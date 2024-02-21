@@ -37,6 +37,7 @@
 		126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */; };
 		12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA904E2B7219FA0059E55D /* LoginInfoView.swift */; };
 		12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA90502B721A730059E55D /* LoginInfoViewController.swift */; };
+		561084DC2B85984200A958EB /* SavedPostImagesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561084DB2B85984200A958EB /* SavedPostImagesDataManager.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
 		563408A22B6F2D3500B0159B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408A12B6F2D3500B0159B /* Reusable.swift */; };
 		563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408A32B6F30FA00B0159B /* BrowseStyleCollectionView.swift */; };
@@ -129,6 +130,7 @@
 		126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckView.swift; sourceTree = "<group>"; };
 		12DA904E2B7219FA0059E55D /* LoginInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoView.swift; sourceTree = "<group>"; };
 		12DA90502B721A730059E55D /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
+		561084DB2B85984200A958EB /* SavedPostImagesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostImagesDataManager.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
 		5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
 		563408A12B6F2D3500B0159B /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 			children = (
 				567C10FC2B81966300446C73 /* MyPostImagesDataModel.swift */,
 				567C10FE2B81969300446C73 /* MyPostImagesDataManager.swift */,
+				561084DB2B85984200A958EB /* SavedPostImagesDataManager.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -807,26 +810,20 @@
 				126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */,
 				563408AA2B6F3E0600B0159B /* BrowseNextWeekViewController.swift in Sources */,
 				05B034C62B73276D0014F110 /* CalendarViewController.swift in Sources */,
-
 				056CAEF52B8318AC00ED6B81 /* ParsedWeather.swift in Sources */,
-
 				567C10FD2B81966300446C73 /* MyPostImagesDataModel.swift in Sources */,
-				05B034B42B7325330014F110 /* Hourly.swift in Sources */,
 				5664CCF72B84B6FF003651F6 /* BrowseMainDataManager.swift in Sources */,
-
 				05B034C42B7327540014F110 /* MyPostViewController.swift in Sources */,
 				5639272F2B3EAE1900A88D43 /* AppDelegate.swift in Sources */,
 				5664CCE52B81F4E1003651F6 /* MyPageViewController.swift in Sources */,
+				561084DC2B85984200A958EB /* SavedPostImagesDataManager.swift in Sources */,
 				5664CCEC2B823997003651F6 /* BrowseStyleDataModel.swift in Sources */,
 				0530AB172B6708D30021625D /* DailyWeatherCell.swift in Sources */,
-
 				056CAEED2B8317C800ED6B81 /* String+Extension.swift in Sources */,
 				056CAF022B83715100ED6B81 /* WeatherIcon.swift in Sources */,
 				056CAEEF2B8317E600ED6B81 /* DateFormatter.swift in Sources */,
-
 				567C10F92B81853100446C73 /* SavedPostCollectionViewController.swift in Sources */,
 				5664CCF92B85234C003651F6 /* OtherPeopleStyleViewController.swift in Sources */,
-
 				0530AB112B6707890021625D /* HourlyWeatherCell.swift in Sources */,
 				0530AB092B63F9A30021625D /* TodayWeatherCell.swift in Sources */,
 				56B060102B5CEA9400CE923C /* StyleCollectionReusableHeaderView.swift in Sources */,
@@ -847,9 +844,6 @@
 				56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */,
 				056CAEEB2B8317A500ED6B81 /* CLLocation+Extension.swift in Sources */,
 				0530AAB42B5D508F0021625D /* Vibration.swift in Sources */,
-
-				0519E5D92B76201D00A306F1 /* WeatherManager.swift in Sources */,
-
 				0530AAB22B5D50440021625D /* TabBarController.swift in Sources */,
 				563408A42B6F30FA00B0159B /* BrowseStyleCollectionView.swift in Sources */,
 				563927312B3EAE1900A88D43 /* SceneDelegate.swift in Sources */,
@@ -863,7 +857,6 @@
 				567C10F52B80F0A800446C73 /* MyPostCollectionViewController.swift in Sources */,
 				567C10EC2B805D5900446C73 /* TemperatureSliderView.swift in Sources */,
 				05B034CA2B7328DD0014F110 /* PaddedLabel.swift in Sources */,
-				56C1DC532B73AD1B006580F9 /* OtherPeopleView.swift in Sources */,
 				056CAEF32B83188D00ED6B81 /* WeatherDataCenter.swift in Sources */,
 				563408A22B6F2D3500B0159B /* Reusable.swift in Sources */,
 				56BF77A52B63C71D004C044F /* BrowseDetailViewController.swift in Sources */,

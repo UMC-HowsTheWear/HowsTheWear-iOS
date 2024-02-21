@@ -13,8 +13,9 @@ final class SavedPostCollectionViewController: UIViewController {
         frame: .zero,
         collectionViewLayout: generateCollectionViewLayout()
     )
-    private var postImageArray = [UIImage(named: "")]
-    
+    private var postImageArray: [MyPostImagesDataModel] = []
+    private let savedPostImagesDataManager = SavedPostImagesDataManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUserPostCollectionView()
@@ -43,8 +44,8 @@ extension SavedPostCollectionViewController: UICollectionViewDataSource {
                 as? MyPagePostCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.postImageView.image = postImageArray[indexPath.item]
-        
+        cell.postImageView.image = postImageArray[indexPath.item].postImages
+
         return cell
     }
     
@@ -60,14 +61,18 @@ extension SavedPostCollectionViewController {
             forCellWithReuseIdentifier: MyPagePostCollectionViewCell.reuseIdentifier
         )
         postImageCollectionView.backgroundColor = .clear
+        
+        postImageArray = savedPostImagesDataManager.fetchMyPostImagesData()
+
     }
     
     private func generateCollectionViewLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1/2),
-            heightDimension: .fractionalHeight(1/2)
+            heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 3, leading: 1.5, bottom: 0, trailing: 1.5)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),

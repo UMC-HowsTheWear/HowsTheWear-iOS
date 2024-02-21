@@ -14,7 +14,7 @@ final class TemperatureSliderView: UIView {
         $0.font = UIFont.pretendard(size: 16, weight: .semibold)
     }
     
-    private let temperatureSlider = MyPageTemperatureSlider()
+    let temperatureSlider = MyPageTemperatureSlider()
     
     private let insensitiveLabel = UILabel().then {
         $0.textColor = UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)
