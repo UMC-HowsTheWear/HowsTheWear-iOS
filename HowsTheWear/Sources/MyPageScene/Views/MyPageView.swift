@@ -58,11 +58,10 @@ final class MyPageView: UIView {
         $0.setTitleColor(UIColor(red: 0.741, green: 0.741, blue: 0.741, alpha: 1), for: .normal)
     }
         
-    private let styleHashTagCollectionView = StyleHashTagView("MyPageStyleCollectionViewCell")
+    let styleHashTagCollectionView = StyleHashTagView("MyPageStyleCollectionViewCell")
     
-    private let heatSlider = TemperatureSliderView(temperatureTitleText: "더위")
-    
-    private let coldSlider = TemperatureSliderView(temperatureTitleText: "추위")
+    let heatSlider = TemperatureSliderView(temperatureTitleText: "더위")
+    let coldSlider = TemperatureSliderView(temperatureTitleText: "추위")
     
     private let myPagePostViewController: UIViewController? = {
         let pageViewController = MyPagePostPagingViewController(

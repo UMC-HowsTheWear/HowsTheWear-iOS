@@ -9,6 +9,12 @@ import UIKit
 
 final class EditInterestView: UIView {
     
+    var hashTagArray:[String] = []
+    var heatNumber:Float = 0.0
+    var coldNumber:Float = 0.0
+    
+    private let myPageViewController = MyPageViewController()
+    
     private let dividerView1 = UIView().then {
         $0.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
     }
@@ -74,10 +80,10 @@ final class EditInterestView: UIView {
         $0.numberOfLines = 2
     }
     
-    private let coldSlider = TemperatureSliderView(temperatureTitleText: "더위")
-    private let headSlider = TemperatureSliderView(temperatureTitleText: "추위")
+    let coldEditSlider = TemperatureSliderView(temperatureTitleText: "더위")
+    let heatEditSlider = TemperatureSliderView(temperatureTitleText: "추위")
     
-    private let saveButton = UIButton().then {
+    let saveButton = UIButton().then {
         $0.backgroundColor = UIColor(red: 0.133, green: 0.133, blue: 0.133, alpha: 1)
         $0.setTitle("저장하기", for: .normal)
         $0.titleLabel?.font = UIFont.pretendard(size: 14, weight: .medium)
@@ -116,7 +122,9 @@ extension EditInterestView {
         ].forEach {
             $0.addTarget(self, action: #selector(didTapStyleHashTagButton), for: .touchUpInside)
         }
-
+        
+        coldEditSlider.temperatureSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        heatEditSlider.temperatureSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
     }
     
     @objc private func didTapStyleHashTagButton(_ sender: UIButton) {
@@ -125,12 +133,26 @@ extension EditInterestView {
             sender.configuration?.baseBackgroundColor = UIColor(red: 0.443, green: 0.608, blue: 0.902, alpha: 1)
             sender.configuration?.baseForegroundColor = .white
             sender.layer.borderWidth = 0
+            hashTagArray.append(sender.titleLabel?.text! ?? "")
         } else {
             sender.configuration?.baseBackgroundColor = .white
             sender.configuration?.baseForegroundColor = UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)
             sender.layer.borderWidth = 1
+            
+            let buttonIndex: Int = hashTagArray.firstIndex(of: sender.titleLabel?.text ?? "")!
+            hashTagArray.remove(at: buttonIndex)
         }
     }
+    
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        // sender가 coldSlider인지 heatSlider인지 확인하고 해당 변수에 값을 저장
+        if sender == coldEditSlider.temperatureSlider {
+            coldNumber = sender.value // 슬라이더의 현재 값을 coldNumber에 저장합니다.
+        } else if sender == heatEditSlider.temperatureSlider {
+            heatNumber = sender.value // 슬라이더의 현재 값을 heatNumber에 저장합니다.
+        }
+    }
+
     
 }
 
@@ -159,9 +181,9 @@ extension EditInterestView {
             sytleButtonStackView,
             temperatureDescriptionLabel,
             dividerView2,
-            headSlider,
+            heatEditSlider,
             dividerView3,
-            coldSlider,
+            coldEditSlider,
             dividerView4,
             saveButton
         ].forEach {
@@ -207,7 +229,7 @@ extension EditInterestView {
             make.leading.equalTo(titleLabel)
         }
 
-        headSlider.snp.makeConstraints { make in
+        heatEditSlider.snp.makeConstraints { make in
             make.centerX.equalTo(safeAreaLayoutGuide)
             make.top.equalTo(dividerView2.snp.bottom).offset(16)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).inset(44)
@@ -216,11 +238,11 @@ extension EditInterestView {
         dividerView3.snp.makeConstraints { make in
             make.height.equalTo(1)
             make.centerX.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(headSlider.snp.bottom).offset(16)
+            make.top.equalTo(heatEditSlider.snp.bottom).offset(16)
             make.leading.equalTo(titleLabel)
         }
         
-        coldSlider.snp.makeConstraints { make in
+        coldEditSlider.snp.makeConstraints { make in
             make.centerX.equalTo(safeAreaLayoutGuide)
             make.top.equalTo(dividerView3.snp.bottom).offset(16)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).inset(44)
@@ -229,7 +251,7 @@ extension EditInterestView {
         dividerView4.snp.makeConstraints { make in
             make.height.equalTo(1)
             make.centerX.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(coldSlider.snp.bottom).offset(16)
+            make.top.equalTo(coldEditSlider.snp.bottom).offset(16)
             make.leading.equalTo(titleLabel)
         }
         
@@ -244,39 +266,3 @@ extension EditInterestView {
     }
     
 }
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-struct UIViewPreview<View: UIView>: UIViewRepresentable {
-    let view: View
-
-    init(_ builder: @escaping () -> View) {
-        view = builder()
-    }
-
-    // MARK: - UIViewRepresentable
-
-    func makeUIView(context: Context) -> UIView {
-        return view
-    }
-
-    func updateUIView(_ view: UIView, context: Context) {
-        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        view.setContentHuggingPriority(.defaultHigh, for: .vertical)
-    }
-}
-
-#endif
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-
-struct Preview: PreviewProvider{
-    static var previews: some View {
-        UIViewPreview {
-            let myView = EditInterestView()
-            return myView
-        }.previewLayout(.sizeThatFits)
-    }
-}
-#endif

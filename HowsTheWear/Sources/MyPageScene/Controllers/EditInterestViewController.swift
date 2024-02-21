@@ -9,7 +9,8 @@ import UIKit
 
 final class EditInterestViewController: UIViewController {
     
-    let editInterestView = EditInterestView()
+    private let editInterestView = EditInterestView()
+    private let myPageViewController = MyPageViewController()
     
     override func loadView() {
         view = editInterestView
@@ -18,8 +19,7 @@ final class EditInterestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNaviBar()
-//        configureSubview()
-//        configureLayout()
+        configureAddTarget()
     }
     
     private func configureNaviBar() {
@@ -55,15 +55,18 @@ final class EditInterestViewController: UIViewController {
 }
 
 extension EditInterestViewController {
-    private func configureSubview() {
-        [editInterestView].forEach {
-            view.addSubview($0)
-        }
+    private func configureAddTarget() {
+        editInterestView.saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
     }
     
-    private func configureLayout() {
-        editInterestView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
-        }
+    // MARK: - 여기여기
+    @objc private func didTapSaveButton() {
+        myPageViewController.hashTagArray = editInterestView.hashTagArray
+        myPageViewController.heatNumber = editInterestView.heatNumber
+        myPageViewController.coldNumber = editInterestView.coldNumber
+        
+        navigationController?.pushViewController(myPageViewController, animated: true)
     }
+    
+    
 }
