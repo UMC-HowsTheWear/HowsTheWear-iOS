@@ -84,7 +84,7 @@ extension MyPageViewController {
     
 }
 
-// MARK: Configure ActionSheet
+// MARK:  - Configure ActionSheet
 
 extension MyPageViewController {
     
@@ -108,7 +108,7 @@ extension MyPageViewController {
     
 }
 
-// MARK: Configure PHPicker
+// MARK:  - Configure PHPicker
 
 extension MyPageViewController: PHPickerViewControllerDelegate {
     
@@ -145,7 +145,7 @@ extension MyPageViewController: PHPickerViewControllerDelegate {
     
 }
 
-// MARK: Configure ImagePicker
+// MARK: - Configure ImagePicker
 
 extension MyPageViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

@@ -70,7 +70,7 @@ extension MyPagePostSegmentedControll {
     
     private func configureUnderLineView() {
         let originX: CGFloat = 0
-        let originY: CGFloat = bounds.size.height - 3           // 걷느려보기
+        let originY: CGFloat = bounds.size.height - 3           // 건드려보기
         let width: CGFloat = bounds.size.width / CGFloat(numberOfSegments)
         let height: CGFloat = 1                                 // 건드려보기
         

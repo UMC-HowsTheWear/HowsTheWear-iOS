@@ -47,4 +47,5 @@ extension MyPageStyleCollectionViewCell {
             make.margins.equalToSuperview()
         }
     }
+    
 }
