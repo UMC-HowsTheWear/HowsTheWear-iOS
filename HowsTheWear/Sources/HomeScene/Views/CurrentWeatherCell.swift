@@ -18,13 +18,7 @@ final class CurrentWeatherCell: UITableViewCell {
     let weatherService = WeatherService()
 
     let weatherIcon = UIImageView().then {
-        $0.image = UIImage(named: "clear-cloudy")
         $0.contentMode = .scaleAspectFit
-        $0.layer.masksToBounds = false
-        $0.layer.shadowColor = UIColor(red: 0.164, green: 0.315, blue: 0.475, alpha: 0.1).cgColor
-        $0.layer.shadowOpacity = 1
-        $0.layer.shadowRadius = 16
-        $0.layer.shadowOffset = CGSize(width: -8, height: 8)
     }
     
     let locationLabel = UILabel().then {
@@ -71,8 +65,12 @@ extension CurrentWeatherCell: CLLocationManagerDelegate {
             do {
                 let result = try await weatherService.weather(for: location)
                 DispatchQueue.main.async {
+                    // 온도 업데이트
                     let temperature = result.currentWeather.temperature.converted(to: .celsius).value
                     self.temperatureLabel.text = String(format: "%.0f", temperature)
+
+                    // 날씨 아이콘 업데이트
+                    self.updateWeatherIcon(for: result.currentWeather.condition)
                 }
             } catch {
                 print(error.localizedDescription)
@@ -101,14 +99,36 @@ extension CurrentWeatherCell: CLLocationManagerDelegate {
 
 extension CurrentWeatherCell {
     
+    func updateWeatherIcon(for condition: WeatherCondition) {
+        // 낮인지 밤인지 결정하는 로직 추가
+        let isDaytime = checkIfDaytime()
+        if let icon = WeatherIcon.icon(for: condition, isDaytime: isDaytime) {
+            weatherIcon.image = icon
+        }
+    }
+
+    // 낮인지 밤인지를 판단하는 메서드
+    func checkIfDaytime() -> Bool {
+        let currentHour = Calendar.current.component(.hour, from: Date())
+        // 예를 들어, 6시부터 18시 사이를 낮으로 간주
+        return currentHour >= 6 && currentHour <= 18
+    }
+    
     func updateWeather(currentWeather: CurrentWeather, location: CLLocation) {
+        // 날씨 아이콘 업데이트
+        updateWeatherIcon(for: currentWeather.condition)
+        
         // 온도 레이블 업데이트
         let temperature = currentWeather.temperature.converted(to: .celsius).value
         temperatureLabel.text = String(format: "%.0f", temperature)
 
         // 위치 레이블 업데이트
         CLGeocoder().reverseGeocodeLocation(location) { [weak self] placemarks, error in
-            guard error == nil, let placemark = placemarks?.first, let city = placemark.locality, let country = placemark.country else {
+            guard error == nil,
+                  let placemark = placemarks?.first,
+                  let city = placemark.locality,
+                  let country = placemark.country
+            else {
                 return
             }
             DispatchQueue.main.async {
@@ -127,17 +147,27 @@ private extension CurrentWeatherCell {
         backgroundView?.backgroundColor = .clear
         addSubviews([weatherIcon, locationLabel, temperatureLabel, temperatureIcon])
         setupConstraints()
+        configureWeatherIconShadow()
+    }
+    
+    func configureWeatherIconShadow() {
+        weatherIcon.layer.masksToBounds = false
+        weatherIcon.layer.shadowColor = UIColor(red: 0.164, green: 0.315, blue: 0.475, alpha: 0.1).cgColor
+        weatherIcon.layer.shadowOpacity = 1
+        weatherIcon.layer.shadowRadius = 16
+        weatherIcon.layer.shadowOffset = CGSize(width: -8, height: 8)
     }
     
     func setupConstraints() {
         weatherIcon.snp.makeConstraints {
-            $0.centerX.top.equalToSuperview()
-            $0.height.equalTo(170)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(90)
+            $0.width.height.equalTo(170)
         }
         
         locationLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(weatherIcon.snp.bottom).inset(30)
+            $0.top.equalTo(weatherIcon.snp.bottom).offset(20)
             $0.left.equalTo(20)
             $0.height.equalTo(24)
         }
