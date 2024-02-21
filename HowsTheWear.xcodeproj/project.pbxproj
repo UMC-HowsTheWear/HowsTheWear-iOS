@@ -37,6 +37,7 @@
 		126C9D4D2B7327C300C9FF03 /* LoginInfoCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */; };
 		12DA904F2B7219FA0059E55D /* LoginInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA904E2B7219FA0059E55D /* LoginInfoView.swift */; };
 		12DA90512B721A730059E55D /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DA90502B721A730059E55D /* LoginInfoViewController.swift */; };
+		422C6069CB66FAAAC12D752C /* Pods_HowsTheWear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B507F9A89157A77DC07B15 /* Pods_HowsTheWear.framework */; };
 		561084DC2B85984200A958EB /* SavedPostImagesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561084DB2B85984200A958EB /* SavedPostImagesDataManager.swift */; };
 		5619F98D2B432A8400E86325 /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */; };
 		563408A22B6F2D3500B0159B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563408A12B6F2D3500B0159B /* Reusable.swift */; };
@@ -50,9 +51,6 @@
 		563927332B3EAE1900A88D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563927322B3EAE1900A88D43 /* ViewController.swift */; };
 		563927382B3EAE1A00A88D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 563927372B3EAE1A00A88D43 /* Assets.xcassets */; };
 		5639273B2B3EAE1A00A88D43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 563927392B3EAE1A00A88D43 /* LaunchScreen.storyboard */; };
-		563927472B3EB8CE00A88D43 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 563927462B3EB8CE00A88D43 /* Then */; };
-		5639274A2B3EB90A00A88D43 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 563927492B3EB90A00A88D43 /* SnapKit */; };
-		5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */; };
 		56475D3D2B73C6D900D88A62 /* OtherPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D3C2B73C6D900D88A62 /* OtherPeopleViewController.swift */; };
 		56475D432B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D422B746CD000D88A62 /* OtherPeopleProfileHeaderView.swift */; };
 		56475D472B7474C400D88A62 /* OtherPeopleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56475D462B7474C400D88A62 /* OtherPeopleDetailView.swift */; };
@@ -130,6 +128,8 @@
 		126C9D4C2B7327C300C9FF03 /* LoginInfoCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoCheckView.swift; sourceTree = "<group>"; };
 		12DA904E2B7219FA0059E55D /* LoginInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoView.swift; sourceTree = "<group>"; };
 		12DA90502B721A730059E55D /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
+		3C5916A14D53BA205A014574 /* Pods-HowsTheWear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowsTheWear.debug.xcconfig"; path = "Target Support Files/Pods-HowsTheWear/Pods-HowsTheWear.debug.xcconfig"; sourceTree = "<group>"; };
+		50B507F9A89157A77DC07B15 /* Pods_HowsTheWear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HowsTheWear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561084DB2B85984200A958EB /* SavedPostImagesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPostImagesDataManager.swift; sourceTree = "<group>"; };
 		5619F9892B431B9E00E86325 /* BrowseMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMainViewController.swift; sourceTree = "<group>"; };
 		5619F98C2B432A8400E86325 /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 		56BF77AA2B664C5B004C044F /* BrowseDetailCellPagingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseDetailCellPagingImageView.swift; sourceTree = "<group>"; };
 		56F0C3822B77B0F700C41278 /* BrowseMoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseMoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		56F0C3872B77BC8700C41278 /* OtherPeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherPeopleDetailViewController.swift; sourceTree = "<group>"; };
+		705B5B357D2898AB712BE6AC /* Pods-HowsTheWear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HowsTheWear.release.xcconfig"; path = "Target Support Files/Pods-HowsTheWear/Pods-HowsTheWear.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				563927472B3EB8CE00A88D43 /* Then in Frameworks */,
-				5639274A2B3EB90A00A88D43 /* SnapKit in Frameworks */,
-				5639274C2B3EB90A00A88D43 /* SnapKit-Dynamic in Frameworks */,
+				422C6069CB66FAAAC12D752C /* Pods_HowsTheWear.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +355,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		1E7381833328445E52D42BD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C5916A14D53BA205A014574 /* Pods-HowsTheWear.debug.xcconfig */,
+				705B5B357D2898AB712BE6AC /* Pods-HowsTheWear.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5619F9872B431B7000E86325 /* BrowseMainScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +451,8 @@
 			children = (
 				5639272D2B3EAE1900A88D43 /* HowsTheWear */,
 				5639272C2B3EAE1900A88D43 /* Products */,
+				1E7381833328445E52D42BD4 /* Pods */,
+				BCEB0181E54439DC90D673AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -704,6 +714,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		BCEB0181E54439DC90D673AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B507F9A89157A77DC07B15 /* Pods_HowsTheWear.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -711,9 +729,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5639273F2B3EAE1A00A88D43 /* Build configuration list for PBXNativeTarget "HowsTheWear" */;
 			buildPhases = (
+				04C942281523584A2ECD9967 /* [CP] Check Pods Manifest.lock */,
 				563927272B3EAE1900A88D43 /* Sources */,
 				563927282B3EAE1900A88D43 /* Frameworks */,
 				563927292B3EAE1900A88D43 /* Resources */,
+				420DD68043C497FA63094969 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -721,9 +741,6 @@
 			);
 			name = HowsTheWear;
 			packageProductDependencies = (
-				563927462B3EB8CE00A88D43 /* Then */,
-				563927492B3EB90A00A88D43 /* SnapKit */,
-				5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */,
 			);
 			productName = HowsTheWear;
 			productReference = 5639272B2B3EAE1900A88D43 /* HowsTheWear.app */;
@@ -754,8 +771,6 @@
 			);
 			mainGroup = 563927222B3EAE1900A88D43;
 			packageReferences = (
-				563927452B3EB8CE00A88D43 /* XCRemoteSwiftPackageReference "Then" */,
-				563927482B3EB90A00A88D43 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 5639272C2B3EAE1900A88D43 /* Products */;
 			projectDirPath = "";
@@ -780,6 +795,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04C942281523584A2ECD9967 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HowsTheWear-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		420DD68043C497FA63094969 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HowsTheWear/Pods-HowsTheWear-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HowsTheWear/Pods-HowsTheWear-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HowsTheWear/Pods-HowsTheWear-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		563927272B3EAE1900A88D43 /* Sources */ = {
@@ -920,7 +977,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -983,7 +1040,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1004,13 +1061,14 @@
 		};
 		563927402B3EAE1A00A88D43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C5916A14D53BA205A014574 /* Pods-HowsTheWear.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HowsTheWear/HowsTheWear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JD4YAFH7N;
+				DEVELOPMENT_TEAM = 7WULLR98GP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowsTheWear/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1032,13 +1090,14 @@
 		};
 		563927412B3EAE1A00A88D43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 705B5B357D2898AB712BE6AC /* Pods-HowsTheWear.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HowsTheWear/HowsTheWear.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JD4YAFH7N;
+				DEVELOPMENT_TEAM = 7WULLR98GP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowsTheWear/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1080,43 +1139,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		563927452B3EB8CE00A88D43 /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		563927482B3EB90A00A88D43 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		563927462B3EB8CE00A88D43 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 563927452B3EB8CE00A88D43 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		563927492B3EB90A00A88D43 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 563927482B3EB90A00A88D43 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		5639274B2B3EB90A00A88D43 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 563927482B3EB90A00A88D43 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 563927232B3EAE1900A88D43 /* Project object */;
 }
