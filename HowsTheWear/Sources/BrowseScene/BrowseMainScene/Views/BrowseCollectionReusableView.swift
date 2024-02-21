@@ -24,7 +24,6 @@ final class BrowseCollectionReusableView: UICollectionReusableView {
         $0.font = UIFont.pretendard(size: 15, weight: .semibold)
         $0.textColor = .black
         $0.textAlignment = .left
-        $0.text = "헤더 레이블"
     }
     
     let browseHeaderRightArrowButton = UIButton().then {

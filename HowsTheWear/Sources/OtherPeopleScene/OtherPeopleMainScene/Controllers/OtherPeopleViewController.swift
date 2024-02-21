@@ -128,13 +128,10 @@ extension OtherPeopleViewController {
 // MARK: - Configure CollectionView
 
 extension OtherPeopleViewController {
-<<<<<<< HEAD
-=======
 
     func setCollectionViewCellSelectionHandler(_ handler: @escaping ((IndexPath) -> Void)) {
         othersPeopleCollectionView.didSelectCell = handler
     }
->>>>>>> feat/totalEdit
     
     private func configureCollectionView() {
         othersPeopleCollectionView.delegate = self

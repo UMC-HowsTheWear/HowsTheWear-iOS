@@ -9,7 +9,7 @@ import UIKit
 
 final class OtherPeopleDescriptionStackView: UIView {
     
-    private var saveStyleNumber: Int = 0 {
+    private var saveStyleNumber: Int = 129 {
         didSet {
             var container = AttributeContainer()
             container.font = UIFont.pretendard(size: 14, weight: .medium)
@@ -19,9 +19,9 @@ final class OtherPeopleDescriptionStackView: UIView {
         }
     }
     
-    private var recommendedTemperature: Int = 0
+    private var recommendedTemperature: Int = 15
 
-    private var feelTemperature: String = "너무 더워요"
+    private var feelTemperature: String = "선선해요"
     
     private lazy var feelTemperatureText = feelTemperatureLabel.text ?? ""
     

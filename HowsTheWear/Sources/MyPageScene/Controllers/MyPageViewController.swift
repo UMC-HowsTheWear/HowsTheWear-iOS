@@ -23,6 +23,20 @@ final class MyPageViewController: UIViewController {
         configureAddTarget()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let navigationController = navigationController,
+           navigationController.topViewController is MyPageViewController
+        {
+            tabBarController?.tabBar.isHidden = true
+        }
+    }
+    
     private func configureNaviBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
@@ -60,6 +74,12 @@ final class MyPageViewController: UIViewController {
 extension MyPageViewController {
     private func configureAddTarget() {
         myPageView.postProfileImageButton.addTarget(self, action: #selector(configureSelectImageAlert), for: .touchUpInside)
+        myPageView.editUserFashionStyleButton.addTarget(self, action: #selector(didTapEditButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapEditButton() {
+        let editInterestViewController = EditInterestViewController()
+        navigationController?.pushViewController(editInterestViewController, animated: true)
     }
     
 }

@@ -27,6 +27,19 @@ final class OtherPeopleDetailView: UIView {
         $0.setImage(UIImage(named: "tag"), for: .normal)
     }
     
+    lazy var itemTagLabelContainerView = UIView().then {
+        $0.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        $0.addSubview(itemTagLabel)
+    }
+    
+    let itemTagLabel = UILabel().then {
+        $0.text = "grds blucher 08 leather"
+        $0.font = UIFont.pretendard(size: 12, weight: .medium)
+        $0.textColor = .clear
+        $0.numberOfLines = 2
+        $0.lineBreakMode = .byTruncatingTail
+    }
+    
     private let bottomDescriptionStackView = OtherPeopleDescriptionStackView()
     
     private let leftHashTagLabel = UILabel().then {
@@ -46,6 +59,7 @@ final class OtherPeopleDetailView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         configureInitialSetting()
+        itemTagLabelContainerView.layer.cornerRadius = itemTagLabelContainerView.layer.bounds.height * 0.36
     }
     
     override init(frame: CGRect) {
@@ -73,11 +87,20 @@ extension OtherPeopleDetailView {
     
 }
 
+// MARK: - Public Interface
+
+extension OtherPeopleDetailView {
+    func configureContents(_ image: UIImage?, hashTag: String) {
+        postImageView.image = image
+        leftHashTagLabel.text = hashTag
+    }
+}
+
 // MARK: - Configure UI
 
 extension OtherPeopleDetailView {
     private func confiugreSubview() {
-        [postShadowImageview, leftHashTagLabel, bookmarkButton].forEach {
+        [postShadowImageview, itemTagLabelContainerView, leftHashTagLabel, bookmarkButton].forEach {
             postImageView.addSubview($0)
         }
         
@@ -106,6 +129,17 @@ extension OtherPeopleDetailView {
             make.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
             make.leading.equalToSuperview()
+        }
+        
+        itemTagLabelContainerView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(55)
+            make.leading.equalToSuperview().inset(15)
+        }
+        
+        itemTagLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.top.equalToSuperview().inset(6)
+            make.leading.equalToSuperview().inset(16)
         }
         
         leftHashTagLabel.snp.makeConstraints { make in
