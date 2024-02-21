@@ -12,7 +12,6 @@ import Then
 
 class LoginInfoView: UIView,UITextFieldDelegate {
     
-    
     private lazy var loginTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "로그인"
@@ -34,7 +33,7 @@ class LoginInfoView: UIView,UITextFieldDelegate {
     private let idLabel: UILabel = {
         let label = UILabel()
         label.text = "아이디"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -46,8 +45,8 @@ class LoginInfoView: UIView,UITextFieldDelegate {
         textField.placeholder = "아이디를 입력해주세요."
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1.5
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         textField.clipsToBounds = true
         textField.textColor = UIColor.black
         textField.autocapitalizationType = .none
@@ -74,7 +73,7 @@ class LoginInfoView: UIView,UITextFieldDelegate {
     private let pwLabel: UILabel = {
         let label = UILabel()
         label.text = "비밀번호"
-        label.font = UIFont(name: "Pretendard-Regular", size: 15)
+        label.font = UIFont(name: "Pretendard-Medium", size: 16)
         label.textColor = #colorLiteral(red: 0.1333333254, green: 0.1333332956, blue: 0.1333333254, alpha: 1)
         return label
     }()
@@ -86,8 +85,8 @@ class LoginInfoView: UIView,UITextFieldDelegate {
         textField.placeholder = "비밀번호를 입력해주세요."
         textField.backgroundColor = UIColor.white
         textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1.5
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor(red: 0.878, green: 0.878, blue: 0.878, alpha: 1).cgColor
         textField.clipsToBounds = true
         textField.textColor = UIColor.black
         textField.autocapitalizationType = .none
@@ -99,18 +98,11 @@ class LoginInfoView: UIView,UITextFieldDelegate {
         return textField
     }()
     
-    //    private lazy var loginInputView = UIStackView(arrangedSubviews: [idTextFieldView,separatorView,pwTextFieldView]).then {
-    //        $0.axis = .vertical
-    //        $0.alignment = .fill
-    //        $0.distribution = .fillProportionally
-    //        $0.spacing = 10
-    //
-    //    }
     
     lazy var passwordSecureButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("표시", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+        button.tintColor = .systemGray
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         button.addTarget(self, action: #selector(passwordSecureModeSetting), for: .touchUpInside)
         return button
@@ -194,22 +186,27 @@ class LoginInfoView: UIView,UITextFieldDelegate {
         }
         
         passwordSecureButton.snp.makeConstraints {
-            $0.top.equalTo(pwView.snp.top).offset(10)
-            $0.bottom.equalTo(pwTextField.snp.bottom).offset(10)
-            $0.trailing.equalTo(pwTextField.snp.trailing).offset(1)
+            $0.centerY.equalTo(pwTextField)
+            $0.trailing.equalTo(pwView.snp.trailing).offset(-10)
         }
         
         confirmButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(pwView.snp.bottom).offset(400)
             $0.left.equalTo(separatorView)
             $0.height.equalTo(60)
+            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(7)
         }
         
     }
     
     @objc private func passwordSecureModeSetting() {
-        // 이미 텍스트필드에 내장되어 있는 기능
+        passwordSecureButton.isSelected.toggle()
+        let eyeImage = passwordSecureButton.isSelected ? "eye.slash" : "eye"
+        passwordSecureButton.setImage(UIImage(systemName: eyeImage), for: .normal)
         pwTextField.isSecureTextEntry.toggle()
     }
 }
+
+
+
+
