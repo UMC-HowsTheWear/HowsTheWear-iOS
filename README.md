@@ -1,6 +1,6 @@
 # HowsTheWear-iOS
 
-## 🌈프로젝트 소개 
+## 🌈 프로젝트 소개 
 
 <img width="700" alt="배너-3" src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/3fe92aec-031f-4389-be51-a5c261748d74" >
 
@@ -9,15 +9,15 @@
 - 날씨, 온도에 따른 옷차림을 추천 받을 수 있어요
 - 작년 이맘때에는 어떤 옷을 입었는지, 다음 주 날씨에 따라 패션 정보를 추천 받을 수 있어요
 
-## 문서
+## 📚 문서
 | 컨벤션                                                                           | 기획/디자인 | 팀 노션 | Git Workflow | 
 | ------------------------------------------------------------------------------------- | ---------------- | ------ | ------ |
 | 📜 [코딩 컨벤션](https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/blob/main/CodingConvention.md) | 🎨 [디자인](https://www.figma.com/design/DZqFiuUyVofqCrXhm2E1aN/%ED%95%98%EB%8D%94%EC%9B%A8-%EC%9E%91%EC%97%85?node-id=28%3A10&t=85n6D9bmukkWMy2B-1)             | 🏠 [팀 노션](https://www.notion.so/HTW-Communication-sheet-df6072167ca748859d8359f94e306600)|📝 [Git Workflow](https://branch-cheque-736.notion.site/ce8bda7865df402bae954c2bf8922e83?pvs=4)
 
-## 이슈 로그  (~~정리중~~)
+## 📝 이슈 로그  (~~정리중~~)
  - [**테이블 뷰 버튼 동작 안할때?**](https://velog.io/@gration77/트러블슈팅-테이블-뷰-셀-내부에-버튼이-동작하지-않을-때)
 
-## 구현 화면
+## 📱 구현 화면
 ### 로그인 및 회원가입
 - 온보딩
 <img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/81329dd8-1784-4c4c-97b2-a8504e5644de" width=30%>
