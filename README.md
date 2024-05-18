@@ -12,7 +12,7 @@
 ## 📚 문서
 | 컨벤션                                                                           | 기획/디자인 | 팀 노션 | Git Workflow | 
 | ------------------------------------------------------------------------------------- | ---------------- | ------ | ------ |
-| 📜 [코딩 컨벤션](https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/blob/main/CodingConvention.md) | 🎨 [디자인](https://www.figma.com/design/DZqFiuUyVofqCrXhm2E1aN/%ED%95%98%EB%8D%94%EC%9B%A8-%EC%9E%91%EC%97%85?node-id=28%3A10&t=85n6D9bmukkWMy2B-1)             | 🏠 [팀 노션](https://www.notion.so/HTW-Communication-sheet-df6072167ca748859d8359f94e306600)|📝 [Git Workflow](https://branch-cheque-736.notion.site/ce8bda7865df402bae954c2bf8922e83?pvs=4)
+| 📜 [코딩 컨벤션](https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/blob/main/CodingConvention.md) | 🎨 [디자인](https://www.figma.com/design/DZqFiuUyVofqCrXhm2E1aN/%ED%95%98%EB%8D%94%EC%9B%A8-%EC%9E%91%EC%97%85?node-id=28%3A10&t=85n6D9bmukkWMy2B-1)             | 🏠 [팀 노션](https://capricious-taxi-431.notion.site/HTW-Communication-sheet-df6072167ca748859d8359f94e306600?pvs=4)|📝 [Git Workflow](https://branch-cheque-736.notion.site/ce8bda7865df402bae954c2bf8922e83?pvs=4)
 
 ## 📝 이슈 로그  (~~정리중~~)
  - [**테이블 뷰 버튼 동작 안할때?**](https://velog.io/@gration77/트러블슈팅-테이블-뷰-셀-내부에-버튼이-동작하지-않을-때)
