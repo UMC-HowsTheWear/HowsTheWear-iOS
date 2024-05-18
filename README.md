@@ -20,7 +20,8 @@
 ## 📱 구현 화면
 ### 로그인 및 회원가입
 - 온보딩
-<img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/81329dd8-1784-4c4c-97b2-a8504e5644de" width=30%>
+
+![Simulator Screen Recording - iPhone 15 Pro - 2024-05-19 at 07 39 04](https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/118424182/c5eee676-ca85-49f2-8bde-96ea069939e6)
 
 - 로그인
 <img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/3d87edbe-a47f-45cd-8440-56246c6fd759" width=30%>
@@ -30,7 +31,9 @@
 
 ### 메인화면
 - 날씨 정보와 오늘의 아이템을 추천받을 수 있어요
-<img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/42e93f34-1d9d-44ee-bade-83fefad3e371" width=30%>
+
+<img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/118424182/81af0d5c-3215-4104-80ff-fa313f24bf80" width=30%>
+<img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/118424182/97e00190-cfa1-46e4-8f11-26df4104a360" width=30%>
 
 
 ### 둘러보기
@@ -41,7 +44,8 @@
 ### 다른 사람들은
 - 해시태그 별 다른 사람들의 룩을 둘러볼 수 있어요
 <img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/06fe69c1-a5b4-498b-b493-9de796f37417" width=30%>
-<img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/59834326/7c7dffb3-29f1-4f06-99b4-97e99a662cd3" width=30%>
+<img src="https://github.com/UMC-HowsTheWear/HowsTheWear-iOS/assets/118424182/09b6623c-8400-42c0-9642-92e7a85342fc" width=30%>
+
 
 ### 마이페이지
 - 나의 패션 스타일, 온도 민감도를 조절할 수 있어요
